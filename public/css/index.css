@@ -1,0 +1,20 @@
+html, body {
+  padding : 0%;
+  margin: 0%;
+  height: 100%;
+  width: 100%;
+}
+body{
+  background: linear-gradient(#000, #222);
+}
+#message{
+  text-align: center;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  top: 40vh;
+  font-size: 4vw;
+  font-weight: bold;
+  font-family: "century gothic";
+  color: #eee;
+}
