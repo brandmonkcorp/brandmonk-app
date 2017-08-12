@@ -13,14 +13,12 @@ app.use(express.static(publicPath));
 
 app.post('/register', (req, res) => {
   console.log(req.body);
-  var newUser = new User({
-    name: req.body.name,
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
-  });
+  var newUser = new User(req.body);
   newUser.save().then((doc) => {
-    res.send(doc);
+    res.send({
+      "status": "success",
+      "name": doc.name
+    });
   }, (e) =>{
     res.status(400).send(e);
   });

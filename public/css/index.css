@@ -76,6 +76,20 @@ body{
 :-moz-placeholder { /* Firefox 18- */
   color: #a84;
 }
+#errormessage{
+  position: relative;
+  float: left;
+  width: 91%;
+  height: auto;
+  padding: 1vh;
+  margin: 1vh;
+  border-radius: 5px;
+  background-color: #822;
+  color: #eee;
+  font-size: 1vw;
+  text-align: center;
+  display: none;
+}
 #button-wrapper{
   position: relative;
   margin-top: 5vh;
@@ -83,15 +97,17 @@ body{
   width: 100%;
   height: 5vh;
 }
-#button-wrapper button{
-  width: 45%;
-  height: 5vh;
+#button-wrapper .button{
+  width: 42%;
+  height: 3vh;
   margin: 1vh;
   border: 1px solid #299;
   background-color: transparent;
   border-radius: 5px;
   font-size: 2.5vh;
   transition: width 0.3s ease;
+  text-align: center;
+  padding: 1vh;
 }
 #login,#back-to-login{
   position:absolute;
@@ -103,12 +119,12 @@ body{
   right: 1%;
   color: #f44;
 }
-#button-wrapper button:hover{
+#button-wrapper .button:hover{
   cursor: pointer;
-  width: 95%;
+  width: 90.5%;
   z-index: 1;
 }
-#button-wrapper button:active{
+#button-wrapper .button:active{
   background-color:white;
   color: #222;
 }
