@@ -11,9 +11,10 @@ var app = express();
 app.use(bodyParser.json());
 app.use(express.static(publicPath));
 
-app.post('/page', (req, res) => {
+app.post('/register', (req, res) => {
   console.log(req.body);
   var newUser = new User({
+    name: req.body.name,
     username: req.body.username,
     email: req.body.email,
     password: req.body.password
@@ -23,6 +24,13 @@ app.post('/page', (req, res) => {
   }, (e) =>{
     res.status(400).send(e);
   });
+});
+app.post('/login', (req, res) => {
+
+});
+
+app.get('/userExist', (req, res) => {
+
 });
 
 app.listen(port, () =>{

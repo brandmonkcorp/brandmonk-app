@@ -18,15 +18,22 @@ body{
   font-family: "century gothic";
   color: #eee;
 }
-#login-wrapper{
+#container{
   position: absolute;
   right: 5vw;
   top: 10vw;
+  height: auto;
+  width: auto;
+}
+#login-wrapper{
+  position: relative;
+  float: left;
   height: 50vh;
   width: 50vh;
   border-radius: 1vh;
   font-family: "century gothic";
   padding: 1vh;
+  display: none;
 }
 #login-head{
   position: relative;
@@ -35,7 +42,7 @@ body{
   height: auto;
   font-size:4vh;
   font-weight: bold;
-  color: #299;
+  color: #eee;
   text-align: center;
 }
 #login-form{
@@ -44,7 +51,7 @@ body{
   margin-top: 5vh;
   width: 100%;
 }
-#login-wrapper input{
+ input{
   position: relative;
   float: left;
   margin: 1vh;
@@ -53,9 +60,21 @@ body{
   background-color: transparent;
   color: white;
   font-size: 2.5vh;
-  border: 1px solid #555;
+  border: 1px solid #299;
   border-radius: 5px;
   padding: 1vh;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #a52;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #a84;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #a84;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #a84;
 }
 #button-wrapper{
   position: relative;
@@ -68,18 +87,18 @@ body{
   width: 45%;
   height: 5vh;
   margin: 1vh;
-  border: 1px solid #555;
+  border: 1px solid #299;
   background-color: transparent;
   border-radius: 5px;
   font-size: 2.5vh;
-  transition: width 0.5s ease;
+  transition: width 0.3s ease;
 }
-#login{
+#login,#back-to-login{
   position:absolute;
   left: 0%;
   color: #299;
 }
-#register{
+#register, #register-me{
   position:absolute;
   right: 1%;
   color: #f44;
@@ -93,13 +112,23 @@ body{
   background-color:white;
   color: #222;
 }
-#login:hover{
+#login:hover, #back-to-login:hover{
   background-color: #299;
   border: 1px solid #299;
   color: #eee;
 }
-#register:hover{
+#register:hover, #register-me:hover{
   background-color: #f44;
   border: 1px solid #f44;
   color: #eee;
+}
+#register-wrapper{
+  position: relative;
+  float: left;
+  height: 50vh;
+  width: 50vh;
+  border-radius: 1vh;
+  font-family: "century gothic";
+  padding: 1vh;
+  display: none;
 }
