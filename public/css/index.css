@@ -18,3 +18,88 @@ body{
   font-family: "century gothic";
   color: #eee;
 }
+#login-wrapper{
+  position: absolute;
+  right: 5vw;
+  top: 10vw;
+  height: 50vh;
+  width: 50vh;
+  border-radius: 1vh;
+  font-family: "century gothic";
+  padding: 1vh;
+}
+#login-head{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+  font-size:4vh;
+  font-weight: bold;
+  color: #299;
+  text-align: center;
+}
+#login-form{
+  position: relative;
+  float: left;
+  margin-top: 5vh;
+  width: 100%;
+}
+#login-wrapper input{
+  position: relative;
+  float: left;
+  margin: 1vh;
+  width: 90%;
+  height: 4vh;
+  background-color: transparent;
+  color: white;
+  font-size: 2.5vh;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 1vh;
+}
+#button-wrapper{
+  position: relative;
+  margin-top: 5vh;
+  float: left;
+  width: 100%;
+  height: 5vh;
+}
+#button-wrapper button{
+  width: 45%;
+  height: 5vh;
+  margin: 1vh;
+  border: 1px solid #555;
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 2.5vh;
+  transition: width 0.5s ease;
+}
+#login{
+  position:absolute;
+  left: 0%;
+  color: #299;
+}
+#register{
+  position:absolute;
+  right: 1%;
+  color: #f44;
+}
+#button-wrapper button:hover{
+  cursor: pointer;
+  width: 95%;
+  z-index: 1;
+}
+#button-wrapper button:active{
+  background-color:white;
+  color: #222;
+}
+#login:hover{
+  background-color: #299;
+  border: 1px solid #299;
+  color: #eee;
+}
+#register:hover{
+  background-color: #f44;
+  border: 1px solid #f44;
+  color: #eee;
+}
