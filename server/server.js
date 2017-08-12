@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const {mongoose} = require('./db/mongoose');
 const {User} = require('./models/user');
-const publicPath = path.join(__dirname, './public');
+const publicPath = path.join(__dirname, '../public');
 
 var port = 3000;
 var app = express();
