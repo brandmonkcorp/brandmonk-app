@@ -132,7 +132,7 @@ function makeitNormal(e){
 $(document.body).on('keyup', 'input[name="phone"]', function (e) {
   var key =  String.fromCharCode(e.which);
   var elem = $('input[name="phone"]');
-  if(/^[0-9]*$/.test(elem.val()) == false) {
+  if(/^[+0-9]*$/.test(elem.val()) == false) {
     elem.val(elem.val().substr(0, elem.val().length-1));
     showErrorMessage('Only Digits!', elem);
     regflag3 = false;
