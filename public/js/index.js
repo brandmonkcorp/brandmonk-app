@@ -1,6 +1,7 @@
 var passwordCheck, regflag1 = regflag2 = regflag3 = regflag4 = false, activeFlag = false;
 $(document).ready(function (){
   $('#container').load('./pages/login.html', function () {
+    $('<div></div>').load('./pages/register.html');
     $('#login-wrapper').show();
   });
 });
