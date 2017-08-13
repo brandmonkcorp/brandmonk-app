@@ -1,16 +1,17 @@
 <div id="register-wrapper">
   <span id="login-head">Good to go!</span>
   <form id="register-form">
-    <input type="text" name="name" placeholder="Your name"/><br>
+    <input type="text" minlength="4" name="name" placeholder="Your name"/><br>
     <input type="text" name="username" placeholder="Username"/><br>
     <input type="email" name="email" placeholder="Email"/><br>
-    <input type="password" name="password" placeholder="Password"/><br>
+    <input type="text" maxlength="10" name="phone" placeholder="Mobile"/><br>
+    <input type="password" minlength="6" name="password" placeholder="Password"/><br>
     <input type="password" name="password2" placeholder="Retype Password"/><br>
     <input id="reg-button" type="submit" style="display:none"/>
-    <span id="errormessage"></span>
   </form>
   <div id="button-wrapper">
-    <span class="button" id="back-to-login">Back to Login</span>
-    <span class="button" id="register-me">Sign me Up</span>
+    <span  class="login dohover" id="back-to-login">Back to Login</span>
+    <span  class="register dohover" id="register-me">Sign me Up</span>
   </div>
 </div>
+<script>removeSubmitListener();</script>

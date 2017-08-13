@@ -27,8 +27,18 @@ app.post('/login', (req, res) => {
 
 });
 
-app.get('/userExist', (req, res) => {
+app.post('/userExist', (req, res) => {
+  console.log(req.body);
+  User.findOne(req.body).then((data) => {
+    if(data != null){
+      res.send({status: 'found'});
+    }else{
+      res.send({status: 'not found'});
+    }
 
+  }, (e) => {
+    res.send({status: "not found",e});
+  });
 });
 
 app.listen(port, () =>{

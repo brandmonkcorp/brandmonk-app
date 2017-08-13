@@ -17,6 +17,11 @@ var User = mongoose.model('User', {
     trim: true,
     minlength: 2
   },
+  phone:{
+    type: String,
+    required: true,
+    length: 10
+  },
   password:{
     type: String,
     required: true,
