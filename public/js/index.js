@@ -1,8 +1,6 @@
 var passwordCheck, regflag1 = regflag2 = regflag3 = regflag4 = false, activeFlag = false;
 $(document).ready(function (){
-  $('#login-wrapper').load('./pages/login.html', function () {
-    $('#login-wrapper').css({'visibility': 'visible'});
-  });
+  $('#login-wrapper').load('./pages/login.html');
   $('#register-wrapper').load('./pages/register.html');
 });
 $(document.body).on('submit', '#login-form', function (e) {
@@ -12,15 +10,15 @@ $(document.body).on('submit', '#login-form', function (e) {
 $(document.body).on('submit', '#register-form', function (e) {
   e.preventDefault();
   if(!passwordCheck){
-    return showErrorMessage('Passwords do not match!', $('input[name=password2]'));
+    return showErrorMessage('Passwords do not match!', $('#register-form input[name=password2]'));
   }
   registerUser();
 });
 
 $(document.body).on('keyup', '#register-form input[name=username]', function (e) {
-  $('input[name="username"]').css('color', '#fff');
+  $('#register-form input[name="username"]').css('color', '#fff');
   var key =  String.fromCharCode(e.which);
-  var elem = $('input[name=username]');
+  var elem = $('#register-form input[name=username]');
   if(/^[a-zA-Z0-9]*$/.test(elem.val()) == false) {
     elem.val(elem.val().substr(0, elem.val().length-1));
     showErrorMessage('No special character is allowed!', elem);
@@ -30,7 +28,7 @@ $(document.body).on('keyup', '#register-form input[name=username]', function (e)
   }
 });
 $(document.body).on('focusout', '#register-form input[name=username]', function (e) {
-  var elem = $('input[name=username]');
+  var elem = $('#register-form input[name=username]');
   if(elem.val().length < 6){
     if(elem.val().length >= 1){
       regflag1 = false;
@@ -43,7 +41,7 @@ $(document.body).on('focusout', '#register-form input[name=username]', function 
 
 function checkAvailability(){
   var userdata = {
-    username: $('input[name="username"]').val()
+    username: $('#register-form input[name="username"]').val()
   };
   $.ajax({
     url: '/userExist',
@@ -55,48 +53,46 @@ function checkAvailability(){
     if(res.status == "found"){
       showErrorMessage('Username not Available!',$('input[name="username"]'));
       regflag1 = false;
-      return $('input[name="username"]').focus();
+      return $('#register-form input[name="username"]').focus();
     }
-    showErrorMessage('Username Available!',$('input[name="username"]'), "success");
-    $('input[name="username"]').css('color', '#4f4');
+    showErrorMessage('Username Available!',$('#register-form input[name="username"]'), "success");
+    $('#register-form input[name="username"]').css('color', '#4f4');
     regflag1 = true;
   })
   .fail(function (err) {
-    showErrorMessage('Connection Problem!',$('input[name="username"]'));
+    showErrorMessage('Connection Problem!',$('#register-form input[name="username"]'));
     regflag1 = true;
   });
 }
 
-$(document.body).on('focusout', 'input[name=email]', function (e) {
-  var email = $('input[name="email"]').val();
+$(document.body).on('focusout', '#register-form input[name=email]', function (e) {
+  var email = $('#register-form input[name="email"]').val();
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-  if(!emailReg.test( email )){
+  if(!emailReg.test( email ) && email.length != 0){
     regflag2 = false;
-    return showErrorMessage('Provide a valid Email id!',$('input[name="email"]'));
+    return showErrorMessage('Provide a valid Email id!',$('#register-form input[name="email"]'));
   }else if(email.length >= 1){
     regflag2 = true;
   }
 });
 
-$(document.body).on('focusout', 'input[name=password]', function () {
-  var elem = $('input[name=password]');
+$(document.body).on('focusout', '#register-form input[name=password]', function () {
+  var elem = $('#register-form input[name=password]');
   if(elem.val().length < 6 && elem.val().length >= 1){
     showErrorMessage('Password must be atleast 6 characters long!', elem);
-    elem.focus();
   }else{
     if( elem.val().length >= 1 && !( /\d/.test(elem.val()) && /[A-Z]/.test(elem.val()))){
-      showErrorMessage('Password should contain atleast one Uppercase letter and a Digit!', elem);
-      elem.focus();
+      showErrorMessage('Password should contain atleast one Uppercase letter and a Digit!', elem)
     }
   }
 });
 
 
 $(document.body).on('keyup', 'input[name=password2]', function () {
-  if($('input[name=password]').val() == $('input[name=password2]').val()){
+  if($('#register-form input[name=password]').val() == $('input[name=password2]').val()){
     passwordCheck = true;
     makeitNormal(this);
-    if($('input[name=password]').val().length >= 6){
+    if($('#register-form input[name=password]').val().length >= 6){
       regflag4 = true;
     }
   }else{
@@ -129,9 +125,9 @@ function makeitNormal(e){
   });
 }
 
-$(document.body).on('keyup', 'input[name="phone"]', function (e) {
+$(document.body).on('keyup', '#register-form input[name="phone"]', function (e) {
   var key =  String.fromCharCode(e.which);
-  var elem = $('input[name="phone"]');
+  var elem = $('#register-form input[name="phone"]');
   if(/^[+0-9]*$/.test(elem.val()) == false) {
     elem.val(elem.val().substr(0, elem.val().length-1));
     showErrorMessage('Only Digits!', elem);
@@ -140,8 +136,8 @@ $(document.body).on('keyup', 'input[name="phone"]', function (e) {
     regflag3 = true;
   }
 });
-$(document.body).on('focusout', 'input[name="phone"]', function (e) {
-  var elem = $('input[name="phone"]');
+$(document.body).on('focusout', '#register-form input[name="phone"]', function (e) {
+  var elem = $('#register-form input[name="phone"]');
   if(elem.val().length != 10 && elem.val().length >= 1){
     regflag3 = false;
     return showErrorMessage('Not a valid Phone Number!', elem);
@@ -189,11 +185,11 @@ function authenticate() {
 }
 function registerUser() {
   var formData = {
-    name: $('input[name="name"]').val(),
-    username: $('input[name="username"]').val(),
-    email: $('input[name="email"]').val(),
-    phone: $('input[name="phone"]').val(),
-    password: $('input[name="password"]').val()
+    name: $('#register-form input[name="name"]').val(),
+    username: $('#register-form input[name="username"]').val(),
+    email: $('#register-form input[name="email"]').val(),
+    phone: $('#register-form input[name="phone"]').val(),
+    password: $('#register-form input[name="password"]').val()
   };
   $.ajax({
     url: '/register',
@@ -203,13 +199,12 @@ function registerUser() {
   })
   .done(function(doc){
       showErrorMessage('Success! Redirecting...', $('#register-form'), "success");
-      setTimeout(function () {
-        $('#register-wrapper').slideUp(100,function () {
-          $('#container').load('./pages/login.html', function () {
-            $('#login-wrapper').slideDown(100);
-          });
-        });
-      }, 2000);
+
+      setTimeout(function (){
+        $('#register-form input').val('');
+        $('#register-wrapper').css({'visibility': 'hidden'});
+        $('#login-wrapper').css({'visibility': 'visible'});
+      },3000);
   })
   .fail(function(error){
       showErrorMessage(error.responseJSON.message, $('#register-form'));
