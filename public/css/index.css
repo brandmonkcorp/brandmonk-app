@@ -150,7 +150,7 @@ body{
   display: none;
 }
 @media screen and (max-height: 480px) and (max-width: 853px){
-  #login-wrapper{
+  #login-wrapper,#register-wrapper{
     width: 90vw;
     padding: 5px;
     border-radius: 5px;
@@ -158,7 +158,7 @@ body{
   #button-wrapper{
     margin-top: 20px;
     width: 86vw;
-    padding: 5px;
+    padding: 6px;
   }
   .dohover:hover{
     cursor: pointer;
@@ -181,11 +181,6 @@ body{
   }
   #login-form,#register-form{
     margin-top: 20px;
-  }
-  #button-wrapper{
-    margin-top: 20px;
-    width: 86vw;
-    padding: 5px;
   }
   .register, .login{
     width: 45%;
@@ -214,7 +209,7 @@ body{
     width: 90vw;
     border-radius: 5px;
     font-family: "century gothic";
-    padding: 5px;
+    padding: 6px;
     display: none;
   }
   input{
