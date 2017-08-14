@@ -18,22 +18,15 @@ body{
   font-family: "century gothic";
   color: #eee;
 }
-#container{
+#login-wrapper{
   position: absolute;
   right: 5vw;
   top: 5vw;
-  height: auto;
-  width: auto;
-}
-#login-wrapper{
-  position: relative;
-  float: left;
   height: 50vh;
   width: 50vh;
   border-radius: 1vh;
   font-family: "century gothic";
   padding: 1vh;
-  display: none;
 }
 
 #login-head{
@@ -132,7 +125,7 @@ body{
 }
 .dohover:hover{
   cursor: pointer;
-  width: 94%;
+  width: 94.5%;
   z-index: 1;
 }
 .login:active,.register:active{
@@ -141,14 +134,14 @@ body{
 }
 
 #register-wrapper{
-  position: relative;
-  float: left;
+  position: absolute;
+  right: 5vw;
+  top: 5vw;
   height: 50vh;
   width: 50vh;
   border-radius: 1vh;
   font-family: "century gothic";
   padding: 1vh;
-  display: none;
 }
 @media screen and (max-height: 480px) and (max-width: 853px){
   #login-wrapper,#register-wrapper{
@@ -211,7 +204,6 @@ body{
     border-radius: 5px;
     font-family: "century gothic";
     padding: 6px;
-    display: none;
   }
   input{
     min-height: 25px;

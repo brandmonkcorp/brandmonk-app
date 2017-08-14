@@ -1,10 +1,9 @@
 var passwordCheck, regflag1 = regflag2 = regflag3 = regflag4 = false, activeFlag = false;
 $(document).ready(function (){
-  $('#container').load('./pages/login.html', function () {
-    $(document.body).append($('<div style="visibility: hidden"></div>').load('./pages/register.html'));
-    $(document.body).append($('<div style="visibility: hidden"></div>').load('./pages/register.html'));
-    $('#login-wrapper').show();
+  $('#login-wrapper').load('./pages/login.html', function () {
+    $('#login-wrapper').css({'visibility': 'visible'});
   });
+  $('#register-wrapper').load('./pages/register.html');
 });
 $(document.body).on('submit', '#login-form', function (e) {
   e.preventDefault();
@@ -178,18 +177,12 @@ $(document.body).on('click', '#register-me', function () {
 });
 
 $(document.body).on('click', '#register', function () {
-  $('#login-wrapper').slideUp(100,function () {
-    $('#container').load('./pages/register.html', function () {
-      $('#register-wrapper').slideDown(100);
-    });
-  });
+  $('#login-wrapper').css({'visibility': 'hidden'});
+  $('#register-wrapper').css({'visibility': 'visible'});
 });
 $(document.body).on('click', '#back-to-login', function () {
-  $('#register-wrapper').slideUp(100,function () {
-    $('#container').load('./pages/login.html', function () {
-      $('#login-wrapper').slideDown(100);
-    });
-  });
+  $('#register-wrapper').css({'visibility': 'hidden'});
+  $('#login-wrapper').css({'visibility': 'visible'});
 });
 function authenticate() {
 
