@@ -96,8 +96,9 @@ body{
   position: relative;
   margin-top: 5vh;
   float: left;
-  width: 100%;
+  width: 97%;
   height: 5vh;
+  padding: 1vh;
 }
 .register, .login{
   width: 44%;
@@ -131,7 +132,7 @@ body{
 }
 .dohover:hover{
   cursor: pointer;
-  width: 95%;
+  width: 94%;
   z-index: 1;
 }
 .login:active,.register:active{
