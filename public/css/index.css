@@ -35,6 +35,7 @@ body{
   padding: 1vh;
   display: none;
 }
+
 #login-head{
   position: relative;
   float: left;
@@ -158,4 +159,78 @@ body{
   background-color:  transparent;
   border: 1px solid #999;
   color: #999;
+}
+@media screen and (max-height: 480px) {
+  body,html{
+    height: 100%;
+    width: 100%;
+  }
+  #login-wrapper{
+    height: 200px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  #register-wrapper{
+    height: 350px;
+    width: 200px;
+    border-radius: 5px;
+    font-family: "century gothic";
+    padding: 5px;
+    display: none;
+  }
+  input{
+    min-height: 20px;
+    min-width: 100px;
+    margin: 5px;
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+    border: 1px solid #299;
+    border-radius: 5px;
+    padding:4px;
+  }
+  #login-head{
+    font-size: 18px;
+  }
+  #login-form,#register-form{
+    margin-top: 20px;
+  }
+  #button-wrapper{
+    margin-top: 20px;
+    width: 100%;
+  }
+  .register, .login{
+    width: 42%;
+    min-height: 15px;
+    margin: 4px;
+    border: 1px solid #299;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: width 0.3s ease;
+    text-align: center;
+    padding: 3px;
+  }
+  .login{
+    position:absolute;
+    left: 0%;
+    color: #4f4;
+  }
+  .register{
+    position:absolute;
+    right: 1%;
+    color: #f44;
+  }
+  .dohover:hover{
+    cursor: pointer;
+    width: 42%;
+  }
+  #errormessage{
+    width: 91%;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #822;
+    font-size: 10px;
+  }
 }

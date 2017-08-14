@@ -114,7 +114,7 @@ function showErrorMessage(message, elem, status) {
     $(elem).after('<span style="background-color: #4a4" id="errormessage"></span>');
   $('#errormessage').text(`${message}`);
   $('#errormessage').slideDown(100);
-  $('#errormessage').fadeOut(5000);
+  $('#errormessage').fadeOut(7000);
 }
 function makeitRed(e){
   $(e).css({
