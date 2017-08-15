@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/brandmonkcorp/brandmonk-app#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "mongoose": "^4.5.9"
+    "jsonwebtoken": "^7.4.2",
+    "mongoose": "^4.5.9",
+    "validator": "^8.0.0"
   }
 }

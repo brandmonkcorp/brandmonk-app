@@ -71,7 +71,7 @@ body{
 :-moz-placeholder { /* Firefox 18- */
   color: #a84;
 }
-#errormessage{
+.errormessage{
   position: relative;
   float: left;
   width: 96%;
@@ -190,7 +190,7 @@ body{
     cursor: pointer;
     width: 45%;
   }
-  #errormessage{
+  .errormessage{
     width: 95%;
     padding: 5px;
     margin-top: 5px;
@@ -261,7 +261,7 @@ body{
     cursor: pointer;
     width: 45%;
   }
-  #errormessage{
+  .errormessage{
     width: 95%;
     padding: 5px;
     margin-top: 5px;

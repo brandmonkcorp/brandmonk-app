@@ -5,6 +5,7 @@ const {mongoose} = require('./db/mongoose');
 const {User} = require('./models/user');
 const publicPath = path.join(__dirname, '../public');
 
+
 var port = 3000;
 var app = express();
 
@@ -14,17 +15,25 @@ app.use(express.static(publicPath));
 app.post('/register', (req, res) => {
   console.log(req.body);
   var newUser = new User(req.body);
-  newUser.save().then((doc) => {
-    res.send({
-      "status": "success",
-      "name": doc.name
+  newUser.save().then((data) => {
+    return newUser.generateAuthToken();
+  }).then((token) => {
+    console.log(token);
+    res.header('x-auth', token).send({
+      "status": "success"
     });
-  }, (e) =>{
+  }).catch((e) =>{
     res.status(400).send(e);
   });
 });
 app.post('/login', (req, res) => {
-
+  User.findByCredentials(req.body.username, req.body.password).then((user) => {
+    return user.generateAuthToken().then((token) => {
+      res.header('x-auth', token).send();
+    });
+  }).catch(() => {
+    res.status(400).send();
+  });
 });
 
 app.post('/userExist', (req, res) => {

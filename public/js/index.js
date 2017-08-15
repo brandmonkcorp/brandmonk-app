@@ -5,6 +5,9 @@ $(document).ready(function (){
 });
 $(document.body).on('submit', '#login-form', function (e) {
   e.preventDefault();
+  if( ($('#login-form input[name=username]').val() == "") || ( $('#login-form input[name=password]').val() == "")){
+    return showErrorMessage('Fields can\'t be empty !',$('#login-form'));
+  }
   authenticate();
 });
 $(document.body).on('submit', '#register-form', function (e) {
@@ -34,8 +37,6 @@ $(document.body).on('focusout', '#register-form input[name=username]', function 
       regflag1 = false;
       return showErrorMessage('Username must be atleast 6 characters!', elem);
     }
-    else
-      return;
   }
 });
 
@@ -51,7 +52,7 @@ function checkAvailability(){
   })
   .done(function (res) {
     if(res.status == "found"){
-      showErrorMessage('Username not Available!',$('input[name="username"]'));
+      showErrorMessage('Username not Available!',$('#register-form input[name="username"]'));
       regflag1 = false;
       return $('#register-form input[name="username"]').focus();
     }
@@ -68,7 +69,7 @@ function checkAvailability(){
 $(document.body).on('focusout', '#register-form input[name=email]', function (e) {
   var email = $('#register-form input[name="email"]').val();
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-  if(!emailReg.test( email ) && email.length != 0){
+  if((!emailReg.test( email )) && email.length != 0){
     regflag2 = false;
     return showErrorMessage('Provide a valid Email id!',$('#register-form input[name="email"]'));
   }else if(email.length >= 1){
@@ -103,14 +104,20 @@ $(document.body).on('keyup', 'input[name=password2]', function () {
 });
 
 function showErrorMessage(message, elem, status) {
-  $(elem).parent().find('#errormessage').remove();
+  var parent = $(elem).parent().attr('id');
+  var name = $(elem).attr('name') || $(elem).attr('id');
+  var id = `em-${parent}-${name}`;
+  console.log(id);
+  $(elem).parent().find(`#${id}`).remove();
   if(status != "success")
-    $(elem).after('<span id="errormessage"></span>');
+    $(elem).after(`<span class="errormessage" id="${id}"></span>`);
   else
-    $(elem).after('<span style="background-color: #4a4" id="errormessage"></span>');
-  $('#errormessage').text(`${message}`);
-  $('#errormessage').slideDown(100);
-  $('#errormessage').fadeOut(7000);
+    $(elem).after('<span style="background-color: #4a4" class="errormessage"></span>');
+  $(`#${id}`).text(`${message}`);
+  $(`#${id}`).slideDown(100);
+  $(`#${id}`).fadeOut(7000, function (){
+    $(`#${id}`).remove();
+  });
 }
 function makeitRed(e){
   $(e).css({
@@ -181,7 +188,21 @@ $(document.body).on('click', '#back-to-login', function () {
   $('#login-wrapper').css({'visibility': 'visible'});
 });
 function authenticate() {
-
+  var credentials = {
+    username: $('#login-form input[name=username]').val(),
+    password: $('#login-form input[name=password]').val()
+  };
+  $.ajax({
+    url: '/login',
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(credentials)
+  }).done(function (data, status, response) {
+    token = response.getResponseHeader('x-auth');
+    showErrorMessage('You are Successfully Logged in!', $('#login-form'), "success");
+  }).fail(function () {
+    showErrorMessage('Invalid username/password !', $('#login-form'));
+  });
 }
 function registerUser() {
   var formData = {
@@ -209,5 +230,4 @@ function registerUser() {
   .fail(function(error){
       showErrorMessage(error.responseJSON.message, $('#register-form'));
   });
-  console.log(formData);
 }
