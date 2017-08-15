@@ -200,12 +200,14 @@ function authenticate() {
     token = response.getResponseHeader('x-auth');
 
     if($('#login-form input[name=remember]').is(':checked') ){
-      Cookies.remove('token');
-      Cookies.set('token', token, {secure: true});
+      Cookies.remove('_perm_user_token');
+      Cookies.set('_perm_user_token', token, {secure: true});
       console.log(Cookies.get('token'));
-    }
+    }else{
 
-    showErrorMessage('You are Successfully Logged in!', $('#login-form'), "success");
+    }
+    window.location.replace('/home.html');
+    //showErrorMessage('You are Successfully Logged in!', $('#login-form'), "success");
   }).fail(function () {
     showErrorMessage('Invalid username/password !', $('#login-form'));
   });
