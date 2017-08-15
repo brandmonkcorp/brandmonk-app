@@ -204,7 +204,7 @@ function authenticate() {
       Cookies.set('_PERM_authUID', token, {secure: true, expires: 3650});
     }else{
       Cookies.remove('_LOC_authUID');
-      Cookies.set('_LOC_authUID', token, {secure: true);
+      Cookies.set('_LOC_authUID', token, {secure: true});
     }
     window.location.replace('/home.html');
     //showErrorMessage('You are Successfully Logged in!', $('#login-form'), "success");
