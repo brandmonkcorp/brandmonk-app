@@ -107,7 +107,6 @@ function showErrorMessage(message, elem, status) {
   var parent = $(elem).parent().attr('id');
   var name = $(elem).attr('name') || $(elem).attr('id');
   var id = `em-${parent}-${name}`;
-  console.log(id);
   $(elem).parent().find(`#${id}`).remove();
   if(status != "success")
     $(elem).after(`<span class="errormessage" id="${id}"></span>`);
@@ -135,7 +134,7 @@ function makeitNormal(e){
 $(document.body).on('keyup', '#register-form input[name="phone"]', function (e) {
   var key =  String.fromCharCode(e.which);
   var elem = $('#register-form input[name="phone"]');
-  if(/^[+0-9]*$/.test(elem.val()) == false) {
+  if(/^[0-9]*$/.test(elem.val()) == false) {
     elem.val(elem.val().substr(0, elem.val().length-1));
     showErrorMessage('Only Digits!', elem);
     regflag3 = false;
@@ -199,6 +198,13 @@ function authenticate() {
     data: JSON.stringify(credentials)
   }).done(function (data, status, response) {
     token = response.getResponseHeader('x-auth');
+
+    if($('#login-form input[name=remember]').is(':checked') ){
+      Cookies.remove('token');
+      Cookies.set('token', token, {secure: true});
+      console.log(Cookies.get('token'));
+    }
+
     showErrorMessage('You are Successfully Logged in!', $('#login-form'), "success");
   }).fail(function () {
     showErrorMessage('Invalid username/password !', $('#login-form'));
@@ -220,7 +226,7 @@ function registerUser() {
   })
   .done(function(doc){
       showErrorMessage('Success! Redirecting...', $('#register-form'), "success");
-
+      removeSubmitListener();
       setTimeout(function (){
         $('#register-form input').val('');
         $('#login-form input[name=username]').val(formData.username);

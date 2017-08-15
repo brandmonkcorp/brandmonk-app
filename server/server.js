@@ -15,11 +15,8 @@ app.use(express.static(publicPath));
 app.post('/register', (req, res) => {
   console.log(req.body);
   var newUser = new User(req.body);
-  newUser.save().then((data) => {
-    return newUser.generateAuthToken();
-  }).then((token) => {
-    console.log(token);
-    res.header('x-auth', token).send({
+  newUser.save().then(() => {
+    res.send({
       "status": "success"
     });
   }).catch((e) =>{
