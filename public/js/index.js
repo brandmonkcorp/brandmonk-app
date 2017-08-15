@@ -200,11 +200,11 @@ function authenticate() {
     token = response.getResponseHeader('x-auth');
 
     if($('#login-form input[name=remember]').is(':checked') ){
-      Cookies.remove('_perm_user_token');
-      Cookies.set('_perm_user_token', token, {secure: true, expires: 3650});
-      console.log(Cookies.get('token'));
+      Cookies.remove('_PERM_authUID');
+      Cookies.set('_PERM_authUID', token, {secure: true, expires: 3650});
     }else{
-
+      Cookies.remove('_LOC_authUID');
+      Cookies.set('_LOC_authUID', token, {secure: true);
     }
     window.location.replace('/home.html');
     //showErrorMessage('You are Successfully Logged in!', $('#login-form'), "success");
