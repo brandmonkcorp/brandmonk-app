@@ -112,7 +112,7 @@ function showErrorMessage(message, elem, status) {
   if(status != "success")
     $(elem).after(`<span class="errormessage" id="${id}"></span>`);
   else
-    $(elem).after('<span style="background-color: #4a4" class="errormessage"></span>');
+    $(elem).after(`<span style="background-color: #4a4" class="errormessage" id="${id}"></span>`);
   $(`#${id}`).text(`${message}`);
   $(`#${id}`).slideDown(100);
   $(`#${id}`).fadeOut(7000, function (){
@@ -223,6 +223,8 @@ function registerUser() {
 
       setTimeout(function (){
         $('#register-form input').val('');
+        $('#login-form input[name=username]').val(formData.username);
+        $('#login-form input[name=password]').val('');
         $('#register-wrapper').css({'visibility': 'hidden'});
         $('#login-wrapper').css({'visibility': 'visible'});
       },3000);
