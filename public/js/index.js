@@ -201,7 +201,7 @@ function authenticate() {
 
     if($('#login-form input[name=remember]').is(':checked') ){
       Cookies.remove('_perm_user_token');
-      Cookies.set('_perm_user_token', token, {secure: true});
+      Cookies.set('_perm_user_token', token, {secure: true, expires: 3650});
       console.log(Cookies.get('token'));
     }else{
 
