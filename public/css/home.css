@@ -8,7 +8,34 @@ html,body{
 video{
   position: absolute;
   top: 15vh;
-  left: 30vw;
+  left: 22vw;
+  display: none;
+  border: 2px solid white;
+}
+#button-wrapper{
+  position: absolute;
+  top: 45vh;
+  width: 100%;
+}
+button{
+  position: relative;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  float: left;
+  height: 7vh;
+  width: 10vw;
+  background-color: #299;
+  font-family: "century gothic";
+  font-size: 1vw;
+  color: white;
+  border-radius: 5px;
+}
+button:hover{
+  background-color: #f44;
+  cursor: pointer;
+}
+#verizon{
+  float: right;
 }
 #overlay {
     position: fixed;
