@@ -15,7 +15,9 @@ app.use(express.static(publicPath));
 app.post('/register', (req, res) => {
   console.log(req.body);
   var newUser = new User(req.body);
+  console.log('hit 1');
   newUser.save().then(() => {
+    console.log('hit server');
     res.send({
       "status": "success"
     });
@@ -34,7 +36,7 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/userExist', (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   User.findOne(req.body).then((data) => {
     if(data != null){
       res.send({status: 'found'});

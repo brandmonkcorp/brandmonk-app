@@ -15,6 +15,7 @@ $(document.body).on('submit', '#register-form', function (e) {
   if(!passwordCheck){
     return showErrorMessage('Passwords do not match!', $('#register-form input[name=password2]'));
   }
+  console.log('hit');
   registerUser();
 });
 
