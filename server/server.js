@@ -13,11 +13,9 @@ app.use(bodyParser.json());
 app.use(express.static(publicPath));
 
 app.post('/register', (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   var newUser = new User(req.body);
-  console.log('hit 1');
   newUser.save().then(() => {
-    console.log('hit server');
     res.send({
       "status": "success"
     });
