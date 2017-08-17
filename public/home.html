@@ -3,20 +3,52 @@
   <head>
     <title>Home Page</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script type="text/javascript" src="//cdn.jsdelivr.net/afterglow/latest/afterglow.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
   </head>
-
   <body>
-<div style="position:absolute; left:25vw">
-    <video class="afterglow" id="myvideo" width="720" height="480">
 
-<source type="video/mp4" src="https://1930455220.rsc.cdn77.org/bmonk/YouTube%20-%20Amazing%20Dubai%20-%20Wonderful%20Fountain%20_HD_.mp4" />
-<source type="video/mp4" src="http://wpc.63B7B.alphacdn.net/0063B7B/videos/Ocean.mp4" data-quality="hd" />
 
-</div>
+  <div class="container">
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="position:absolute;top:45vh;left:60vw">CDN77</button>
 
- </video>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+          <div class="modal-body">
+            <video class="afterglow" id="myvideo" width="867" height="400">
+                <source type="video/mp4" src="https://1930455220.rsc.cdn77.org/bmonk/Motion_Gallery_hd.m4v" data-quality="hd" />
+                <source type="video/mp4" src="https://1930455220.rsc.cdn77.org/bmonk/MotionGalleryHd-1.m4v" />
+              </video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="position:absolute;top:45vh;left:30vw">Verizon</button>
+
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+          <div class="modal-body">
+            <video class="afterglow" id="myvideo" width="867" height="400">
+                <source type="video/mp4" src="http://wpc.63B7B.alphacdn.net/0063B7B/videos/hd.m4v" data-quality="hd" />
+                <source type="video/mp4" src="http://wpc.63B7B.alphacdn.net/0063B7B/videos/sd.m4v" />
+              </video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
   </body>
 </html>
