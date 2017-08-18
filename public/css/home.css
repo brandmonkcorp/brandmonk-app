@@ -5,7 +5,7 @@ html,body{
   width: 100%;
   background: linear-gradient(#222, #000);
 }
-video{
+#video-player{
   position: absolute;
   top: 15vh;
   left: 22vw;
@@ -30,7 +30,7 @@ video{
   color: white;
   border-radius: 5px;
 }
-button:hover{
+#button-wrapper button:hover{
   background-color: #f44;
   cursor: pointer;
 }
