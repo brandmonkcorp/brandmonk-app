@@ -143,19 +143,47 @@ body,html{
   margin: 5px;
   margin-top: 3vh;
   padding: .5%;
-  color: #555;
+  color: #299;
 }
 #inputs input{
   position: relative;
   float: left;
   font-size: 1.3vw;
   width: 60%;
-  border: 1px solid #555;
-  background-color: transparent;
+  border: 1px solid #999;
+  border-top: 1px solid transparent;
+  background-color: #fff;
   margin: 5px;
   margin-top: 3vh;
   padding: .5%;
 }
 input:hover{
   box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
+}
+#save{
+  position: relative;
+  float: right;
+  margin: 2vw;
+  margin-bottom: 1vh;
+  width: auto;
+  padding: 1%;
+  background-color: #299;
+  color: #eee;
+  font-size: 1vw;
+}
+#save:hover{
+  box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
+  cursor: pointer;
+}
+#save:active{
+  background-color: #eee;
+  border: #299;
+  color: #299;
+}
+#policy{
+  position: relative;
+  float: right;
+  margin-right: 2vw;
+  font-size: 0.8vw;
+  color: #f44;
 }
