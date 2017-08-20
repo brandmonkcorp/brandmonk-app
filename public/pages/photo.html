@@ -1,0 +1,33 @@
+<form id="Photo-form" class="forms">
+  <h2 id="headline">Choose your picture</h2>
+  <div id="picture-holder">
+    <div id="picture-box">
+      <div id="loading" style="visibility: hidden;"></div>
+      <input type="file" accept="image/*" id="picture" name='picture' style="display: none;"/>
+      <div id="upload" onclick="$('#picture').click();"></div>
+    </div>
+    <div id="messageBox" style="visibility: hidden">
+      <span id="errorIcon"></span>
+      <span id="message"></span>
+    </div>
+  </div>
+
+  <div id="canvas-holder" style="visibility: hidden;">
+    <canvas id="resize"></canvas>
+    <div id="button-holder">
+      <div id="plus" class="button"></div>
+      <div id="minus" class="button"></div>
+      <div id="left" class="button"></div>
+      <div id="right" class="button"></div>
+      <div id="up" class="button"></div>
+      <div id="down" class="button"></div>
+      <div id="crop" class="button"></div>
+    </div>
+    <p id="infor" style="color: #299; text-align: center;">Use the buttons to resize and set your picture</p>
+  </div>
+  <div>
+     <input type="hidden" id="locopoco" name="locopoco" value="">
+  </div>
+</form>
+<script src="../js/upload-image.js"></script>
+<script src="../js/resize-listeners.js"></script>

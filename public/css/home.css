@@ -3,6 +3,7 @@ html,body{
   padding: 0%;
   height: 100%;
   width: 100%;
+  font-family: "century gothic";
   background: linear-gradient(#222, #000);
 }
 #video-player{
