@@ -10,5 +10,15 @@ $(document).ready(function () {
 $('#start').click(function () {
   $('#intro').fadeOut(1000, function () {
     $('#container').css('visibility', 'visible');
+    $('#basic-info').css('visibility', 'visible');
   });
+});
+
+$('.tabs').click(function () {
+  var id = $(this).attr('id');
+  var targetId = id.substr(0, id.length - 4);
+  $('.tabs').removeClass('tabs-now');
+  $(this).addClass('tabs-now');
+  $('.info-class').css('visibility', 'hidden');
+  $(`#${targetId}`).css('visibility', 'visible');
 });
