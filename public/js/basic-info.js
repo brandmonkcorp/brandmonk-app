@@ -1,6 +1,6 @@
-$('#save').click(function () {
-  saveData();
-  goNext();
+$(document.body).on('click', '#save-basic', function () {
+  saveBasicData();
+  goBasicNext();
 });
 
 $(document).ready( function () {
@@ -13,11 +13,11 @@ function loadData() {
 }
 
 
-function saveData() {
+function saveBasicData() {
 
 }
 
-function goNext() {
+function goBasicNext() {
   $('#basic-info-tab').removeClass('tabs-now');
   $('#basic-info').css('visibility', 'hidden');
   $('#ad-pref').css('visibility', 'visible');

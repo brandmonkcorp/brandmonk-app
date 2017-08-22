@@ -67,18 +67,18 @@ body,html{
   width: auto;
   font-size: 2vw;
   padding: 1vh 1vw 1vh 1vw;
-  background-color: #299;
+  background-color: #295;
   border-radius: 1vw;
   color: #eee;
 }
 #start:hover{
   cursor: pointer;
   background-color: #eee;
-  color: #299;
-  border: 1px solid #299;
+  color: #295;
+  border: 1px solid #295;
 }
 #start:active{
-  background-color: #299;
+  background-color: #295;
   color: #eee;
 }
 #container{
@@ -89,26 +89,23 @@ body,html{
 #tab-container{
   position: relative;
   float: left;
-  width: 90%;
-  margin: 1vh 0 0 4vw;
+  width: 100%;
   height: auto;
 }
 .tabs{
   position: relative;
   float: left;
-  width: 24.6%;
+  width: 25%;
   padding: .5vh 0 .5vh 0;
   text-align: center;
   color: #eee;
   font-size: 1.2vw;
-  background: #222;
-  border: 1px solid #222;
+  background: #295;
 }
 .tabs:hover{
-  background: #f44;
+  background: #257;
   color: #eee;
   cursor: pointer;
-  border: 1px solid #f44;
 }
 .tabs:active{
   background: #222;
@@ -117,7 +114,6 @@ body,html{
 .tabs-now{
   background-color: #eee;
   color: #555;
-  border: 1px solid #555;
 }
 #inputs{
   position: relative;
@@ -142,45 +138,62 @@ body,html{
 .left-column{
   position: relative;
   float: left;
-  width: 60%;
-  height: auto;
+  width: 50%;
+  height: 64vh;
 }
 #photo-container{
   position: relative;
   float: left;
   width: 59%;
-  height: 100%;
+  height: 64vh;
 }
 .label{
   position: relative;
   float: left;
-  width: 30%;
+  width: 32%;
   font-size: 1.3vw;
-  margin: 5px;
-  margin-top: 3vh;
-  padding: .5%;
+  margin: 1.2vh;
+  padding: .4%;
   color: #299;
 }
 input, .multiselect, select{
   position: relative;
   float: left;
   font-size: 1.3vw;
-  width: 60%;
   border: 1px solid #999;
   border-top: 1px solid transparent;
   background-color: #fff;
-  margin: 5px;
-  margin-top: 3vh;
+  margin: 1.2vh;
+  padding: .4%;
+  font-family: "century gothic";
+}
+input{
+  width: 55%;
+}
+.multiselect{
+  height: 2vw;
+  width: 54%;
+}
+.multiselect:hover{
+  cursor: pointer;
+}
+select{
+  width: 55%;
   padding: .5%;
+  font-size: 1.3vw;
+}
+.select-class{
+  font-size: 1.3vw;
+  font-family: "century gothic";
 }
 input:hover, .multiselect:hover, select:hover{
   box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
 }
 .input-panel{
   position: absolute;
-  left: 33%;
-  float: none;
-  width: 60%;;
+  top: 6vh;
+  left: 37%;
+  width: 55%;
   height: 20vh;
   overflow-y: auto;
   z-index: 1;
@@ -188,15 +201,12 @@ input:hover, .multiselect:hover, select:hover{
   font-size: 1.2vw;
   box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
 }
-#lang{
-  top: 8vh;
-}
 .selected-lang{
   position: relative;
   margin-left: .2vw;
-  padding: .7%;
+  padding: .8%;
   background-color: #299;
-  font-size: 1vw;
+  font-size: 1.2vw;
   color: #eee;
 }
 .language-name{
@@ -215,22 +225,23 @@ input:hover, .multiselect:hover, select:hover{
   cursor: pointer;
   border: 1px solid #299;
 }
-#save{
+.save-button{
   position: relative;
   float: right;
-  margin: 2vw;
+  margin-top: 2vh;
+  margin-right: 2vw;
   margin-bottom: 1vh;
   width: auto;
-  padding: 1%;
-  background-color: #299;
+  padding: 1.5%;
+  background-color: #295;
   color: #eee;
   font-size: 1vw;
 }
-#save:hover{
+.save-button:hover{
   box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
   cursor: pointer;
 }
-#save:active{
+.save-button:active{
   background-color: #eee;
   border: #299;
   color: #299;
@@ -241,4 +252,163 @@ input:hover, .multiselect:hover, select:hover{
   margin-right: 2vw;
   font-size: 0.8vw;
   color: #f44;
+}
+.select-all{
+  position: relative;
+  margin: 1%;
+  margin-top: 4vh;
+  float: left;
+  padding: 1%;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 1vw;
+  color: #999;
+}
+.select-all:hover{
+  border: 1px solid #f44;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
+}
+.selected-all{
+  background-color: #f44;
+  color: #eee;
+}
+#count-selected{
+  position: relative;
+  margin: 1%;
+  margin-top: 4vh;
+  float: left;
+  padding: 1%;
+  font-size: 1vw;
+  color: #f44;
+}
+#selected{
+  position: relative;
+  float: right;
+  height: 1.7vw;
+  width: 1.7vw;
+  background-image: url('../images/icons/check1.png');
+  background-size: 100% 100%;
+  display: none;
+}
+#text-pref, #text-iden{
+  position: absolute;
+  width: 100%;
+  top: -5vh;
+  font-size: 2vw;
+  text-align: center;
+  color: #555;
+}
+#text-iden{
+  left: .7vw;
+  top: -4vh;
+  text-align: left;
+}
+#ad-genre{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 50vh;
+  overflow-y: auto;
+}
+.genre-div{
+  margin: 1%;
+  position: relative;
+  width: 95%;
+  height: auto;
+  padding: .5%;
+  border: 1px solid transparent;
+  font-size: 1.3vw;
+  background-color: #fff;
+  color: #222;
+  border-radius: 5px;
+}
+.genre-div:hover{
+  border: 1px solid #999;
+  color: #299;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
+}
+.genre-name{
+  margin-left: 2%;
+}
+.genre-select{
+  border: 1px solid #299;
+  background-color: #eee;
+  color: #999;
+}
+#submit-container{
+  position: relative;
+  float: right;
+}
+#left-div{
+  position: relative;
+  float: left;
+  height: 70vh;
+  width: 20vw;
+}
+#social-photo{
+  position: relative;
+  float: left;
+  margin-left: 1.2vw;
+  width: 17.5vw;
+  height: 17.5vw;
+  border: 4px solid #f44;
+  background-image: url('../images/user_profile_male.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#social-name{
+  position: relative;
+  float: left;
+  width: 100%;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  color: #555;
+}
+.social-info{
+  position: relative;
+  margin-top: 1vh;
+  float: left;
+  width: 100%;
+  font-size: 1.2vw;
+  padding: 1%;
+  color: #257;
+  text-align: center;
+  font-weight: bold;
+  border-left: 1vh solid #295;
+  background-color: #fff;
+}
+#social-edit{
+  position: relative;
+  float: right;
+  width: 60vw;
+  height: 65vh;
+}
+#social-brief{
+  position: relative;
+  float: left;
+  margin: 1%;
+  width: 100%;
+  font-size: 2vw;
+  font-weight: bold;
+  color: #777;
+  text-align: center;
+}
+#social-account-text{
+  position: relative;
+  float: right;
+  margin: 1%;
+  width: 38%;
+  font-size: 2vw;
+  font-weight: bold;
+  color: #295;
+  text-align: center;
+}
+.social-label{
+  width: 50%;
+  color: #299;
+  font-weight: bold;
 }

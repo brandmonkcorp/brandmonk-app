@@ -1,13 +1,33 @@
 <div class="left-column">
   <span class="label">Ad Language</span>
-    <div contenteditable="false" class="multiselect" name="languages" style="height: 1.5vw;">Select</div><br>
-  <span class="label">Feedback Language</span><select></select>
-  <span class="label">Gender</span><select></select>
-  <span class="label">Education</span><select></select>
-  <span class="label">Preferred Ad type</span><select></select>
+    <div contenteditable="false" class="multiselect" name="languages">Select</div><br>
+  <span class="label">Feedback Language</span><select name="f-lang"></select>
+  <span class="label">Gender</span><select name="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+  <span class="label">Education</span><select name="edu">
+    <option value="no_schooling">No Schooling</option>
+    <option value="tenth_fail">10th Fail</option>
+    <option value="tenth_pass">10th Pass</option>
+    <option value="twelveth">12th Pass</option>
+    <option value="graduate">Graduate and Higher</option>
+  </select>
+  <span class="label">Preferred Ad type</span><select name="ad_type">
+    <option value="video">Video Ads</option>
+    <option value="still">Static Ads</option>
+    <option value="animate">Animated GIFs</option>
+  </select>
+</div>
+<div class="right-column" style="width: 48%;">
+  <div id="text-pref">Choose your preferred Ad genre!</div>
+  <span class="select-all">Select All</span><span id="count-selected">
+    <span id="count" style="color:#299">0</span> selected</span>
+  <div id="ad-genre"></div>
 </div>
 <div id="submit-container">
-  <span id="save" class="save-button">Save Data</span>
+  <span id="save-pref" class="save-button">Save Data</span>
   <span id="policy">By submitting data you agree to BrandMonk user Agreement, privacy policy.</span>
 </div>
 <script src="../js/ad-pref.js"></script>
