@@ -1,11 +1,24 @@
-var cdn77src = "https://1930455220.rsc.cdn77.org/bmonk/Motion_Gallery_hd.m4v";
-var verizonsrc = "http://wpc.63B7B.alphacdn.net/0063B7B/videos/hd.m4v";
-$('#cdn77').click(function () {
-  $('video').fadeIn();
-  $('video').attr('src', cdn77src);
-});
+function openProf() {
+    document.getElementById("profNav").style.width = "250px";
+}
 
-$('#verizon').click(function () {
-  $('video').fadeIn();
-  $('video').attr('src', verizonsrc);
-});
+function closeProf() {
+    document.getElementById("profNav").style.width = "0";
+}
+function myFunction(){
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+function filterFunction(){
+  var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}

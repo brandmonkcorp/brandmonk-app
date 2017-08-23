@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome</title>
+    <title>BrandMonK</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/home.css">
   </head>
 
   <body>
-    <div id="button-wrapper">
-      <button id="cdn77">CDN77</button>
-      <button id="verizon">Verizon</button>
+    <script src="./js/home.js"></script>
+    <div id="head">
+      <div id="brandmonk" ><span style="color: #eee">Brand</span>Monk</div>
+      <span id="logout" class="head-button">Logout</span>
     </div>
-    <video id="video-player" width="750" controls>
-      <source type="video/mp4">
-          Your browser does not support HTML5 video.
-    </video>
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script src="./js/home1.js"></script>
+  <div id="profNav" class="sidenav">
+  <img class="container" src="../images/user_profile_male.jpg" alt="User Image">
+  <a href="javascript:void(0)" class="closeNav" onclick="closeProf()">&times;</a>
+  <a href="#"> Full Name</a>
+  <a href="#"> User Name</a>
+  <a href="#"> Profile</a>
+  <div class="dropdown">
+    <span onclick="myFunction()" class="dropbtn">Ad Preferences</span>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+      <a href="#">Movies & TV Shows</a>
+      <a href="#">Financial Products</a>
+      <a href="#">Apps & Games</a>
+      <a href="#">Mobiles & Accessories</a>
+      <a href="#">Computer & Accessories</a>
+      <a href="#">Household Appliances</a>
+      <a href="#">Fashion</a>
+      <a href="#">Medical Services</a>
+      <a href="#">Home, Kitchen & Pets</a>
+      <a href="#">Beauty & Healthcare</a>
+      <a href="#">Food & Grocery</a>
+      <a href="#">Sports & Fitness</a>
+      <a href="#">Wallets, Bags & Luggages</a>
+      <a href="#">Toys & Baby Products</a>
+      <a href="#">Vehicles</a>
+      <a href="#">Industrial Appliances</a>
+    </div>
+  </div>
+</div>
+<div class="navBtn">
+  <span onclick="openProf()">&#9776;</span>
+</div>
+
   </body>
 </html>
