@@ -4,14 +4,14 @@ html,body{
   height: 100%;
   width: 100%;
   font-family: "century gothic";
-  background: #eee;
+  background: #d1d1e0;
 }
 #head{
   position: relative;
   float: left;
   width: 100%;
   height: 8vh;
-  background-color: #0000ff;
+  background-color: #257;
 }
 #brandmonk{
   position: relative;
@@ -50,31 +50,40 @@ html,body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #00ccff;
+    background-color: #257;
     overflow-x: hidden;
     transition: 0.5s;
     float: left;
 }
 
-.sidenav a {
-
+.info {
     text-decoration: none;
-    font-size: 25px;
-    color: #000033;
+    font-size: 1.25vw;
+    color: white;
     display: block;
     transition: 0.3s;
+    border: 1px solid transparent;
 }
 
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+.info:hover, .info:focus{
+    border: 1px solid white;
+    cursor: pointer;
 }
-
-.sidenav .closeNav {
+.sidenav a {
+    font-size: 25px;
+    color: rgb(129, 129, 129);
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+    color: white;
+}
+.closeNav {
   position: absolute;
   top: 0vh;
-  right: 0vw;
+  right: 2vw;
   font-size: 36px;
   margin-left: 50px;
+
 }
 
 .navBtn{
@@ -94,25 +103,31 @@ html,body{
   border-radius: 50%;
 }
 .dropbtn {
-    background-color: #00ccff;
+    background-color: #257;
     border: 1px solid transparent;
     text-decoration: none;
-    font-size: 25px;
-    color: #000033;
+    width: 100vw;
+    font-size: 1.25vw;
+    color: white;
     display: block;
     cursor: pointer;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    color: #f1f1f1;
+    border: 1px solid white;
+    w
 }
 #myInput {
     border-box: box-sizing;
-    font-size: 16px;
+    font-size: 1.2vw;
     padding: 14px 20px 12px 45px;
-    border: none;
+    border: 1px solid transparent;
+    background-color: #257;
+    color: white;
 }
-
+#myInput:focus{
+    border: 1px solid white;
+}
 .dropdown {
     position: relative;
     display: inline-block;
@@ -121,17 +136,18 @@ html,body{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color:  #00b8e6;
-    min-width: 230px;
+    background-color:  #257;
+    min-width: 22vw;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    float: left;
 }
 
 .dropdown-content a {
   text-decoration: none;
-  font-size: 25px;
-  color: #000033;
+  font-size: 1.25vw;
+  color: white;
   display: block;
   transition: 0.3s;
 }
@@ -139,3 +155,48 @@ html,body{
 .dropdown a:hover {color: ##f1f1f1;}
 
 .show {display:block;}
+.tabs{
+  position: relative;
+  margin-top: 0.5vh;
+  float: left;
+  width: 100%;
+  height: 5vh;
+  background-color: white;
+}
+.tabBtn{
+  font-weight: bold;
+  color: #1f1f7a;
+  font-size: 1.3vw;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+}
+.tabBtn:hover, .tabBtn:focus{
+  border-bottom:2px solid blue;
+  cursor: pointer;
+}
+#vid-container{
+  position: absolute;
+  left: 15vw;
+  top: 15vh;
+  width: 70%;
+  height: 85%;
+  padding: 2%;
+  background-color: #fff;
+}
+.video-divs{
+  position: relative;
+  margin: 2%;
+  float: left;
+  width: 20vw;
+  height: 15vw;
+  border: 1px solid black;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.thumbs{
+  padding-left: 6vw;
+  padding-right: 5vh;
+  padding-top: 5vw;
+
+
+}

@@ -1,9 +1,24 @@
+$(document).ready( function () {
+
+  for (var i=1; i<=6; i++){
+    var videoDiv = $(`<div id="video-${i}" class="video-divs"></div>`);
+    $('#vid-container').append(videoDiv);
+    $(`#video-${i}`).css('background-image', `url('./images/thumbnails/thumb${i}.png')`);
+  }
+});
+
+
+
+
 function openProf() {
-    document.getElementById("profNav").style.width = "250px";
+  document.getElementById("profNav").style.width = "22vw";
+
 }
 
 function closeProf() {
-    document.getElementById("profNav").style.width = "0";
+  document.getElementById("profNav").style.width = "0";
+  document.getElementById("myDropdown").classList.toggle("show",false);
+
 }
 function myFunction(){
   document.getElementById("myDropdown").classList.toggle("show");
