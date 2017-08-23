@@ -11,7 +11,7 @@ body,html{
   float: left;
   width: 100%;
   height: 8vh;
-  background-color: #222;
+  background-color: #257;
 }
 #brandmonk{
   position: relative;
@@ -23,7 +23,7 @@ body,html{
   font-family: verdana arial "century gothic";
   font-size: 2.7vw;
   font-weight: bold;
-  color: #eee;
+  color: #fff;
 }
 .head-button{
   position: relative;
@@ -103,7 +103,7 @@ body,html{
   background: #295;
 }
 .tabs:hover{
-  background: #257;
+  background-color: #7b7;
   color: #eee;
   cursor: pointer;
 }
@@ -154,7 +154,7 @@ body,html{
   font-size: 1.3vw;
   margin: 1.2vh;
   padding: .4%;
-  color: #299;
+  color: #257;
 }
 input, .multiselect, select{
   position: relative;
@@ -205,7 +205,7 @@ input:hover, .multiselect:hover, select:hover{
   position: relative;
   margin-left: .2vw;
   padding: .8%;
-  background-color: #299;
+  background-color: #295;
   font-size: 1.2vw;
   color: #eee;
 }
@@ -218,12 +218,12 @@ input:hover, .multiselect:hover, select:hover{
   border: 1px solid transparent;
 }
 .language-clicked{
-  background-color: #299;
+  background-color: #295;
   color: #eee;
 }
 .language-name:hover{
   cursor: pointer;
-  border: 1px solid #299;
+  border: 1px solid #295;
 }
 .save-button{
   position: relative;
@@ -243,8 +243,8 @@ input:hover, .multiselect:hover, select:hover{
 }
 .save-button:active{
   background-color: #eee;
-  border: #299;
-  color: #299;
+  border: #295;
+  color: #295;
 }
 #policy{
   position: relative;
@@ -321,7 +321,7 @@ input:hover, .multiselect:hover, select:hover{
   border: 1px solid transparent;
   font-size: 1.3vw;
   background-color: #fff;
-  color: #222;
+  color: #257;
   border-radius: 5px;
 }
 .genre-div:hover{
@@ -378,7 +378,7 @@ input:hover, .multiselect:hover, select:hover{
   color: #257;
   text-align: center;
   font-weight: bold;
-  border-left: 1vh solid #295;
+  border-left: 1vh solid #257;
   background-color: #fff;
 }
 #social-edit{
@@ -409,6 +409,6 @@ input:hover, .multiselect:hover, select:hover{
 }
 .social-label{
   width: 50%;
-  color: #299;
+  color: #257;
   font-weight: bold;
 }
