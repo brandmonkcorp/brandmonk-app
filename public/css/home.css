@@ -4,50 +4,202 @@ html,body{
   height: 100%;
   width: 100%;
   font-family: "century gothic";
-  background: linear-gradient(#222, #000);
+  background: #d1d1e0;
 }
-#video-player{
-  position: absolute;
-  top: 15vh;
-  left: 22vw;
-  display: none;
-  border: 2px solid white;
-}
-#button-wrapper{
-  position: absolute;
-  top: 45vh;
-  width: 100%;
-}
-#button-wrapper button{
+#head{
   position: relative;
-  margin-left: 10vw;
-  margin-right: 10vw;
   float: left;
-  height: 7vh;
-  width: 10vw;
-  background-color: #299;
-  font-family: "century gothic";
-  font-size: 1vw;
-  color: white;
-  border-radius: 5px;
+  width: 100%;
+  height: 8vh;
+  background-color: #257;
 }
-#button-wrapper button:hover{
-  background-color: #f44;
+#brandmonk{
+  position: relative;
+  margin-left: 4vw;
+  padding: .5vh;
+  float: left;
+  height:100%;
+  width: 20vw;
+  font-family: verdana arial "century gothic";
+  font-size: 2.3vw;
+  font-weight: bold;
+  color: #eee;
+}
+.head-button{
+  position: relative;
+  padding: 2vh;
+  float: right;
+  width: auto;
+  height: 50%;
+  font-size: 1.25vw;
+  color: #eee;
+}
+.head-button:hover{
+  background-color: #eee;
+  color: #299;
   cursor: pointer;
 }
-#verizon{
-  float: right;
+.head-button:active{
+  background-color: #299;
+  color: white;
 }
-#overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
+.sidenav {
     height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 2;
+    background-color: #257;
+    overflow-x: hidden;
+    transition: 0.5s;
+    float: left;
+}
+
+.info {
+    text-decoration: none;
+    font-size: 1.25vw;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.info:hover, .info:focus{
+    border: 1px solid white;
     cursor: pointer;
+}
+.sidenav a {
+    font-size: 25px;
+    color: rgb(129, 129, 129);
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+    color: white;
+}
+.closeNav {
+  position: absolute;
+  top: 0vh;
+  right: 2vw;
+  font-size: 36px;
+  margin-left: 50px;
+
+}
+
+.navBtn{
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  font-size: relative;
+  cursor:pointer;
+  color:white;
+}
+.container{
+  position:relative;
+  top: 1vh;
+  left:4vw;
+  height: 20vh;
+  width: 10vw;
+  border-radius: 50%;
+}
+.dropbtn {
+    background-color: #257;
+    border: 1px solid transparent;
+    text-decoration: none;
+    width: 100vw;
+    font-size: 1.25vw;
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    border: 1px solid white;
+    w
+}
+#myInput {
+    border-box: box-sizing;
+    font-size: 1.2vw;
+    padding: 14px 20px 12px 45px;
+    border: 1px solid transparent;
+    background-color: #257;
+    color: white;
+}
+#myInput:focus{
+    border: 1px solid white;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #257;
+    min-width: 22vw;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    float: left;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  font-size: 1.25vw;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown a:hover {
+  border: 1px solid white;
+  color: ##f1f1f1;
+}
+
+.show {display:block;}
+.tabs{
+  position: relative;
+  margin-top: 0.5vh;
+  float: left;
+  width: 100%;
+  height: 5vh;
+  background-color: white;
+}
+.tabBtn{
+  font-weight: bold;
+  color: #1f1f7a;
+  font-size: 1.3vw;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+}
+.tabBtn:hover, .tabBtn:focus{
+  border-bottom:2px solid blue;
+  cursor: pointer;
+}
+#vid-container{
+  position: absolute;
+  left: 15vw;
+  top: 15vh;
+  width: 70%;
+  height: 85%;
+  padding: 2%;
+  background-color: #fff;
+}
+.video-divs{
+  position: relative;
+  margin: 2%;
+  float: left;
+  width: 20vw;
+  height: 15vw;
+  border: 1px solid black;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.thumbs{
+  padding-left: 6vw;
+  padding-right: 5vh;
+  padding-top: 5vw;
+
+
 }
