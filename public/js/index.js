@@ -242,10 +242,6 @@ function registerUser() {
       showErrorMessage(error.responseJSON.message, $('#register-form'));
   });
 }
-$(function(){
-    $('#myModal').modal({
-        show: false
-    }).on('hidden.bs.modal', function(){
-        $(this).find('video')[0].pause();
-    });
+$(document.body).on('click', '#forgot-password', function () {
+  window.open('password-recovery.html', '_blank');
 });

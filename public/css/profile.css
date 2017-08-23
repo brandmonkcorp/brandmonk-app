@@ -21,7 +21,7 @@ body,html{
   height:100%;
   width: 20vw;
   font-family: verdana arial "century gothic";
-  font-size: 2.7vw;
+  font-size: 2.3vw;
   font-weight: bold;
   color: #fff;
 }
@@ -395,7 +395,6 @@ input:hover, .multiselect:hover, select:hover{
   font-size: 2vw;
   font-weight: bold;
   color: #777;
-  text-align: center;
 }
 #social-account-text{
   position: relative;
