@@ -49,6 +49,14 @@ var UserSchema = new mongoose.Schema({
   passChangeRequest:{
     type: Boolean,
     default: false
+  },
+  acitivated:{
+    type: Boolean,
+    default: false
+  },
+  setupCompleted:{
+    type: Boolean,
+    default: false
   }
 });
 
@@ -62,7 +70,7 @@ UserSchema.methods.generateAuthToken = function (access) {
     return token;
   });
 };
-UserSchema.statics.findByToken = function (token) {
+UserSchema.statics.findByToken = function (token, access) {
   var User = this;
   var decoded;
    try{
@@ -73,8 +81,7 @@ UserSchema.statics.findByToken = function (token) {
 
    return User.findOne({
      '_id': decoded._id,
-     'tokens.token': token,
-     'tokens.access': 'passwordReset'
+     'tokens.token': token
    });
 };
 UserSchema.statics.findByCredentials = function (username, password) {

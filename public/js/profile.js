@@ -1,11 +1,7 @@
+var X_PID_AUTH =   Cookies.get('_LOC_authPID');
+
 $(document).ready(function () {
-  $('#intro').fadeIn(2000);
-  $('#basic-info').load('./pages/basic-info.html', function () {
-    $('#photo-container').load('./pages/photo.html');
-  });
-  $('#ad-pref').load('./pages/ad-pref.html');
-  $('#identification').load('./pages/identification.html');
-  $('#profile').load('./pages/prof.html');
+  checkAuth();
 });
 $('#start').click(function () {
   $('#intro').fadeOut(1000, function () {
@@ -13,6 +9,34 @@ $('#start').click(function () {
     $('#basic-info').css('visibility', 'visible');
   });
 });
+
+function checkAuth() {
+  $.ajax({
+    url: '/profile',
+    method: 'GET',
+    contentType: 'application/json',
+    headers:{
+      'x-auth': X_PID_AUTH
+    }
+  })
+  .done(function(doc){
+      if(doc.message == 'activated'){
+        nextLoad();
+      }else if(doc.message == 'deactivated'){
+        console.log('Account created');
+        $(document.body).load('../pages/activate-account.html', function () {
+          $('#name-activate').text(doc.sendData.name);
+          $('#email-activate').text(doc.sendData.email);
+        });
+      }else if(doc.message == 'redirect'){
+        window.location.replace('../profile.html');
+      }
+  })
+  .fail(function(error){
+    $(document.body).load('../pages/error.html');
+  });
+}
+
 
 $('.tabs').click(function () {
   var id = $(this).attr('id');
@@ -22,3 +46,13 @@ $('.tabs').click(function () {
   $('.info-class').css('visibility', 'hidden');
   $(`#${targetId}`).css('visibility', 'visible');
 });
+
+function nextLoad() {
+  $('#intro').fadeIn(2000);
+  $('#basic-info').load('./pages/basic-info.html', function () {
+    $('#photo-container').load('./pages/photo.html');
+  });
+  $('#ad-pref').load('./pages/ad-pref.html');
+  $('#identification').load('./pages/identification.html');
+  $('#profile').load('./pages/prof.html');
+}

@@ -2,12 +2,16 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
+const mailgun = require('mailgun-js');
 const {mongoose} = require('./db/mongoose');
 const {User} = require('./models/user');
 const {authenticate} = require('./middleware/authenticate');
 const publicPath = path.join(__dirname, '../public');
+var config = require('../config/config.json');
 
-
+var api_key = config.mailgun_api_key;
+var domain = config.mailgun_domain;
+var from_who = "support@brandmonk.online";
 
 var port = 3000;
 var app = express();
@@ -17,14 +21,80 @@ app.use(express.static(publicPath));
 
 app.post('/register', (req, res) => {
   var newUser = new User(req.body);
-  newUser.save().then(() => {
-    res.send({
-      "status": "success"
+  newUser.save().then((user) => {
+
+    return user.generateAuthToken('register').then((token) => {
+      res.header('x-auth', token).send({
+        "status": "success"
+      });
+      sendActivateMail(user, token);
     });
   }).catch((e) =>{
     res.status(400).send(e);
   });
 });
+
+var sendActivateMail = (user, token) => {
+  var mail = new mailgun({apiKey: api_key, domain: domain});
+  var mailBody = {
+      from: from_who,
+      to: user.email,
+      subject: 'Activate your BrandMonk account!',
+      html: `Hi,${user.name}! A very hearty welcome at BrandMonk Family.
+      You are just one step away.<a href="https://www.brandmonk.online/activate/${token}">Activate your account</a>
+       and start earning.`
+    };
+    mail.messages().send(mailBody, function (err, body) {
+        if (err) {
+            console.log("got an error: ", err);
+            //res.send({"message": "error"});
+        }
+        else {
+            console.log('Mail Sent!');
+            //res.send({"message": "success"});
+        }
+    });
+};
+app.get('/activate/:id', (req, res) => {
+  console.log('hit');
+  var token = req.params.id;
+  User.findByToken(token).then((user) => {
+    if(!user){
+      return Promise.reject();
+    }
+    req.user = user;
+    req.token = token;
+    next();
+  }).catch((e) => {
+    res.status(401).send();
+  });
+});
+
+app.get('/profile', authenticate,  (req, res) => {
+  var profileActivated = req.user.activated;
+  var setupCompleted = req.user.setupCompleted;
+  var sendData = {
+    "username": req.user.username,
+    "name" : req.user.name,
+    "email": req.user.email,
+    "mobile": req.user.phone
+  };
+  if(profileActivated){
+    if(!setupCompleted)
+      res.send({"message": 'activated', sendData});
+    else {
+      res.send({'message': 'redirect'});
+    }
+  }else{
+    var sendData = {
+      'username': req.user.username,
+      'name': req.user.name,
+      'email': req.user.email
+    };
+    res.send({'message': 'deactivated', sendData});
+  }
+});
+
 app.post('/login', (req, res) => {
   User.findByCredentials(req.body.username, req.body.password).then((user) => {
     return user.generateAuthToken('login').then((token) => {
@@ -85,11 +155,9 @@ app.post('/passwordReset', authenticate, (req, res) => {
     user.save().then(() => {
       res.send({"status": "success"});
     }).catch((e) => {
-    res.status(401).send(e);
+      res.status(401).send(e);
+    });
   });
-
-});
-
 });
 
 

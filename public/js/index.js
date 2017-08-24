@@ -19,7 +19,7 @@ $(document.body).on('submit', '#register-form', function (e) {
   registerUser();
 });
 
-$(document.body).on('keyup', '#register-form input[name=username]', function (e) {
+/* $(document.body).on('keyup', '#register-form input[name=username]', function (e) {
   $('#register-form input[name="username"]').css('color', '#fff');
   var key =  String.fromCharCode(e.which);
   var elem = $('#register-form input[name=username]');
@@ -30,7 +30,7 @@ $(document.body).on('keyup', '#register-form input[name=username]', function (e)
   }else if(elem.val().length >= 6){
     checkAvailability();
   }
-});
+}); */
 $(document.body).on('focusout', '#register-form input[name=username]', function (e) {
   var elem = $('#register-form input[name=username]');
   if(elem.val().length < 6){
@@ -38,6 +38,16 @@ $(document.body).on('focusout', '#register-form input[name=username]', function 
       regflag1 = false;
       return showErrorMessage('Username must be atleast 6 characters!', elem);
     }
+  }
+  $('#register-form input[name="username"]').css('color', '#fff');
+  var key =  String.fromCharCode(e.which);
+  var elem = $('#register-form input[name=username]');
+  if(/^[a-zA-Z0-9]*$/.test(elem.val()) == false) {
+    elem.val(elem.val().substr(0, elem.val().length-1));
+    showErrorMessage('No special character is allowed!', elem);
+    return regflag1 = false;
+  }else if(elem.val().length >= 6){
+    checkAvailability();
   }
 });
 
@@ -227,16 +237,10 @@ function registerUser() {
     contentType: 'application/json',
     data: JSON.stringify(formData)
   })
-  .done(function(doc){
-      showErrorMessage('Success! Redirecting...', $('#register-form'), "success");
-      removeSubmitListener();
-      setTimeout(function (){
-        $('#register-form input').val('');
-        $('#login-form input[name=username]').val(formData.username);
-        $('#login-form input[name=password]').val('');
-        $('#register-wrapper').css({'visibility': 'hidden'});
-        $('#login-wrapper').css({'visibility': 'visible'});
-      },3000);
+  .done(function(doc, status, response){
+    var token = response.getResponseHeader('x-auth');
+      Cookies.set('_LOC_authPID', token);
+      window.location.replace('../profile.html');
   })
   .fail(function(error){
       showErrorMessage(error.responseJSON.message, $('#register-form'));
