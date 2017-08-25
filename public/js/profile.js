@@ -1,5 +1,7 @@
-var X_PID_AUTH =   Cookies.get('_LOC_authFirstPID');
-
+var X_PID_AUTH = Cookies.get('_LOC_authFirstPID');
+if(!X_PID_AUTH){
+  X_PID_AUTH = Cookies.get('_LOC_authUID');
+}
 $(document).ready(function () {
   checkAuth();
 });
@@ -29,11 +31,11 @@ function checkAuth() {
           $('#email-activate').text(doc.sendData.email);
         });
       }else if(doc.message == 'redirect'){
-        window.location.replace('../profile.html');
+        window.location.replace('../home.html');
       }
   })
   .fail(function(error){
-    $(document.body).load('../pages/error.html');
+    return $(document.body).load('../pages/error.html');
   });
 }
 
