@@ -10,7 +10,7 @@
   <body>
 
     <div id="head">
-      <div id="brandmonk" ><span style="color: #eee">Brand</span><span style="color:#1b5">Monk</span></div>
+      <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
       <span id="logout" class="head-button">Logout</span>
     </div>
   <div id="profNav" class="sidenav">
@@ -61,8 +61,16 @@
     <span class="tabBtn" onclick="">Trending</span>
     <span class="tabBtn" onclick="">Most Viewed</span>
 </div>
-<div id="vid-container">
+<div id="vid-container" >
+
+
 </div>
+<div id="overlay" onclick="off()">
+  <video id="vidPlayer" controls controlsList="nodownload">
+    <source id="vid" type="video/mp4">
+  </video>
+</div>
+
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="./js/home.js"></script>
 

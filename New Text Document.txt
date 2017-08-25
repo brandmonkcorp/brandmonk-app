@@ -1,0 +1,6 @@
+<div id="overlay" onclick="off()">
+  <div>
+    <video id="vidPlayer" src="https://1930455220.rsc.cdn77.org/bmonk/posVid-1mp4" autoplay>
+    </video>
+  </div>
+</div>

@@ -1,10 +1,27 @@
 $(document).ready( function () {
 
-  for (var i=1; i<=6; i++){
+  for (var i=1; i<=8; i++){
     var videoDiv = $(`<div id="video-${i}" class="video-divs"></div>`);
     $('#vid-container').append(videoDiv);
     $(`#video-${i}`).css('background-image', `url('./images/thumbnails/thumb${i}.png')`);
+    $(`#video-${i}`).click(function(){
+      $("video").attr("src",`https://1930455220.rsc.cdn77.org/bmonk/posVid-${i}.mp4`);
+      $("#overlay").show();
+    });
+
   }
+
+  $("#overlay").click(function(){
+    $("#overlay").hide();
+    $('#vidPlayer').get(0).pause();
+
+  });
+  $('#vidPlayer').click(false);
+
+
+
+
+
 });
 
 

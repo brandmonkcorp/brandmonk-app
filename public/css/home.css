@@ -11,7 +11,8 @@ html,body{
   float: left;
   width: 100%;
   height: 8vh;
-  background-color: #229;
+  background-color: #3333ff;
+
 }
 #brandmonk{
   position: relative;
@@ -50,7 +51,7 @@ html,body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #229;
+    background-color: #3333ff;
     overflow-x: hidden;
     transition: 0.5s;
     float: left;
@@ -103,7 +104,7 @@ html,body{
   border-radius: 50%;
 }
 .dropbtn {
-    background-color: #257;
+    background-color: #3333ff;
     border: 1px solid transparent;
     text-decoration: none;
     width: 100vw;
@@ -122,7 +123,7 @@ html,body{
     font-size: 1.2vw;
     padding: 14px 20px 12px 45px;
     border: 1px solid transparent;
-    background-color: #257;
+    background-color:#3333ff;
     color: white;
 }
 #myInput:focus{
@@ -136,7 +137,7 @@ html,body{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color:  #257;
+    background-color:  #3333ff;
     min-width: 22vw;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -182,7 +183,7 @@ html,body{
   left: 15vw;
   top: 15vh;
   width: 70%;
-  height: 85%;
+  height: auto;
   padding: 2%;
   background-color: #fff;
 }
@@ -192,14 +193,36 @@ html,body{
   float: left;
   width: 20vw;
   height: 15vw;
-  border: 1px solid black;
+  //border: 1px solid black;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+.video-divs:hover{
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 225, 0.6), 0 6px 20px 0 rgba(0, 0, 225, 0.6);
 }
 .thumbs{
   padding-left: 6vw;
   padding-right: 5vh;
   padding-top: 5vw;
-
-
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.99);
+    z-index: 2;
+    cursor: pointer;
+}
+#vidPlayer{
+  position: absolute;
+  top: 20vh;
+  left: 13vw;
+  width: 70vw;
+  height: 60vh;
 }
