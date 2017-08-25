@@ -79,6 +79,7 @@ app.get('/activate', (req, res) => {
 });
 
 app.get('/profile', authenticate,  (req, res) => {
+  console.log('into profile, authenticated');
   var profileActivated = req.user.activated;
   var setupCompleted = req.user.setupCompleted;
   var sendData = {
@@ -177,6 +178,7 @@ app.post('/passwordReset', authenticate, (req, res) => {
 });
 
 app.post('/postProfileData', authenticate, (req, res) => {
+  console.log()
   var user = req.user;
   user.setupCompleted = true;
   user.save().then(() => {

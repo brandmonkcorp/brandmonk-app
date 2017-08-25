@@ -10,7 +10,8 @@ function checkHomeAuth () {
     token = Cookies.get('_PERM_authUID');
     if(!token){
       //No user logged in
-      return $(document.body).load('../pages/error.html', function () {
+
+          return $(document.body).load('../pages/error.html', function () {
           $(this).css('visibility', 'visible');
       });
     }
@@ -46,14 +47,11 @@ function getProfileData(token) {
 
 //your code
 function playNextFunc() {
-  for (var i=1; i<=8; i++){
-    var videoDiv = $(`<div id="video-${i}" class="video-divs"></div>`);
+  for (var i=1; i<=6; i++){
+    var videoDiv = $(`<div id="Vid-${i}" class="video-divs"></div>`);
     $('#vid-container').append(videoDiv);
-    $(`#video-${i}`).css('background-image', `url('./images/thumbnails/thumb${i}.png')`);
-    $(`#video-${i}`).click(function(){
-      $("video").attr("src",`https://1930455220.rsc.cdn77.org/bmonk/posVid-${i}.mp4`);
-      $("#overlay").show();
-    });
+    $(`#Vid-${i}`).css('background-image', `url('./images/thumbnails/thumb${i}.png')`);
+  
 
   }
 
@@ -64,6 +62,12 @@ function playNextFunc() {
   });
   $('#vidPlayer').click(false);
 }
+
+$(document.body).on('click', '.video-divs', function () {
+  var id = $(this).attr('id');
+  $("video").attr("src",`https://1930455220.rsc.cdn77.org/bmonk/pos${id}.mp4`);
+  $("#overlay").show();
+});
 
 
 
