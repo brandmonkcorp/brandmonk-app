@@ -41,7 +41,7 @@ var sendActivateMail = (user, token) => {
       to: user.email,
       subject: 'Activate your BrandMonk account!',
       html: `Hi,${user.name}! A very hearty welcome at BrandMonk Family.
-      You are just one step away.<a href="http://localhost:3000/activate.html?auth=${token}">Activate your account</a>
+      You are just one step away.<a href="https://www.brandmonk.online/activate.html?auth=${token}">Activate your account</a>
        and start earning.`
     };
     mail.messages().send(mailBody, function (err, body) {
