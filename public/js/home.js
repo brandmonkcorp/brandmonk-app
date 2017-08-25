@@ -10,7 +10,9 @@ function checkHomeAuth () {
     token = Cookies.get('_PERM_authUID');
     if(!token){
       //No user logged in
-      return $(document.body).load('../pages/error.html');
+      return $(document.body).load('../pages/error.html', function () {
+          $(this).css('visibility', 'visible');
+      });
     }
   }
   getProfileData(token);
@@ -29,14 +31,15 @@ function getProfileData(token) {
       $(document.body).css('visibility', 'visible');
       playNextFunc();
     }else{
-      return $(document.body).load('../pages/error.html', function () {
-        $(document.body).css('visibility', 'visible');
+      $(document.body).load('../pages/error.html', function () {
+        $(this).css('visibility', 'visible');
       });
     }
 })
 .fail(function(error){
-  return $(document.body).load('../pages/error.html', function () {
-      $(document.body).css('visibility', 'visible');
+  console.log('before');
+  $(document.body).load('../pages/error.html', function () {
+      $(this).css('visibility', 'visible');
   });
 });
 }
