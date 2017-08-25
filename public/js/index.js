@@ -231,7 +231,7 @@ function registerUser() {
   })
   .done(function(doc, status, response){
     var token = response.getResponseHeader('x-auth');
-      Cookies.set('_LOC_authPID', token);
+      Cookies.set('_LOC_authFirstPID', token);
       window.location.replace('../profile.html');
   })
   .fail(function(error){

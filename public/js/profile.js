@@ -1,4 +1,4 @@
-var X_PID_AUTH =   Cookies.get('_LOC_authPID');
+var X_PID_AUTH =   Cookies.get('_LOC_authFirstPID');
 
 $(document).ready(function () {
   checkAuth();
