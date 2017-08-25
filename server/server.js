@@ -41,7 +41,7 @@ var sendActivateMail = (user, token) => {
       to: user.email,
       subject: 'Activate your BrandMonk account!',
       html: `Hi,${user.name}! A very hearty welcome at BrandMonk Family.
-      You are just one step away.<a href="https://www.brandmonk.online/activate/${token}">Activate your account</a>
+      You are just one step away.<a href="http://localhost:3000/activate.html?auth=${token}">Activate your account</a>
        and start earning.`
     };
     mail.messages().send(mailBody, function (err, body) {
@@ -55,16 +55,24 @@ var sendActivateMail = (user, token) => {
         }
     });
 };
-app.get('/activate/:id', (req, res) => {
-  console.log('hit');
-  var token = req.params.id;
+app.get('/activate', (req, res) => {
+  var token = req.header('x-auth');
   User.findByToken(token).then((user) => {
+    console.log('activation request arrived from ',user.name, ' Activation Status:', user.activated);
     if(!user){
       return Promise.reject();
     }
-    req.user = user;
-    req.token = token;
-    next();
+    if(!user.activated){
+      user.activated = true;
+      user.save().then( function () {
+        console.log('User activation done for ',user.name);
+        res.send({'message': 'done'});
+      });
+    }else{
+      res.send({'message': 'activated'});
+      console.log(user.name,' is already activated');
+    }
+
   }).catch((e) => {
     res.status(401).send();
   });

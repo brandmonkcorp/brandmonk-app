@@ -50,7 +50,7 @@ var UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  acitivated:{
+  activated:{
     type: Boolean,
     default: false
   },

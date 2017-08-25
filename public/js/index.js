@@ -1,4 +1,4 @@
-var passwordCheck, regflag1 = regflag2 = regflag3 = regflag4 = false, activeFlag = false;
+var passwordCheck, passwordCheck2, regflag1 = regflag2 = regflag3 = regflag4 = false, activeFlag = false;
 $(document).ready(function (){
   $('#login-wrapper').load('./pages/login.html');
   $('#register-wrapper').load('./pages/register.html');
@@ -19,18 +19,6 @@ $(document.body).on('submit', '#register-form', function (e) {
   registerUser();
 });
 
-/* $(document.body).on('keyup', '#register-form input[name=username]', function (e) {
-  $('#register-form input[name="username"]').css('color', '#fff');
-  var key =  String.fromCharCode(e.which);
-  var elem = $('#register-form input[name=username]');
-  if(/^[a-zA-Z0-9]*$/.test(elem.val()) == false) {
-    elem.val(elem.val().substr(0, elem.val().length-1));
-    showErrorMessage('No special character is allowed!', elem);
-    return regflag1 = false;
-  }else if(elem.val().length >= 6){
-    checkAvailability();
-  }
-}); */
 $(document.body).on('focusout', '#register-form input[name=username]', function (e) {
   var elem = $('#register-form input[name=username]');
   if(elem.val().length < 6){
@@ -92,9 +80,13 @@ $(document.body).on('focusout', '#register-form input[name=password]', function 
   var elem = $('#register-form input[name=password]');
   if(elem.val().length < 6 && elem.val().length >= 1){
     showErrorMessage('Password must be atleast 6 characters long!', elem);
+    passwordCheck2 = false;
   }else{
     if( elem.val().length >= 1 && !( /\d/.test(elem.val()) && /[A-Z]/.test(elem.val()))){
+      passwordCheck2 = false;
       showErrorMessage('Password should contain atleast one Uppercase letter and a Digit!', elem)
+    }else{
+        passwordCheck2 = true;
     }
   }
 });
@@ -104,7 +96,7 @@ $(document.body).on('keyup', 'input[name=password2]', function () {
   if($('#register-form input[name=password]').val() == $('input[name=password2]').val()){
     passwordCheck = true;
     makeitNormal(this);
-    if($('#register-form input[name=password]').val().length >= 6){
+    if(passwordCheck2){
       regflag4 = true;
     }
   }else{
