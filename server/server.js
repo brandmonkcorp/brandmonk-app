@@ -106,7 +106,16 @@ app.get('/profile', authenticate,  (req, res) => {
 app.post('/login', (req, res) => {
   User.findByCredentials(req.body.username, req.body.password).then((user) => {
     return user.generateAuthToken('login').then((token) => {
-      res.header('x-auth', token).send();
+      if(user.activated){
+        if(user.setupCompleted){
+          res.header('x-auth', token).send({'message': 'home'});
+        }else{
+          res.header('x-auth', token).send({'message': 'profile'});
+        }
+      }else{
+          res.header('x-auth', token).send({'message': 'activate'});
+      }
+
     });
   }).catch(() => {
     res.status(400).send();
