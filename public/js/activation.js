@@ -29,5 +29,6 @@ function getParam() {
   var path = $(location).attr('href');
   var lastIndex = path.lastIndexOf('?') + 6;
   var token = path.substr(lastIndex, path.length);
+  Cookies.set('_LOC_authFirstPID', token);
   return token;
 }
