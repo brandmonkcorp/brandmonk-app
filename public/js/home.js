@@ -7,12 +7,8 @@ $(document).ready( function () {
     $(`#video-${i}`).click(function(){
       $("video").attr("src",`https://1930455220.rsc.cdn77.org/bmonk/posVid-${i}.mp4`);
       $("#overlay").show();
-
-      //$("#vid").attr("src", `https://1930455220.rsc.cdn77.org/bmonk/posVid-${i}.mp4`);
-      //$("#vidPlayer")[0].load();
-      //$("#vidPlayer").video(`<source src='https://1930455220.rsc.cdn77.org/bmonk/posVid-${i}.mp4' type="video/mp4"></source>`);
     });
-    //  $("#vidPlayer").video(`src("https://1930455220.rsc.cdn77.org/bmonk/posVid-${i}mp4")`);
+
   }
 
   $("#overlay").click(function(){
