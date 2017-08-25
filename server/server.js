@@ -165,7 +165,6 @@ app.post('/passwordReset', authenticate, (req, res) => {
   if(!req.user.passChangeRequest){
     return res.status(401).send(e);
   }
-
   User.findOne({"username": username}).then((user) => {
     user.password = password;
     user.passChangeRequest = false;
@@ -174,6 +173,16 @@ app.post('/passwordReset', authenticate, (req, res) => {
     }).catch((e) => {
       res.status(401).send(e);
     });
+  });
+});
+
+app.post('/postProfileData', authenticate, (req, res) => {
+  var user = req.user;
+  user.setupCompleted = true;
+  user.save().then(() => {
+    res.send({'message': 'done'});
+  }).catch((e) => {
+    res.status(401).send();
   });
 });
 
