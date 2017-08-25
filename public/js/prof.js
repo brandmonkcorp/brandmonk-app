@@ -6,7 +6,6 @@ $('#submit-data-prof').click(function () {
       token = Cookies.get('_PERM_authUID');
     }
   }
-  console.log(X_PID_AUTH);
   submitProfileSetupData(token);
 });
 
