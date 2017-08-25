@@ -10,7 +10,7 @@ $('#submit-data-prof').click(function () {
   submitProfileSetupData(token);
 });
 
-function submitProfileSetupData(){
+function submitProfileSetupData(token){
   $.ajax({
     url: '/postProfileData',
     method: 'POST',
