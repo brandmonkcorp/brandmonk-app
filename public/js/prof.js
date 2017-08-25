@@ -1,4 +1,5 @@
 $('#submit-data-prof').click(function () {
+  console.log(X_PID_AUTH);
   submitProfileSetupData();
 });
 
