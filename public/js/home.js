@@ -1,5 +1,51 @@
 $(document).ready( function () {
+  //dont delete this
+  checkHomeAuth();
+});
 
+//checking for authentication, profile status
+function checkHomeAuth () {
+  var token = Cookies.get('_LOC_authUID');
+  if(!token){
+    token = Cookies.get('_PERM_authUID');
+    if(!token){
+      //No user logged in
+      return $(document.body).load('../pages/error.html', function () {
+          $(this).css('visibility', 'visible');
+      });
+    }
+  }
+  getProfileData(token);
+}
+function getProfileData(token) {
+  $.ajax({
+    url: '/profile',
+    method: 'GET',
+    contentType: 'application/json',
+    headers:{
+      'x-auth': token
+    }
+  })
+  .done(function(doc, status, response){
+    if(doc.message == 'redirect'){
+      $(document.body).css('visibility', 'visible');
+      playNextFunc();
+    }else{
+      $(document.body).load('../pages/error.html', function () {
+        $(this).css('visibility', 'visible');
+      });
+    }
+})
+.fail(function(error){
+  console.log('before');
+  $(document.body).load('../pages/error.html', function () {
+      $(this).css('visibility', 'visible');
+  });
+});
+}
+
+//your code
+function playNextFunc() {
   for (var i=1; i<=8; i++){
     var videoDiv = $(`<div id="video-${i}" class="video-divs"></div>`);
     $('#vid-container').append(videoDiv);
@@ -17,13 +63,7 @@ $(document).ready( function () {
 
   });
   $('#vidPlayer').click(false);
-
-
-
-
-
-});
-
+}
 
 
 

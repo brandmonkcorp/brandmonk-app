@@ -207,9 +207,14 @@ function authenticate() {
       Cookies.set('_PERM_authUID', token, {secure: true, expires: 3650});
     }else{
       Cookies.remove('_LOC_authUID');
-      Cookies.set('_LOC_authUID', token, {secure: true});
+      Cookies.set('_LOC_authUID', token);
     }
-    window.location.replace('/home.html');
+    if(data.message == 'home'){
+      window.location.replace('/home.html');
+    }
+    else {
+      window.location.replace('/profile.html')
+    }
     //showErrorMessage('You are Successfully Logged in!', $('#login-form'), "success");
   }).fail(function () {
     showErrorMessage('Invalid username/password !', $('#login-form'));

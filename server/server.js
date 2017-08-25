@@ -106,7 +106,16 @@ app.get('/profile', authenticate,  (req, res) => {
 app.post('/login', (req, res) => {
   User.findByCredentials(req.body.username, req.body.password).then((user) => {
     return user.generateAuthToken('login').then((token) => {
-      res.header('x-auth', token).send();
+      if(user.activated){
+        if(user.setupCompleted){
+          res.header('x-auth', token).send({'message': 'home'});
+        }else{
+          res.header('x-auth', token).send({'message': 'profile'});
+        }
+      }else{
+          res.header('x-auth', token).send({'message': 'activate'});
+      }
+
     });
   }).catch(() => {
     res.status(400).send();
@@ -156,7 +165,6 @@ app.post('/passwordReset', authenticate, (req, res) => {
   if(!req.user.passChangeRequest){
     return res.status(401).send(e);
   }
-
   User.findOne({"username": username}).then((user) => {
     user.password = password;
     user.passChangeRequest = false;
@@ -165,6 +173,16 @@ app.post('/passwordReset', authenticate, (req, res) => {
     }).catch((e) => {
       res.status(401).send(e);
     });
+  });
+});
+
+app.post('/postProfileData', authenticate, (req, res) => {
+  var user = req.user;
+  user.setupCompleted = true;
+  user.save().then(() => {
+    res.send({'message': 'done'});
+  }).catch((e) => {
+    res.status(401).send();
   });
 });
 
