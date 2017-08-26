@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var token = getParam();
   $.ajax({
-    url: '/activate',
+    url: '/activateUser',
     method: 'GET',
     contentType: 'application/json',
     headers:{
@@ -17,11 +17,7 @@ $(document).ready(function () {
     }
   })
   .fail(function(error){
-    console.log('Authorization failed');
-    $('#wrapper-activation #password-brief').text('Sorry! Unauthorized Access.').css({
-      'visibility': 'visible',
-      'color': '#f44'
-    });
+    $(document.body).load('../pages/error');
   });
 });
 

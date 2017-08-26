@@ -77,6 +77,7 @@ $('.multiselect').click(function () {
   }else
     $('#lang').css('visibility', 'visible');
 });
+
 $(document.body).on('mouseup', function (e) {
   var container = $('.language-name');
   if ( !$('div[name=languages]').is(e.target) && !container.is(e.target)){

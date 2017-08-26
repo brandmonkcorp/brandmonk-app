@@ -10,19 +10,25 @@ const publicPath = path.join(__dirname, '../public');
 var config = require('../config/config.json');
 
 var api_key = config.mailgun_api_key;
-var domain = config.mailgun_domain;
-var from_who = "support@brandmonk.online";
+var domain = config.mailgun_main_domain;
+var from_who = "BrandMonk Team<support@brandmonk.online>";
 
 var port = 3000;
 var app = express();
 
 app.use(bodyParser.json());
-app.use(express.static(publicPath));
+app.use(express.static(publicPath, {extensions:['html']}));
 
-app.post('/register', (req, res) => {
+app.get('/auth', authenticate, (req, res) => {
+  res.send();
+});
+
+app.post('/registerUser', (req, res) => {
   var newUser = new User(req.body);
+  var nameUser;
   newUser.save().then((user) => {
-
+    nameUser = user.name;
+    console.log(user.name, 'registered activated:',user.activated, ' setup:',user.setupCompleted);
     return user.generateAuthToken('register').then((token) => {
       res.header('x-auth', token).send({
         "status": "success"
@@ -30,6 +36,7 @@ app.post('/register', (req, res) => {
       sendActivateMail(user, token);
     });
   }).catch((e) =>{
+    console.log('Registration failed for', nameUser );
     res.status(400).send(e);
   });
 });
@@ -41,45 +48,37 @@ var sendActivateMail = (user, token) => {
       to: user.email,
       subject: 'Activate your BrandMonk account!',
       html: `Hi,${user.name}! A very hearty welcome at BrandMonk Family.
-      You are just one step away.<a href="https://www.brandmonk.online/activate.html?auth=${token}">Activate your account</a>
+      You are just one step away.<a href="https://www.brandmonk.online/activate?auth=${token}">Activate your account</a>
        and start earning.`
     };
     mail.messages().send(mailBody, function (err, body) {
         if (err) {
-            console.log("got an error: ", err);
-            //res.send({"message": "error"});
+            console.log("Mail sent failed to", user.email);
         }
         else {
-            console.log('Mail Sent!');
-            //res.send({"message": "success"});
+            console.log('Mail Sent to', user.email);
         }
     });
 };
-app.get('/activate', (req, res) => {
-  var token = req.header('x-auth');
-  User.findByToken(token).then((user) => {
-    console.log('activation request arrived from ',user.name, ' Activation Status:', user.activated);
-    if(!user){
-      return Promise.reject();
-    }
+app.get('/activateUser', authenticate, (req, res) => {
+  var user = req.user;
+    console.log('activation request arrived from',user.name, ' Activation Status:', user.activated);
     if(!user.activated){
       user.activated = true;
       user.save().then( function () {
-        console.log('User activation done for ',user.name);
+        console.log('User activation success for', user.name);
         res.send({'message': 'done'});
+      }).catch((e) => {
+        console.log('user activation failed for', user.name);
+        res.status(400).send();
       });
     }else{
       res.send({'message': 'activated'});
-      console.log(user.name,' is already activated');
+      console.log(user.name,'is already activated');
     }
-
-  }).catch((e) => {
-    res.status(401).send();
-  });
 });
 
-app.get('/profile', authenticate,  (req, res) => {
-  console.log('into profile, authenticated');
+app.get('/profileData', authenticate,  (req, res) => {
   var profileActivated = req.user.activated;
   var setupCompleted = req.user.setupCompleted;
   var sendData = {
@@ -104,8 +103,9 @@ app.get('/profile', authenticate,  (req, res) => {
   }
 });
 
-app.post('/login', (req, res) => {
+app.post('/loginUser', (req, res) => {
   User.findByCredentials(req.body.username, req.body.password).then((user) => {
+    console.log(user.name, ' logged in');
     return user.generateAuthToken('login').then((token) => {
       if(user.activated){
         if(user.setupCompleted){
@@ -139,9 +139,11 @@ app.post('/userExist', (req, res) => {
 app.post('/passwordRecov', (req, res) => {
   User.findOne({"username":req.body.username}).then((user) => {
     if(user != null){
+      console.log('password recovery request from', user.name);
       var mobile = user.phone;
       var req_mobile = req.body.phone.trim();
       if(mobile == req_mobile){
+
         user.passChangeRequest = true;
         user.save();
         user.generateAuthToken('passwordReset').then((token) => {
@@ -170,6 +172,7 @@ app.post('/passwordReset', authenticate, (req, res) => {
     user.password = password;
     user.passChangeRequest = false;
     user.save().then(() => {
+      console.log('password recovery successfull for', user.name);
       res.send({"status": "success"});
     }).catch((e) => {
       res.status(401).send(e);
@@ -178,7 +181,7 @@ app.post('/passwordReset', authenticate, (req, res) => {
 });
 
 app.post('/postProfileData', authenticate, (req, res) => {
-  console.log()
+  console.log('setup profile data sent from', req.user.name);
   var user = req.user;
   user.setupCompleted = true;
   user.save().then(() => {

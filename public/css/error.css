@@ -1,0 +1,47 @@
+#icon-holder{
+  position: relative;
+  float: left;
+  margin: 8%;
+  width: 18vw;
+  height: 18vw;
+  background-image: url('../images/icons/error-auth.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  box-shadow: 0px 10px 10px 0px rgba(175,190,200,0.6), 0px 10px 10px 0px rgba(175,190,200,0.6);
+}
+
+#text-content{
+  position: relative;
+  float: left;
+  margin: 2%;
+  margin-top: 10%;
+  width: 60vw;
+}
+#error-head{
+  position: relative;
+  float: left;
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: #555;
+  width: 100%;
+}
+#home-button{
+  position: relative;
+  float: right;
+  margin:8%;
+  padding: 1%;
+  font-size: 1.2vw;
+  background-color: #295;
+  color: #eee;
+  border: 1px solid #295;
+}
+#home-button:hover{
+  box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
+  cursor: pointer;
+}
+#home-button:active{
+  background-color: #eee;
+  color: #295;
+  border: 1px solid #295;
+}

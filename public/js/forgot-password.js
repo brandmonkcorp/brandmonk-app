@@ -15,7 +15,7 @@ function checkCombo(username, mobile) {
   .done(function (data, status, response) {
     token_pass_change = response.getResponseHeader('x-auth');
     if(data.message == "match"){
-      $('#input-container').load('./pages/forgot-pass-choose.html');
+      $('#input-container').load('./pages/forgot-pass-choose');
     }else{
       showErrorMessage(data.message, $('input[name=forgot_password_mobile]'));
     }
@@ -26,7 +26,7 @@ function checkCombo(username, mobile) {
   });
 }
 $(document.body).on('click', '#change-it-now', function () {
-  $('#input-container').load('./pages/reset-password.html');
+  $('#input-container').load('./pages/reset-password');
 });
 
 $(document.body).on('click', '#reset-password-button', function () {
