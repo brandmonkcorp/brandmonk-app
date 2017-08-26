@@ -60,7 +60,7 @@ var UserSchema = new mongoose.Schema({
   },
   isLoggedIn:{
     type: Boolean,
-    default: false
+    default: true
   }
 });
 
