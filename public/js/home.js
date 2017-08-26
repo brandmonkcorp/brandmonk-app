@@ -6,22 +6,25 @@ $(document).ready( function () {
 
 //checking for authentication, profile status
 function checkHomeAuth () {
-  var token = Cookies.get('_LOC_authUID');
+  var token = Cookies.get('_LOC_authFirstPID');
   if(!token){
-    token = Cookies.get('_PERM_authUID');
+    var token = Cookies.get('_PERM_authUID');
     if(!token){
-      //No user logged in
-
-          return $(document.body).load('../pages/error.html', function () {
-          $(this).css('visibility', 'visible');
-      });
+      token = Cookies.get('_LOC_authUID');
+      if(!token){
+        //No user logged in
+            return $(document.body).load('../pages/error', function () {
+            $(this).css('visibility', 'visible');
+        });
+      }
     }
   }
+
   getProfileData(token);
 }
 function getProfileData(token) {
   $.ajax({
-    url: '/profile',
+    url: '/profileData',
     method: 'GET',
     contentType: 'application/json',
     headers:{
@@ -33,14 +36,14 @@ function getProfileData(token) {
       $(document.body).css('visibility', 'visible');
       playNextFunc();
     }else{
-      $(document.body).load('../pages/error.html', function () {
+      $(document.body).load('../pages/error', function () {
         $(this).css('visibility', 'visible');
       });
     }
 })
 .fail(function(error){
   console.log('before');
-  $(document.body).load('../pages/error.html', function () {
+  $(document.body).load('../pages/error', function () {
       $(this).css('visibility', 'visible');
   });
 });
