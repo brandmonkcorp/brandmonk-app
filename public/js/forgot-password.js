@@ -19,15 +19,39 @@ function checkCombo(username, mobile) {
     }else{
       showErrorMessage(data.message, $('input[name=forgot_password_mobile]'));
     }
-
   })
   .fail(function (err) {
-
+    $(document.body).load('../pages/error');
   });
 }
 $(document.body).on('click', '#change-it-now', function () {
-  $(document.body).load('../pages/reset-password');
+  $(document.body).load('../reset-password');
 });
+
+$(document.body).on('click', '#email-me', function () {
+  sendPasswordResetRequest();
+});
+function sendPasswordResetRequest() {
+  $.ajax({
+    url: '/resetPass',
+    method: 'GET',
+    contentType: 'application/json',
+    headers:{
+      'x-auth': token_pass_change
+    }
+  })
+  .done(function (data, status, response) {
+
+      $('#input-container')
+      .html('<span id="password-brief" style="font-size: 3vw;color: #295;text-align:center">A password reset link has been sent to your registered email!</span>');
+      $('#input-container').append('<span id="home-button" class="button-password">Back to Home!</span>');
+      $('#icon-div').css('background-image', 'url("../images/icons/password-updated.png")');
+
+  })
+  .fail(function (err) {
+    console.log('fail');
+  });
+}
 
 $(document.body).on('click', '#reset-password-button', function () {
   var password = $('input[name=password1]').val();
@@ -51,7 +75,6 @@ $(document.body).on('click', '#reset-password-button', function () {
     console.log('fail');
   });
 });
-
 $(document.body).on('click', '#home-button', function () {
   window.open('../page.html');
 });
