@@ -1,3 +1,4 @@
+
 $(document).ready( function () {
   //dont delete this
   checkHomeAuth();
@@ -50,26 +51,65 @@ function getProfileData(token) {
 
 //your code
 function playNextFunc() {
-  for (var i=1; i<=6; i++){
+
+  for (var i=1; i<=10; i++){
     var videoDiv = $(`<div id="Vid-${i}" class="video-divs"></div>`);
+    var title = $(`<div id="title-${i}" class="Tcontainer"></div>`);
     $('#vid-container').append(videoDiv);
-    $(`#Vid-${i}`).css('background-image', `url('./images/thumbnails/thumb${i}.png')`);
-
-
+    $(`#Vid-${i}`).append(title);
+    $(`#Vid-${i}`).css('background-image', `url('./images/thumbnails/AdSnippet- (${i}).png')`);
+    $(`#title-${i}`).html(`Ad Snippet Title-${i}`);
   }
+  $.getJSON("../data/duration.json")
+  .done(function(data_json){
+    var duration = [];
+    duration = data_json.duration;
+    $.each(duration, function(i, val) {
+      var dur_div = $(`<span class="duration" id="dur-${i + 1}"></span>`);
+        $(`#Vid-${i + 1}`).append(dur_div);
+        $(`#dur-${i + 1}`).html(`${val}`);
+    });
+  })
 
   $("#overlay").click(function(){
-    $("#overlay").hide();
-    $('#vidPlayer').get(0).pause();
+    var r = confirm("You will not get any points if you leave!");
+    if (r == true) {
+      $("#overlay").hide();
+      $('#vidPlayer').get(0).pause();
+    }
+
 
   });
   $('#vidPlayer').click(false);
+  $("#vidPlayer").on("contextmenu",function(e){
+       return false;
+    });
 }
 
+
 $(document.body).on('click', '.video-divs', function () {
+
   var id = $(this).attr('id');
   $("video").attr("src",`https://1930455220.rsc.cdn77.org/bmonk/pos${id}.mp4`);
   $("#overlay").show();
+  $('#vidPlayer').get(0).load();
+
+});
+
+$("#adPref").click(function(){
+  $(".dropdown-content").css("width", "22vw");
+});
+
+$("#closePref").click(function(){
+  $(".dropdown-content").css("width", "0");
+});
+
+$(document.body).on('mouseup', function (e) {
+  var container = $('.vanish');
+  if (!container.is(e.target)){
+    $(".dropdown-content").css("width", "0");
+    $(".sidenav").css("width", "0");
+  }
 });
 
 
@@ -87,17 +127,21 @@ function closeProf() {
 function myFunction(){
   document.getElementById("myDropdown").classList.toggle("show");
 }
-function filterFunction(){
-  var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
-        }
-    }
-}
+
+var video = document.getElementById('vidPlayer');
+var supposedCurrentTime = 0;
+video.addEventListener('timeupdate', function() {
+  if (!video.seeking) {
+        supposedCurrentTime = video.currentTime;
+  }
+});
+video.addEventListener('seeking', function() {
+  var delta = video.currentTime - supposedCurrentTime;
+  if (Math.abs(delta) > 0.01) {
+    console.log("Seeking is disabled");
+    video.currentTime = supposedCurrentTime;
+  }
+});
+video.addEventListener('ended', function() {
+    supposedCurrentTime = 0;
+});

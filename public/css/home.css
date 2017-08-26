@@ -59,7 +59,8 @@ html,body{
 
 .info {
     text-decoration: none;
-    font-size: 1.25vw;
+    margin-top:5px;
+    font-size: 1.45vw;
     color: white;
     display: block;
     transition: 0.3s;
@@ -71,7 +72,7 @@ html,body{
     cursor: pointer;
 }
 .sidenav a {
-    font-size: 25px;
+
     color: rgb(129, 129, 129);
     display: block;
     text-decoration: none;
@@ -79,13 +80,14 @@ html,body{
     color: white;
 }
 .closeNav {
-  position: absolute;
-  top: 0vh;
-  right: 2vw;
+  position: relative;
   font-size: 36px;
-  margin-left: 50px;
+  margin-left: 20vw;
+  cursor: pointer;
+  color: white;
 
 }
+
 
 .navBtn{
   position: absolute;
@@ -97,10 +99,10 @@ html,body{
 }
 .container{
   position:relative;
-  top: 1vh;
-  left:4vw;
-  height: 20vh;
-  width: 10vw;
+  margin-bottom: 5px;
+  left:3.3vw;
+  height: 30vh;
+  width: 15vw;
   border-radius: 50%;
 }
 .dropbtn {
@@ -116,7 +118,6 @@ html,body{
 
 .dropbtn:hover, .dropbtn:focus {
     border: 1px solid white;
-    w
 }
 #myInput {
     border-box: box-sizing;
@@ -135,22 +136,31 @@ html,body{
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
     background-color:  #3333ff;
-    min-width: 22vw;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    overflow-x: hidden;
     z-index: 1;
-    float: left;
-}
+    transition: 0.7s;
 
+}
+.closePref{
+  position: relative;
+  font-size: 36px;
+  margin-right: 90vw;
+  cursor: pointer;
+  color: white;
+}
 .dropdown-content a {
   text-decoration: none;
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   color: white;
   display: block;
   transition: 0.3s;
+  border: 1px solid transparent;
 }
 
 .dropdown a:hover {
@@ -159,10 +169,12 @@ html,body{
 }
 
 .show {display:block;}
+
 .tabs{
+  text-align: center;
   position: relative;
   margin-top: 0.5vh;
-  float: left;
+  float: right;
   width: 100%;
   height: 5vh;
   background-color: white;
@@ -178,23 +190,22 @@ html,body{
   border-bottom:2px solid blue;
   cursor: pointer;
 }
+
 #vid-container{
   position: absolute;
-  left: 15vw;
+  left: 3.5vw;
   top: 15vh;
-  width: 70%;
+  width: 93%;
   height: auto;
-  padding: 2%;
   background-color: #fff;
 }
 .video-divs{
   position: relative;
-  margin: 2%;
+  margin: 10px;
   float: left;
-  width: 20vw;
-  height: 15vw;
-  //border: 1px solid black;
-  background-size: 100% 100%;
+  width: 230px;
+  height: 200px;
+  background-size: 100% 65%;
   background-repeat: no-repeat;
 }
 .video-divs:hover{
@@ -223,7 +234,7 @@ video{
   left: 25vw;
   width: 50vw;
   height: 60vh;
-  box-shadow: 0 4px 8px 0 rgba(360, 100, 100, 0.8), 0 6px 20px 0 rgba(360, 100, 100, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(255,255,255, 0.8), 0 6px 20px 0 rgba(255,255,255, 0.8);
 }
 #text{
   position: relative;
@@ -233,4 +244,52 @@ video{
   font-weight: bold;
   text-align: center;
   color: #444;
+}
+.Tcontainer{
+  position: absolute;
+  top: 67%;
+  left: 0%;
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+}
+.closePref:hover {
+   transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);
+   -ms-transform: rotate(-45deg);
+}
+.earning{
+  margin-top: 5px;
+  font-size: 1.5vw;
+  color: white;
+  display: block;
+}
+.score{
+  float: right;
+  font-size: 1.5vw;
+  color: white;
+  display: block;
+}
+.views{
+  margin-top: 5px;
+  font-size: 1.5vw;
+  color: white;
+  display: block;
+}
+.survey{
+  margin-top: 5px;
+  font-size: 1.5vw;
+  color: white;
+  display: block;
+}
+.connections{
+  margin-top: 5px;
+  font-size: 1.5vw;
+  color: white;
+  display: block;
+}
+.duration{
+  color: white;
+  float: right;
+  margin-top: 49%;
 }
