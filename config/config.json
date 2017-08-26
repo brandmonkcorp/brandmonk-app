@@ -1,5 +1,6 @@
 {
   "JWT_TOKEN": "mhsbdjhvjhw@efjgwj21_432ADFSBJY32GR,jsmfzyw4gywb4fHyw4fh",
   "mailgun_api_key": "key-88d9f982427f83efba900647971accd6",
-  "mailgun_domain": "sandboxf95b35c61f3b4954b9665d677b438bdf.mailgun.org"
+  "mailgun_domain": "sandboxf95b35c61f3b4954b9665d677b438bdf.mailgun.org",
+  "mailgun_main_domain": "support.brandmonk.online"
 }

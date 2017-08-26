@@ -19,9 +19,9 @@ function submitProfileSetupData(token){
     }
   })
   .done(function(doc){
-      window.location.replace('../home.html');
+      window.location.replace('../home');
   })
   .fail(function(error){
-    return $(document.body).load('../pages/error.html');
+    return $(document.body).load('../pages/error');
   });
 }

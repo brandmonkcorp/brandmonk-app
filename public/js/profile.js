@@ -1,6 +1,12 @@
-var X_PID_AUTH = Cookies.get('_LOC_authFirstPID');
+var X_PID_AUTH = Cookies.get('_PERM_authUID');
 if(!X_PID_AUTH){
   X_PID_AUTH = Cookies.get('_LOC_authUID');
+  if(!X_PID_AUTH){
+    X_PID_AUTH = Cookies.get('_LOC_authFirstPID')
+    if(!X_PID_AUTH){
+      $(document.body).load('../pages/error');
+    }
+  }
 }
 $(document).ready(function () {
   checkAuth();
@@ -14,7 +20,7 @@ $('#start').click(function () {
 
 function checkAuth() {
   $.ajax({
-    url: '/profile',
+    url: '/profileData',
     method: 'GET',
     contentType: 'application/json',
     headers:{
@@ -25,17 +31,16 @@ function checkAuth() {
       if(doc.message == 'activated'){
         nextLoad();
       }else if(doc.message == 'deactivated'){
-        console.log('Account created');
-        $(document.body).load('../pages/activate-account.html', function () {
+        $(document.body).load('../pages/activate-account', function () {
           $('#name-activate').text(doc.sendData.name);
           $('#email-activate').text(doc.sendData.email);
         });
       }else if(doc.message == 'redirect'){
-        window.location.replace('../home.html');
+        window.location.replace('../home');
       }
   })
   .fail(function(error){
-    return $(document.body).load('../pages/error.html');
+    return $(document.body).load('../pages/error');
   });
 }
 
@@ -51,10 +56,10 @@ $('.tabs').click(function () {
 
 function nextLoad() {
   $('#intro').fadeIn(2000);
-  $('#basic-info').load('./pages/basic-info.html', function () {
-    $('#photo-container').load('./pages/photo.html');
+  $('#basic-info').load('./pages/basic-info', function () {
+    $('#photo-container').load('./pages/photo');
   });
   $('#ad-pref').load('./pages/ad-pref.html');
-  $('#identification').load('./pages/identification.html');
-  $('#profile').load('./pages/prof.html');
+  $('#identification').load('./pages/identification');
+  $('#profile').load('./pages/prof');
 }

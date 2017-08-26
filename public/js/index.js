@@ -1,8 +1,32 @@
 var passwordCheck, passwordCheck2, regflag1 = regflag2 = regflag3 = regflag4 = false, activeFlag = false;
+var token = Cookies.get('_LOC_authFirstPID');
+if(!token){
+  var token = Cookies.get('_PERM_authUID');
+  if(!token){
+    token = Cookies.get('_LOC_authUID');
+    }
+}
 $(document).ready(function (){
-  $('#login-wrapper').load('./pages/login.html');
-  $('#register-wrapper').load('./pages/register.html');
+  $(document.body).css('visibility', 'hidden');
+  doConnect();
+  $('#login-wrapper').load('./pages/login');
+  $('#register-wrapper').load('./pages/register');
 });
+
+function doConnect() {
+  $.ajax({
+    url: '/auth',
+    method: 'GET',
+    contentType: 'text/html',
+    headers:{
+      'x-auth': token
+    }
+  }).done(function (data){
+    window.location.replace('/home');
+  }).fail(function (e){
+    $(document.body).css('visibility', 'visible');
+  });
+}
 $(document.body).on('submit', '#login-form', function (e) {
   e.preventDefault();
   if( ($('#login-form input[name=username]').val() == "") || ( $('#login-form input[name=password]').val() == "")){
@@ -195,7 +219,7 @@ function authenticate() {
     password: $('#login-form input[name=password]').val()
   };
   $.ajax({
-    url: '/login',
+    url: '/loginUser',
     method: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(credentials)
@@ -210,10 +234,10 @@ function authenticate() {
       Cookies.set('_LOC_authUID', token);
     }
     if(data.message == 'home'){
-      window.location.replace('/home.html');
+      window.location.replace('/home');
     }
     else {
-      window.location.replace('/profile.html')
+      window.location.replace('/profile')
     }
     //showErrorMessage('You are Successfully Logged in!', $('#login-form'), "success");
   }).fail(function () {
@@ -229,7 +253,7 @@ function registerUser() {
     password: $('#register-form input[name="password"]').val()
   };
   $.ajax({
-    url: '/register',
+    url: '/registerUser',
     method: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(formData)
@@ -237,7 +261,7 @@ function registerUser() {
   .done(function(doc, status, response){
     var token = response.getResponseHeader('x-auth');
       Cookies.set('_LOC_authFirstPID', token);
-      window.location.replace('../profile.html');
+      window.location.replace('../profile');
   })
   .fail(function(error){
       showErrorMessage(error.responseJSON.message, $('#register-form'));
