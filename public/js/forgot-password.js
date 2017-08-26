@@ -26,7 +26,7 @@ function checkCombo(username, mobile) {
   });
 }
 $(document.body).on('click', '#change-it-now', function () {
-  $('#input-container').load('./pages/reset-password');
+  $(document.body).load('../pages/reset-password');
 });
 
 $(document.body).on('click', '#reset-password-button', function () {

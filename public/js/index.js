@@ -228,7 +228,7 @@ function authenticate() {
 
     if($('#login-form input[name=remember]').is(':checked') ){
       Cookies.remove('_PERM_authUID');
-      Cookies.set('_PERM_authUID', token, {secure: true, expires: 3650});
+      Cookies.set('_PERM_authUID', token, { expires: 3650});
     }else{
       Cookies.remove('_LOC_authUID');
       Cookies.set('_LOC_authUID', token);

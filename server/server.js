@@ -20,6 +20,9 @@ app.use(bodyParser.json());
 app.use(express.static(publicPath, {extensions:['html']}));
 
 app.get('/auth', authenticate, (req, res) => {
+  if(!req.user.isLoggedIn){
+    return res.status(401).send();
+  }
   res.send();
 });
 
@@ -79,6 +82,9 @@ app.get('/activateUser', authenticate, (req, res) => {
 });
 
 app.get('/profileData', authenticate,  (req, res) => {
+  if(!req.user.isLoggedIn){
+    return res.status(401).send();
+  }
   var profileActivated = req.user.activated;
   var setupCompleted = req.user.setupCompleted;
   var sendData = {
@@ -103,21 +109,32 @@ app.get('/profileData', authenticate,  (req, res) => {
   }
 });
 
+app.post('/logoutUser', authenticate, (req, res) => {
+  var user = req.user;
+  user.isLoggedIn = false;
+  user.save().then(() => {
+    console.log(user.name,'logged out.')
+    res.send();
+  });
+});
+
 app.post('/loginUser', (req, res) => {
   User.findByCredentials(req.body.username, req.body.password).then((user) => {
     console.log(user.name, ' logged in');
-    return user.generateAuthToken('login').then((token) => {
-      if(user.activated){
-        if(user.setupCompleted){
-          res.header('x-auth', token).send({'message': 'home'});
+    user.isLoggedIn = true;
+    user.save().then(() => {
+      return user.generateAuthToken('login').then((token) => {
+        if(user.activated){
+          if(user.setupCompleted){
+            res.header('x-auth', token).send({'message': 'home'});
+          }else{
+            res.header('x-auth', token).send({'message': 'profile'});
+          }
         }else{
-          res.header('x-auth', token).send({'message': 'profile'});
+            res.header('x-auth', token).send({'message': 'activate'});
         }
-      }else{
-          res.header('x-auth', token).send({'message': 'activate'});
-      }
-
     });
+  });
   }).catch(() => {
     res.status(400).send();
   });

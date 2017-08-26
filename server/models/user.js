@@ -57,6 +57,10 @@ var UserSchema = new mongoose.Schema({
   setupCompleted:{
     type: Boolean,
     default: false
+  },
+  isLoggedIn:{
+    type: Boolean,
+    default: false
   }
 });
 
