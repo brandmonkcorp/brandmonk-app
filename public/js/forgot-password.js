@@ -76,7 +76,7 @@ $(document.body).on('click', '#reset-password-button', function () {
   });
 });
 $(document.body).on('click', '#home-button', function () {
-  window.open('../page.html');
+  window.location.replace('../page.html');
 });
 
 function showErrorMessage(message, elem, status) {
