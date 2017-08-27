@@ -60,6 +60,7 @@ html,body{
 .info {
     text-decoration: none;
     margin-top:5px;
+    margin-left: 2px;
     font-size: 1.45vw;
     color: white;
     display: block;
@@ -72,7 +73,7 @@ html,body{
     cursor: pointer;
 }
 .sidenav a {
-
+    margin-left: 2px
     color: rgb(129, 129, 129);
     display: block;
     text-decoration: none;
@@ -145,6 +146,7 @@ html,body{
     overflow-x: hidden;
     z-index: 1;
     transition: 0.7s;
+    float: left;
 
 }
 .closePref{
@@ -266,6 +268,7 @@ video{
 }
 .score{
   float: right;
+  margin-right: 2px;
   font-size: 1.5vw;
   color: white;
   display: block;
