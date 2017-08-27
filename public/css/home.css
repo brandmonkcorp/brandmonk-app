@@ -11,7 +11,7 @@ html,body{
   float: left;
   width: 100%;
   height: 8vh;
-  background-color: #33f;
+  background-color: #054f93;
 
 }
 #brandmonk{
@@ -51,7 +51,7 @@ html,body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #33f;
+    background-color: #054f93;
     overflow-x: hidden;
     transition: 0.5s;
     float: left;
@@ -106,7 +106,7 @@ html,body{
   border-radius: 50%;
 }
 .dropbtn {
-    background-color: #3333ff;
+    background-color: #054f93;
     border: 1px solid transparent;
     text-decoration: none;
     width: 100vw;
@@ -124,7 +124,7 @@ html,body{
     font-size: 1.2vw;
     padding: 14px 20px 12px 45px;
     border: 1px solid transparent;
-    background-color:#3333ff;
+    background-color:#054f93;
     color: white;
 }
 #myInput:focus{
@@ -141,7 +141,7 @@ html,body{
     position: fixed;
     top: 0;
     right: 0;
-    background-color:  #3333ff;
+    background-color:  #054f93;
     overflow-x: hidden;
     z-index: 1;
     transition: 0.7s;
