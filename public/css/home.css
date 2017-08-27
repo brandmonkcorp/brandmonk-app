@@ -45,8 +45,8 @@ html,body{
   color: white;
 }
 .sidenav {
-    height: 0%;
-    width: 0%;
+    height: 100%;
+    width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -61,7 +61,7 @@ html,body{
 .info {
     text-decoration: none;
     margin-top:5px;
-    margin-left: 5px;
+    padding-left: 5px;
     font-size: 1.45vw;
     color: white;
     display: block;
@@ -87,9 +87,15 @@ html,body{
   margin-left: 20vw;
   cursor: pointer;
   color: white;
-
 }
 
+.closePref{
+  position: relative;
+  font-size: 36px;
+  margin-right: 90vw;
+  cursor: pointer;
+  color: white;
+}
 
 .navBtn{
   position: absolute;
@@ -151,13 +157,7 @@ html,body{
     float: left;
 
 }
-.closePref{
-  position: relative;
-  font-size: 36px;
-  margin-right: 90vw;
-  cursor: pointer;
-  color: white;
-}
+
 .dropdown-content a {
   margin-left:5px;
   text-decoration: none;
@@ -239,7 +239,6 @@ video{
   top: 20vh;
   left: 25vw;
   width: 50vw;
-  height: 60vh;
   box-shadow: 0 4px 8px 0 rgba(255,255,255, 0.8), 0 6px 20px 0 rgba(255,255,255, 0.8);
 }
 #text{
@@ -304,4 +303,37 @@ video{
   color: white;
   float: right;
   margin-top: 49%;
+}
+.offCode{
+  font-weight: bold;
+  padding-left:5px;
+  margin-top: 5px;
+  font-size: 1.5vw;
+  background-color: white;
+  color: #054f93;
+  display: block;
+}
+.offIn{
+  padding-top: 5px;
+}
+#offInput{
+  width: 100%;
+}
+.sub{
+  font-weight: bold;
+  float: right;
+  padding-top: 2px;
+  margin-right: 7px;
+  font-size: 1.2vw;
+  background-color: white;
+  color: #054f93;
+  cursor: pointer;
+}
+.sub:hover{
+  background-color: #054f93;
+  color: white;
+  transition: 0.5s;
+}
+#clk{
+  pointer-events: none;
 }

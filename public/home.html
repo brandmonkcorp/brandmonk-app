@@ -14,12 +14,12 @@
       <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
       <span id="logout" class="head-button">Logout</span>
     </div>
-  <div id="profNav" class="sidenav vanish">
-    <div>
-      <a href="javascript:void(0)" class="closeNav" onclick="closeProf()">&#8656;</a>
+  <div class="sidenav vanish">
+    <div class="vanish">
+      <a href="javascript:void(0)" class="closeNav">&#8656;</a>
     </div>
   <div>
-    <img class="container" src="../images/user_profile_male.jpg" alt="User Image">
+    <img class="container vanish" src="../images/user_profile_male.jpg" alt="User Image">
   </div>
   <div class="info">
     <span onclick="">User Name</span>
@@ -33,21 +33,30 @@
   <div class="info">
     <span onclick="">History</span>
   </div>
-  <div class="earning">
+  <div class="earning" id="clk">
     Earning<span class="score">00</span>
   </div>
-  <div class="views">
+  <div class="views" id="clk">
     Ads Viewed<span class="score">00</span>
   </div>
-  <div class="survey">
+  <div class="survey" id="clk">
     Surveys Taken<span class="score">00</span>
   </div>
-  <div class="connections">
+  <div class="connections" id="clk">
     Connections<span class="score">00</span>
   </div>
+  <div class="offCode" id="clk">
+    Enter Your Offline Code Here
+</div>
+<div class="offIn">
+  <input type="text" class="vanish" id="offInput" placeholder="Enter Offline Code">
+</div>
+<div style="padding-top:5px">
+  <span class="sub vanish">Submit</span>
+</div>
 </div>
 <div class="navBtn">
-  <span onclick="openProf()">&#9776;</span>
+  <span>&#9776;</span>
 </div>
 <div class="tabs">
     <span class="tabBtn" onclick="">Home</span>
@@ -81,11 +90,9 @@
 
 
 </div>
-<div id="overlay" onclick="off()">
-  <p>
+<div id="overlay">
   <video id="vidPlayer" controls controlsList="nodownload" preload="none">
   </video>
-</p>
 </div>
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="./js/js-cookie.js"></script>

@@ -99,6 +99,7 @@ $(document.body).on('click', '.video-divs', function () {
 });
 
 $("#adPref").click(function(){
+
   $(".dropdown-content").css("height", "100%");
   $(".dropdown-content").css("width", "20%");
 });
@@ -107,6 +108,16 @@ $("#closePref").click(function(){
   $(".dropdown-content").css("height", "0%");
   $(".dropdown-content").css("width", "0");
 });
+$(".navBtn").on("click", function(){
+  $(".sidenav").css("width", "22vw");
+  $(".sidenav").css("height", "100%");
+});
+
+$(".closeNav").on("click", function(){
+  $(".sidenav").css("width", "0");
+  $(".sidenav").css("height", "0");
+});
+
 
 $(document.body).on('mouseup', function (e) {
   var container = $('.vanish');
@@ -117,24 +128,12 @@ $(document.body).on('mouseup', function (e) {
     $(".sidenav").css("height", "0%");
   }
 });
-
 $("#vidPlayer").bind("ended", function() {
    document.webkitExitFullscreen();
    document.mozCancelFullscreen();
    document.exitFullscreen();
 });
 
-function openProf() {
-  document.getElementById("profNav").style.width = "20%";
-  document.getElementById("profNav").style.height = "100%"
-}
-
-function closeProf() {
-  document.getElementById("profNav").style.width = "0%";
-  document.getElementById("profNav").style.height = "0%"
-  document.getElementById("myDropdown").classList.toggle("show",false);
-
-}
 function myFunction(){
   document.getElementById("myDropdown").classList.toggle("show");
 }
