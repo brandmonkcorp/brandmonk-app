@@ -157,6 +157,7 @@ html,body{
   color: white;
 }
 .dropdown-content a {
+  margin-left:5px;
   text-decoration: none;
   font-size: 1.5vw;
   color: white;
@@ -274,24 +275,28 @@ video{
   display: block;
 }
 .views{
+  margin-left:5px;
   margin-top: 5px;
   font-size: 1.5vw;
   color: white;
   display: block;
 }
 .survey{
+  margin-left:5px;
   margin-top: 5px;
   font-size: 1.5vw;
   color: white;
   display: block;
 }
 .connections{
+  margin-left:5px;
   margin-top: 5px;
   font-size: 1.5vw;
   color: white;
   display: block;
 }
 .duration{
+  margin-left:5px;
   color: white;
   float: right;
   margin-top: 49%;
