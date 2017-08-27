@@ -26,6 +26,15 @@ app.get('/auth', authenticate, (req, res) => {
   res.send();
 });
 
+app.get('/resetPass', authenticate, (req, res) => {
+  if(req.user.passChangeRequest){
+    sendPassChangeMail(req.user, req.token);
+    res.send();
+  }else{
+    res.status(401).send();
+  }
+});
+
 app.post('/registerUser', (req, res) => {
   var newUser = new User(req.body);
   var nameUser;
@@ -44,6 +53,24 @@ app.post('/registerUser', (req, res) => {
   });
 });
 
+var sendPassChangeMail = (user, token) => {
+  var mail = new mailgun({apiKey: api_key, domain: domain});
+  var mailBody = {
+      from: from_who,
+      to: user.email,
+      subject: 'Password Reset Request',
+      html: `Hi,${user.name}! Follow the link to <a href="https://www.brandmonk.online/reset-password?auth=${token}">reset your password</a>
+       and start earning.`
+    };
+    mail.messages().send(mailBody, function (err, body) {
+        if (err) {
+            console.log("Mail sent failed to", user.email);
+        }
+        else {
+            console.log('Mail Sent to', user.email);
+        }
+    });
+};
 var sendActivateMail = (user, token) => {
   var mail = new mailgun({apiKey: api_key, domain: domain});
   var mailBody = {
