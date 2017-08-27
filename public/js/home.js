@@ -35,7 +35,7 @@ function getProfileData(token) {
     if(doc.message == 'redirect'){
       $(document.body).css('visibility', 'visible');
       playNextFunc();
-    }else if(doc.message == 'deactivated'){
+    }else if(doc.message == 'activated'){
       window.location.replace('../profile');
     }else{
       $(document.body).load('../pages/error', function () {
