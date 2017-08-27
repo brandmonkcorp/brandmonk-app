@@ -117,12 +117,12 @@ $(document.body).on('mouseup', function (e) {
 
 
 function openProf() {
-  document.getElementById("profNav").style.width = "22vw";
+  document.getElementById("profNav").style.height = "100%";
 
 }
 
 function closeProf() {
-  document.getElementById("profNav").style.width = "0";
+  document.getElementById("profNav").style.height = "0";
   document.getElementById("myDropdown").classList.toggle("show",false);
 
 }
