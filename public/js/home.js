@@ -99,30 +99,35 @@ $(document.body).on('click', '.video-divs', function () {
 });
 
 $("#adPref").click(function(){
-  $(".dropdown-content").css("width", "22vw");
+  $(".dropdown-content").css("height", "100%");
+  $(".dropdown-content").css("width", "20%");
 });
 
 $("#closePref").click(function(){
+  $(".dropdown-content").css("height", "0%");
   $(".dropdown-content").css("width", "0");
 });
 
 $(document.body).on('mouseup', function (e) {
   var container = $('.vanish');
   if (!container.is(e.target)){
-    $(".dropdown-content").css("width", "0");
-    $(".sidenav").css("width", "0");
+    $(".dropdown-content").css("width", "0%");
+    $(".dropdown-content").css("height", "0%");
+    $(".sidenav").css("width", "0%");
+    $(".sidenav").css("height", "0%");
   }
 });
 
 
 
 function openProf() {
-  document.getElementById("profNav").style.height = "100%";
-
+  document.getElementById("profNav").style.width = "20%";
+  document.getElementById("profNav").style.height = "100%"
 }
 
 function closeProf() {
-  document.getElementById("profNav").style.height = "0";
+  document.getElementById("profNav").style.width = "0%";
+  document.getElementById("profNav").style.height = "0%"
   document.getElementById("myDropdown").classList.toggle("show",false);
 
 }
