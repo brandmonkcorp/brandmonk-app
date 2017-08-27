@@ -59,7 +59,8 @@ var sendPassChangeMail = (user, token) => {
       from: from_who,
       to: user.email,
       subject: 'Password Reset Request',
-      html: `Hi,${user.name}! Follow the link to <a href="https://www.brandmonk.online/reset-password?auth=${token}">reset your password</a>
+      html: `Hi,${user.name}! Follow the link to
+      <a href="https://www.brandmonk.online/reset-password?auth=${token}">reset your password</a>
        and start earning.`
     };
     mail.messages().send(mailBody, function (err, body) {
@@ -139,9 +140,11 @@ app.get('/profileData', authenticate,  (req, res) => {
 app.post('/logoutUser', authenticate, (req, res) => {
   var user = req.user;
   user.isLoggedIn = false;
-  user.save().then(() => {
-    console.log(user.name,'logged out.')
-    res.send();
+  User.removeToken(req.token).then(() =>{
+    user.save().then(() => {
+      console.log(user.name,'logged out.')
+      res.send();
+    });
   });
 });
 
