@@ -60,7 +60,7 @@ html,body{
 .info {
     text-decoration: none;
     margin-top:5px;
-    margin-left: 2px;
+    margin-left: 5px;
     font-size: 1.45vw;
     color: white;
     display: block;
@@ -268,7 +268,7 @@ video{
 }
 .score{
   float: right;
-  margin-right: 2px;
+  margin-right: 5px;
   font-size: 1.5vw;
   color: white;
   display: block;
