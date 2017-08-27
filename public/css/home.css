@@ -234,6 +234,7 @@ html,body{
     cursor: pointer;
 }
 video{
+  opacity: 1.0;
   position: absolute;
   top: 20vh;
   left: 25vw;

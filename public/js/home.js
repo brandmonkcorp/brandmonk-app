@@ -118,7 +118,11 @@ $(document.body).on('mouseup', function (e) {
   }
 });
 
-
+$("#vidPlayer").bind("ended", function() {
+   document.webkitExitFullscreen();
+   document.mozCancelFullscreen();
+   document.exitFullscreen();
+});
 
 function openProf() {
   document.getElementById("profNav").style.width = "20%";
