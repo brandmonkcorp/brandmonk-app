@@ -70,3 +70,160 @@ html,body {
 #forgot-password:active{
   color: #aaa;
 }
+#left-half{
+  border-right: 1px solid #0070c0;
+  float: left;
+  width: 50%;
+  height: 50vh;
+  text-align: center;
+  padding-top: 20vh;
+  margin-top: 5vh;
+}
+#left-half-text{
+  font-family: Candara;
+  font-size: 8vh;
+  font-weight: bold;
+  color: #0070c0;
+  padding-left: 1vw;
+  padding-right: 2vw;
+}
+#i-have-questions{
+  background-color: #0070c0;
+  color: #fff;
+  border: 1px solid transparent;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  padding-top: 0.3vh;
+  padding-bottom: 0.3vh;
+  margin-top: 6vh;
+  font-size: 3vh;
+  cursor: pointer;
+}
+#right-half{
+  float: right;
+  margin: 0 auto;
+  width: 43%;
+  padding-top: 10vh;
+  padding-left: 5vw;
+  height: 70vh;
+}
+#right-half-text{
+  font-size: 6.5vh;
+  font-family: candara;
+  color: #0070c0;
+}
+#register-box{
+  margin-top: 8vh;
+  padding-right: 10vh;
+}
+#register-form{
+  font-family: Candara;
+  font-size: 3vh;
+}
+.input-label{
+  float: left;
+}
+#register-form input {
+  width: 17vw;
+  font-size: 2.4vh;
+  float: right;
+  border: 1px solid #0070c0;
+}
+.privacy-policy{
+  margin-top: 5vh;
+  font-size: 2vh;
+}
+#register{
+  background-color: #0070c0;
+  color: #fff;
+  border: 1px solid transparent;
+  padding-left: 7vh;
+  padding-right: 7vh;
+  padding-top: 0.3vh;
+  padding-bottom: 0.3vh;
+  margin-top: 6vh;
+  font-size: 3vh;
+  margin-left: 23vw;
+  transition: all 0.5s;
+}
+#foot{
+  position: absolute;
+  bottom: 0;
+  height: 10vh;
+  width: 100%;
+  background-color: #0070c0;
+}
+#register span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#register span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+#register:hover span{
+  padding-right: 25px;
+}
+
+#register:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#i-have-questions span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#i-have-questions span:after {
+  content: '\003F';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+#i-have-questions:hover span {
+  padding-right: 25px;
+}
+
+#i-have-questions:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#icon-container1{
+  position: absolute;
+  top: 0;
+  padding-right: 2px;
+  left: 75%;
+}
+#icon-container2{
+  position: absolute;
+  padding-right: 2px;
+  left: 75%;
+  bottom: 0;
+}
+#link-container{
+  margin-top: 3.2vh;
+  margin-left: 2vw;
+  border: 1px dashed white;
+  width: 65%;
+}
+#link-container a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.2vw;
+  padding: 1vw;
+}
