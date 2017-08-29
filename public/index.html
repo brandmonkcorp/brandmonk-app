@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome</title>
+    <title>BrandMonk | The Adview Platform for everyone</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
   </head>
 
   <body>
-    <div id="message"><span style="color:#299">Stay</span>
-      put untill we go
-      <span style="color:#f44">Live!!</span>
+    <div id="head">
+      <span id="brandmonk">BrandMonk</span>
+      <div id="login-box">
+        <form id="login-form">
+          <input type="text" placeholder="username" name="username" autocomplete="off"/>
+          <input type="password" placeholder="password" name="password" autocomplete="off"/>
+          <button id="login">Log in</button>
+        </form>
+        <span id="forgot-password">forgot password?</span>
+      </div>
+    </div>
+    <div id="body-container">
+      <div id="left-half">
+        <span id="left-half-text">Monetise your free time with BrandMonk adview platform</span>
+        <button id="i-have-questions">I have questions</button>
+      </div>
+      <div id="right-half">
+        <span id="right-half-text">Register now, it's free forever</span>
+        <div id="register-box">
+          <form id="register-form">
+            <span class="input-label">First Name</span>
+            <input type="text" name="first-name" /><br>
+            <span class="input-label">Last Name</span>
+            <input type="text" name="last-name" /><br>
+            <span class="input-label">Email</span>
+            <input type="email" name="email" /><br>
+            <span class="input-label">Phone</span>
+            <input type="text" length="10" name="phone" /><br>
+            <span class="input-label">Password</span>
+            <input type="password" name="password" /><br>
+            <span class="input-label">Retype Password</span>
+            <input type="password" name="password2" /><br>
+            <span id="privacy-policy"></span>
+            <button id="register">Register</button>
+          </form>
+        </div>
+      </div>
+      <div id="foot">
+        <div id="link-container">
+
+        </div>
+        <div id="icon-container">
+
+        </div>
+      </div>
     </div>
   </body>
 </html>
