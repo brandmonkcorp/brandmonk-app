@@ -87,6 +87,18 @@ html,body {
   padding-left: 1vw;
   padding-right: 2vw;
 }
+#left-half-text-mobile{
+  display:none;
+}
+#login-box-mobile{
+  display:none;
+}
+#foot-mobile{
+  display:none;
+}
+#register-mobile{
+  display: none;
+}
 #i-have-questions{
   background-color: #0070c0;
   color: #fff;
