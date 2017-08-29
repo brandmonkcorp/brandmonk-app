@@ -116,6 +116,17 @@
     background-color: #0070c0;
     visibility: visible;
   }
+  #loading{
+    position: fixed;
+    float: left;
+    width: 15vw;
+    height: 15vw;
+    left: 45%;
+    top: 40%;
+    background-image: url('../images/icons/loading.gif');
+    background-size: 100% 100%;
+    visibility: hidden;
+  }
   #body-container {
     visibility: hidden;
   }

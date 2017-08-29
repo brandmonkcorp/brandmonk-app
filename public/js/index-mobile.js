@@ -3,8 +3,14 @@ $(document).ready(function (){
 });
 
 $(document.body).on('click', '#register-mobile', function () {
-  $('#login-box-mobile').load('./pages_mobile/register-form');
+  $('#loading').css('visibility', 'visible');
+  $('#login-box-mobile').load('./pages_mobile/register-form', function () {
+    $('#loading').css('visibility', 'hidden');
+  });
 });
 $(document.body).on('click', '#back-to-login', function () {
-  $('#login-box-mobile').load('./pages_mobile/login-form');
+  $('#loading').css('visibility', 'visible');
+  $('#login-box-mobile').load('./pages_mobile/login-form', function () {
+    $('#loading').css('visibility', 'hidden');
+  });
 });
