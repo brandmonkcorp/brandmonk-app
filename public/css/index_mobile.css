@@ -22,11 +22,49 @@
     padding: 0%;
     text-align: left;
   }
-  #left-half-text{
+  #body-container {
     position: relative;
     float: left;
-    margin-top: 10vw;
-    width:98%;
+    height: auto;
+    width: auto;
+    padding: 0%;
+    margin: 0%;
+    visibility: hidden;
+  }
+  #left-half{
+    position: relative;
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 0%;
+    margin: 0%;
+  }
+  #right-half{
+    position: relative;
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 0%;
+    margin: 0%;
+    display: none;
+  }
+  #i-have-questions{
+    display: none;
+  }
+  #register-box{
+    display: none;
+  }
+  #privacy-policy{
+    display: none;
+  }
+  #left-half-text{
+    display: none;
+  }
+  #left-half-text-mobile{
+    position: relative;
+    float: left;
+    margin-top: 0vw;
+    width:90vw;
     font-size: 6vw;
     font-weight: bold;
     color: #0070c0;
@@ -39,6 +77,7 @@
   }
   #login-box-mobile{
     position: relative;
+
     padding: 2%;
     width: auto;
     height: 80vh;
@@ -54,14 +93,18 @@
     margin-top: 10vw;
     font-size: 5vw;
     background-color: #fff;
+
   }
   #login-box-mobile button{
+    position: relative;
+    float: left;
     margin-top: 15vw;
-    width: 93vw;
+    width: 92vw;
     font-size: 5vw;
     padding: 1%;
     background-color: #0070c0;
     border: 1px solid #0070c0;
+
   }
   #login-box-mobile button:hover{
     background-color: #fff;
@@ -74,6 +117,7 @@
     border: 1px solid #aaa;
     color: #fff;
     margin-top: 5vw;
+
   }
   #login-box-mobile #register-mobile:hover{
     background-color: #fff;
@@ -86,6 +130,7 @@
     margin-top: 3vw;
     color: #0070c0;
     font-size: 5vw;
+
   }
   .errormessage{
     position: relative;
@@ -99,8 +144,9 @@
     font-size: 3vh;
     text-align: center;
     display: none;
+
   }
-  #privacy-policy{
+  #privacy-policy-mobile{
     position: relative;
     float: left;
     width: 90vw;
@@ -108,13 +154,27 @@
     font-size: 4vw;
     font-family: calibri;
   }
-  #foot{
+  #foot-mobile{
     position: relative;
     float: left;
+    margin-top: 5vw;
     width: 100%;
-    height: 30vw;
+    height: 20vw;
     background-color: #0070c0;
-    visibility: visible;
+  }
+  #link-container{
+    position:relative;
+    float: left;
+    width: 95%;
+  }
+  #link-container a{
+    font-size: 4vw;
+  }
+  #icon-container1, #icon-container2{
+    display: none;
+  }
+  #foot{
+    display: none;
   }
   #loading{
     position: fixed;
@@ -125,9 +185,6 @@
     top: 40%;
     background-image: url('../images/icons/loading.gif');
     background-size: 100% 100%;
-    visibility: hidden;
-  }
-  #body-container {
-    visibility: hidden;
+  display:none;
   }
 }
