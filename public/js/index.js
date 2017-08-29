@@ -11,6 +11,7 @@ $(document).ready(function (){
   doConnect();
   $('#login-wrapper').load('./pages/login');
   $('#register-wrapper').load('./pages/register');
+  $('#login-box').load('./pages_mobile/login-form');
 });
 
 function doConnect() {
