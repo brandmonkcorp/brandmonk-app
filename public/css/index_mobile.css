@@ -1,0 +1,122 @@
+@media screen and (max-width: 480px) and (max-height: 853px){
+  html, body{
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+    width: 100%;
+  }
+  body{
+    background-color: #eee;
+  }
+  #head{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 8.5vh;
+    min-height: 12vw;
+    background-color: #0070c0;
+  }
+  #brandmonk{
+    font-size: 10vw;
+    margin-left: 10vw;
+    padding: 0%;
+    text-align: left;
+  }
+  #left-half-text{
+    position: relative;
+    float: left;
+    margin-top: 10vw;
+    width:98%;
+    font-size: 6vw;
+    font-weight: bold;
+    color: #0070c0;
+    visibility: visible;
+    font-family: candara;
+    text-align: center;
+  }
+  #login-box{
+    display: none;
+  }
+  #login-box-mobile{
+    position: relative;
+    padding: 2%;
+    width: auto;
+    height: 80vh;
+    min-height: 120vw;
+    visibility: visible;
+  }
+  #login-box-mobile input{
+    position: relative;
+    float: left;
+    width: 88vw;
+    padding: 2%;
+    border: 2px solid #ccc;
+    margin-top: 10vw;
+    font-size: 5vw;
+    background-color: #fff;
+  }
+  #login-box-mobile button{
+    margin-top: 15vw;
+    width: 93vw;
+    font-size: 5vw;
+    padding: 1%;
+    background-color: #0070c0;
+    border: 1px solid #0070c0;
+  }
+  #login-box-mobile button:hover{
+    background-color: #fff;
+    border: 1px solid #0070c0;
+    color: #0070c0;
+    cursor: pointer;
+  }
+  #login-box-mobile #register-mobile{
+    background-color: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+    margin-top: 5vw;
+  }
+  #login-box-mobile #register-mobile:hover{
+    background-color: #fff;
+    border: 1px solid #aaa;
+    color: #aaa;
+  }
+  #forgot-password{
+    position: relative;
+    float: left;
+    margin-top: 3vw;
+    color: #0070c0;
+    font-size: 5vw;
+  }
+  .errormessage{
+    position: relative;
+    float: left;
+    width: 88vw;
+    padding: 2%;
+    margin: .5vw;
+    border-radius: 5px;
+    background-color: #822;
+    color: #eee;
+    font-size: 3vh;
+    text-align: center;
+    display: none;
+  }
+  #privacy-policy{
+    position: relative;
+    float: left;
+    width: 90vw;
+    padding: 2%;
+    font-size: 4vw;
+    font-family: calibri;
+  }
+  #foot{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 30vw;
+    background-color: #0070c0;
+    visibility: visible;
+  }
+  #body-container {
+    visibility: hidden;
+  }
+}
