@@ -91,6 +91,15 @@ UserSchema.statics.findByToken = function (token, access) {
 
 UserSchema.statics.removeToken = function (token) {
   var user = this;
+  var decoded;
+   try{
+     decoded = jwt.verify(token, config.JWT_TOKEN);
+   }catch(e){
+     return Promise.reject();
+   }
+   if(decoded.access == 'register'){
+     return Promise.resolve();
+   }
   return user.update({
     $pull:{
       tokens:{token}

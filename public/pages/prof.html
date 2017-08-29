@@ -8,24 +8,27 @@
 <div id="social-edit">
   <span id="social-brief">Let us help you setup your Social Account!</span>
   <span id="social-account-text" style="color:#295;float: right">Almost Done!</span>
-  <span class="label social-label">Where do you work at?</span>
-  <input type="text" name="position" placeholder="Your position at Company"/>
-  <input type="text" name="company" placeholder="Company Name"/><br>
-  <span class="label social-label">Your Education</span>
-  <input type="text" name="edu" placeholder="Last Degree you got"/>
-  <input type="text" name="company" placeholder="Last School you Attended"/><br>
-  <span class="label social-label">Your Relationship Status</span>
-  <select name="relationship">
-    <option value="single">Single</option>
-    <option value="rel">in a relationship</option>
-    <option value="comp">it's complicated</option>
-    <option value="fz">Friendzoned</option>
-    <option value="bz">Brotherzoned</option>
-    <option value="dowc">Depends on who's checking</option>
-  </select>
-  <div id="submit-container">
-    <span id="submit-data-prof" class="save-button">All checked! Create my Profile!</span>
-    <span id="policy">By submitting data you agree to BrandMonk user Agreement, privacy policy.</span>
-  </div>
+<form id="social-form">
+    <span class="label social-label">Where do you work at?</span>
+    <input type="text" name="position" placeholder="Your position at Company" required/>
+    <input type="text" name="company" placeholder="Company Name" required/><br>
+    <span class="label social-label">Your Education</span>
+    <input type="text" name="edu" placeholder="Last Degree you got" required/>
+    <input type="text" name="last_school" placeholder="Last School you Attended" required/><br>
+    <span class="label social-label">Your Relationship Status</span>
+    <select name="relationship">
+      <option value="single">Single</option>
+      <option value="rel">in a relationship</option>
+      <option value="comp">it's complicated</option>
+      <option value="fz">Friendzoned</option>
+      <option value="bz">Brotherzoned</option>
+      <option value="dowc">Depends on who's checking</option>
+    </select>
+    <button id="social-submit" style="visibility:hidden"></button>
+    <div id="submit-container">
+      <span id="submit-data-prof" class="save-button">All checked! Create my Profile!</span>
+      <span id="policy">By submitting data you agree to BrandMonk user Agreement, privacy policy.</span>
+    </div>
+</form>
 </div>
 <script src="../js/prof.js"></script>

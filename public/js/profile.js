@@ -8,8 +8,11 @@ if(!X_PID_AUTH){
     }
   }
 }
+var profiledata, c1 = c2 = c3 = false;
 $(document).ready(function () {
   checkAuth();
+  basicdata = new basicData();
+  basicprofiledata = new basicProfileData();
 });
 $('#start').click(function () {
   $('#intro').fadeOut(1000, function () {
@@ -17,6 +20,21 @@ $('#start').click(function () {
     $('#basic-info').css('visibility', 'visible');
   });
 });
+function showErrorMessage(message, elem, status) {
+  var parent = $(elem).parent().attr('id');
+  var name = $(elem).attr('name') || $(elem).attr('id');
+  var id = `em-${parent}-${name}`;
+  $(elem).parent().find(`#${id}`).remove();
+  if(status != "success")
+    $(elem).after(`<span class="errormessage" id="${id}"></span>`);
+  else
+    $(elem).after(`<span style="background-color: #4a4" class="errormessage" id="${id}"></span>`);
+  $(`#${id}`).text(`${message}`);
+  $(`#${id}`).slideDown(100);
+  $(`#${id}`).fadeOut(7000, function (){
+    $(`#${id}`).remove();
+  });
+}
 
 function checkAuth() {
   $.ajax({
@@ -29,7 +47,7 @@ function checkAuth() {
   })
   .done(function(doc){
       if(doc.message == 'activated'){
-        nextLoad();
+        nextLoad(doc);
       }else if(doc.message == 'deactivated'){
         $(document.body).load('../pages/activate-account', function () {
           $('#name-activate').text(doc.sendData.name);
@@ -43,7 +61,12 @@ function checkAuth() {
     return $(document.body).load('../pages/error');
   });
 }
-
+$(document.body).on('keyup', '#basic-info-form input[name="zip"]', function (e) {
+  var key =  String.fromCharCode(e.which);
+  var elem = $('#basic-info-form input[name="zip"]');
+  if(/^[0-9]*$/.test(elem.val()) == false)
+    elem.val(elem.val().substr(0, elem.val().length-1));
+});
 
 $('.tabs').click(function () {
   var id = $(this).attr('id');
@@ -54,12 +77,22 @@ $('.tabs').click(function () {
   $(`#${targetId}`).css('visibility', 'visible');
 });
 
-function nextLoad() {
+function nextLoad(doc) {
   $('#intro').fadeIn(2000);
   $('#basic-info').load('./pages/basic-info', function () {
+    $('#basic-info-form input[name=name]').val(doc.sendData.name);
+    $('#basic-info-form input[name=email]').val(doc.sendData.email);
+    $('#basic-info-form input[name=mobile]').val(doc.sendData.mobile);
     $('#photo-container').load('./pages/photo');
   });
   $('#ad-pref').load('./pages/ad-pref.html');
-  $('#identification').load('./pages/identification');
-  $('#profile').load('./pages/prof');
+  $('#identification').load('./pages/identification', function () {
+    $('#identification-form input[name=name]').val(doc.sendData.name);
+    $('#identification-form input[name=mobile]').val(doc.sendData.mobile);
+  });
+  $('#profile').load('./pages/prof', function () {
+    $('#social-name').text(doc.sendData.name);
+    $('#social-email').text(doc.sendData.email);
+    $('#social-phone').text(doc.sendData.mobile);
+  });
 }

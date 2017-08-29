@@ -164,22 +164,22 @@ input, .multiselect, select{
   border-top: 1px solid transparent;
   background-color: #fff;
   margin: 1.2vh;
-  padding: .4%;
+  padding: 1%;
   font-family: "century gothic";
 }
 input{
   width: 55%;
 }
 .multiselect{
-  height: 2vw;
-  width: 54%;
+  height: 1.5vw;
+  width: 55%;
 }
 .multiselect:hover{
   cursor: pointer;
 }
 select{
-  width: 55%;
-  padding: .5%;
+  width: 57%;
+  padding: 1%;
   font-size: 1.3vw;
 }
 .select-class{
@@ -189,11 +189,15 @@ select{
 input:hover, .multiselect:hover, select:hover{
   box-shadow: 0px 5px 5px 0px rgba(175,190,200,0.6), 0px 5px 5px 0px rgba(175,190,200,0.6);
 }
+.autofill{
+  color: #054f93;
+  box-shadow: none;
+}
 .input-panel{
   position: absolute;
   top: 6vh;
   left: 37%;
-  width: 55%;
+  width: 57%;
   height: 20vh;
   overflow-y: auto;
   z-index: 1;
@@ -228,7 +232,7 @@ input:hover, .multiselect:hover, select:hover{
 .save-button{
   position: relative;
   float: right;
-  margin-top: 2vh;
+  margin-top: 1vh;
   margin-right: 2vw;
   margin-bottom: 1vh;
   width: auto;
@@ -245,6 +249,21 @@ input:hover, .multiselect:hover, select:hover{
   background-color: #eee;
   border: #295;
   color: #295;
+}
+.errormessage{
+  position: relative;
+  float: right;
+  width: 55%;
+  height: auto;
+  padding: 1vh;
+  margin-right: 4.5%;
+  margin-top: 1vh;
+  border-radius: 5px;
+  background-color: #822;
+  color: #eee;
+  font-size: 2vh;
+  text-align: center;
+  display: none;
 }
 #policy{
   position: relative;
@@ -351,9 +370,9 @@ input:hover, .multiselect:hover, select:hover{
 #social-photo{
   position: relative;
   float: left;
-  margin-left: 1.2vw;
-  width: 17.5vw;
-  height: 17.5vw;
+  margin-left: 3vw;
+  width: 13vw;
+  height: 14vw;
   border: 4px solid #f44;
   background-image: url('../images/user_profile_male.jpg');
   background-size: 100% 100%;

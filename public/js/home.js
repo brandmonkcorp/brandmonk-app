@@ -37,6 +37,8 @@ function getProfileData(token) {
       playNextFunc();
     }else if(doc.message == 'activated'){
       window.location.replace('../profile');
+    }else if(doc.message == 'deactivated'){
+        window.location.replace('../profile');
     }else{
       $(document.body).load('../pages/error', function () {
         $(this).css('visibility', 'visible');
@@ -44,7 +46,6 @@ function getProfileData(token) {
     }
 })
 .fail(function(error){
-  console.log('before');
   $(document.body).load('../pages/error', function () {
       $(this).css('visibility', 'visible');
   });

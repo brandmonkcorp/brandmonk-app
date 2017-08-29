@@ -103,15 +103,27 @@ function loadLangData() {
   });
 }
 $(document.body).on('click', '#save-pref', function () {
+  if(sel_lang.length == 0){
+    return alert('Choose atleast one Ad Language');
+  }
+  if(sel_gen.length == 0){
+    return alert('Choose atleast one Preferred Ad genre');
+  }
   savePrefData();
   goPrefNext();
 });
 
 function savePrefData() {
-
+  basicdata.ad_language = sel_lang;
+  basicdata.feedback_language = $('select[name=f-lang]').val();
+  basicdata.gender = $('select[name=gender]').val();
+  basicdata.education = $('select[name=edu]').val();
+  basicdata.preferred_ad_type = $('select[name=ad_type]').val();
+  basicdata.ad_preference = sel_gen;
 }
 
 function goPrefNext() {
+  c2 = true;
   $('#ad-pref-tab').removeClass('tabs-now');
   $('#ad-pref').css('visibility', 'hidden');
   $('#identification').css('visibility', 'visible');

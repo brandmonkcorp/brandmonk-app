@@ -5,6 +5,8 @@ const bcrypt = require('bcryptjs');
 const mailgun = require('mailgun-js');
 const {mongoose} = require('./db/mongoose');
 const {User} = require('./models/user');
+const {UserData} = require('./models/basicdata');
+const {UserProfileData} = require('./models/basicprofiledata');
 const {authenticate} = require('./middleware/authenticate');
 const publicPath = path.join(__dirname, '../public');
 var config = require('../config/config.json');
@@ -229,12 +231,25 @@ app.post('/passwordReset', authenticate, (req, res) => {
 
 app.post('/postProfileData', authenticate, (req, res) => {
   console.log('setup profile data sent from', req.user.name);
+  console.log(req.body);
+  var basicData = req.body.basicdata;
+  var basicProfileData = req.body.basicprofiledata;
+  basicData.username = req.user.username;
+  basicProfileData.username = req.user.username;
   var user = req.user;
-  user.setupCompleted = true;
-  user.save().then(() => {
-    res.send({'message': 'done'});
-  }).catch((e) => {
-    res.status(401).send();
+  var newUserData = new UserData(basicData);
+  newUserData.save().then( (data) => {
+    var newProfileData = new UserProfileData(basicProfileData);
+    newProfileData.save().then( () => {
+      user.setupCompleted = true;
+      user.save().then(() => {
+        res.send({'message': 'done'});
+      }).catch((e) => {
+        res.status(400).send();
+      });
+    }).catch((e) => {
+      res.status(400).send();
+    });;
   });
 });
 

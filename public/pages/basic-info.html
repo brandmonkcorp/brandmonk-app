@@ -1,13 +1,21 @@
 <div id="photo-container"></div>
-<div class="right-column">
-  <span class="label">Name</span><input type="text" name="name"/><br>
-  <span class="label">Email</span><input type="text" name="email"/><br>
-  <span class="label">Mobile Number</span><input type="text" name="mobile"/><br>
-  <span class="label">Address</span><input type="text" name="address"/><br>
-  <span class="label">City</span><input type="text" name="city"/><br>
-  <span class="label">Zip/ PIN code</span><input type="text" name="zip"/><br>
-  <span class="label">Date of Birth</span><input type="text" name="dob"/><br>
-  <span class="label">Marital Status</span><input type="text" name="marital"/>
+<div class="right-column"><form id="basic-info-form">
+  <span class="label">Name</span><input type="text"  class="autofill" name="name" disabled/><br>
+  <span class="label">Email</span><input type="text"  class="autofill" name="email" disabled/><br>
+  <span class="label">Mobile Number</span><input type="text"  class="autofill" name="mobile" disabled/><br>
+  <span class="label">Address</span><input type="text" name="address" required/><br>
+  <span class="label">City</span><input type="text" name="city" required/><br>
+  <span class="label">Zip/ PIN code</span><input type="text" maxlength="6" name="zip" required/><br>
+  <span class="label">Date of Birth</span><input type="date" placeholder="dd-mm-yyyy" name="dob" required/><br>
+  <span class="label">Marital Status</span><select name="marital">
+    <option value="single">Single</option>
+    <option value="married">Married</option>
+    <option value="separated">Separated</option>
+    <option value="divorced">Divorced</option>
+    <option value="widowed">Widowed</option>
+  </select>
+  <button id="basic-info-submit" style="visibility:hidden"></button>
+</form>
 </div>
 <div id="submit-container">
   <span id="save-basic" class="save-button">Save Data</span>
