@@ -230,9 +230,10 @@ html,body {
 #link-container{
   position: absolute;
   margin-top: 3.2vh;
-  margin-left: 2vw;
+  margin-left: 1vw;
+  padding-left: 2vw;
   border: 1px dashed white;
-  width: 65%;
+  width: 62%;
   font-family: calibri;
 }
 #link-container a{
