@@ -9,13 +9,6 @@ var UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  username:{
-    type: String,
-    required: true,
-    trim: true,
-    minlength: 6,
-    unique: true
-  },
   email:{
     type: String,
     required: true,
@@ -24,7 +17,8 @@ var UserSchema = new mongoose.Schema({
     validate:{
       validator: validator.isEmail,
       message: '{VALUE} is not an valid Email id!'
-    }
+    },
+    unique: true
   },
   phone:{
     type: String,

@@ -28,7 +28,7 @@ function doLogOut(token) {
     Cookies.remove('_PERM_authUID');
     Cookies.remove('_LOC_authFirstPID');
     Cookies.remove('_LOC_authUID');
-    window.location.replace('../page');
+    window.location.replace('../');
   })
   .fail(function(error){
     return $(document.body).load('../pages/error', function () {

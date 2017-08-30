@@ -1,0 +1,192 @@
+@media screen and (max-height: 480px) and (max-width: 853px){
+  body{
+    background-color: #eee;
+  }
+  #head{
+    position: relative;
+    float: left;
+    width: 100%;
+    height:2vh;
+    min-height: 5vw;
+    background-color: #0070c0;
+  }
+  #brandmonk{
+    font-size: 3.5vw;
+    margin-left: 13vw;
+    padding: 0%;
+    text-align: left;
+  }
+  #login-box{
+    display: none;
+  }
+  #body-container {
+    position: relative;
+    float: left;
+    height: auto;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    visibility: hidden;
+  }
+  #left-half{
+    position: relative;
+    float: left;
+    margin-top: 10vw;
+    width: 100%;
+    height: auto;
+    padding: 0%;
+    margin: 0%;
+  }
+  #right-half{
+    position: relative;
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 0%;
+    margin: 0%;
+    display: none;
+  }
+  #i-have-questions{
+    visibility: visible;
+  }
+  #register-box{
+    display: none;
+  }
+  #privacy-policy{
+    display: none;
+  }
+  #left-half-text{
+    display: none
+  }
+  #left-half-text-mobile{
+    position: relative;
+    float: left;
+    margin: 2vw;
+    margin-top: 10vw;
+    width: 40vw;
+    font-size: 4vw;
+    font-weight: bold;
+    color: #0070c0;
+    visibility: visible;
+    font-family: candara;
+    text-align: center;
+    display:block;
+  }
+  #login-box-mobile{
+    position: relative;
+    float: right;
+    margin: 2vw;
+    padding: 2%;
+    width: 45vw;
+    height: auto;
+    min-height: 50vh;
+    visibility: visible;
+    display: block;
+  }
+  #register-mobile{
+    display: block;
+  }
+  #login-box-mobile input{
+    position: relative;
+    float: left;
+    width: 95%;
+    padding: 2%;
+    border: 2px solid #ccc;
+    margin-top: 2vw;
+    font-size: 2vw;
+    background-color: #fff;
+
+  }
+  #login-box-mobile button{
+    position: relative;
+    float: left;
+    margin-top: 5vw;
+    width: 100%;
+    font-size: 2vw;
+    padding: 1%;
+    background-color: #0070c0;
+    border: 1px solid #0070c0;
+    color: white;
+  }
+  #login-box-mobile button:hover{
+    background-color: #fff;
+    border: 1px solid #0070c0;
+    color: #0070c0;
+    cursor: pointer;
+  }
+  #login-box-mobile #register-mobile{
+    background-color: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+    margin-top: 2vw;
+  }
+  #login-box-mobile #register-mobile:hover{
+    background-color: #fff;
+    border: 1px solid #aaa;
+    color: #aaa;
+  }
+  #forgot-password{
+    position: relative;
+    float: left;
+    margin-top: 2vw;
+    color: #0070c0;
+    font-size: 2vw;
+
+  }
+  .errormessage{
+    position: relative;
+    float: left;
+    width: 95%;
+    padding: 2%;
+    margin: .5vw;
+    border-radius: 5px;
+    background-color: #822;
+    color: #eee;
+    font-size: 3vh;
+    text-align: center;
+    display: none;
+
+  }
+  #privacy-policy-mobile{
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 2%;
+    font-size: 2vw;
+    font-family: calibri;
+  }
+  #foot-mobile{
+    position: relative;
+    float: left;
+    margin-top: 10vw;
+    width: 100%;
+    height: 10vw;
+    background-color: #0070c0;
+    display: block;
+  }
+  #link-container{
+    position:relative;
+    float: left;
+    width: 95%;
+  }
+  #link-container a{
+    font-size: 2vw;
+  }
+  #icon-container1, #icon-container2{
+    display: none;
+  }
+  #foot{
+    display: none;
+  }
+  #loading{
+    position: fixed;
+    float: left;
+    width: 5vw;
+    height: 5vw;
+    left: 45%;
+    top: 40%;
+    background-image: url('../images/icons/loading.gif');
+    background-size: 100% 100%;
+    display:none;
+  }
+}

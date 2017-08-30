@@ -118,7 +118,6 @@ app.get('/profileData', authenticate,  (req, res) => {
   var profileActivated = req.user.activated;
   var setupCompleted = req.user.setupCompleted;
   var sendData = {
-    "username": req.user.username,
     "name" : req.user.name,
     "email": req.user.email,
     "mobile": req.user.phone
@@ -131,7 +130,6 @@ app.get('/profileData', authenticate,  (req, res) => {
     }
   }else{
     var sendData = {
-      'username': req.user.username,
       'name': req.user.name,
       'email': req.user.email
     };
@@ -151,7 +149,7 @@ app.post('/logoutUser', authenticate, (req, res) => {
 });
 
 app.post('/loginUser', (req, res) => {
-  User.findByCredentials(req.body.username, req.body.password).then((user) => {
+  User.findByCredentials(req.body.email, req.body.password).then((user) => {
     console.log(user.name, ' logged in');
     user.isLoggedIn = true;
     user.save().then(() => {
@@ -186,7 +184,7 @@ app.post('/userExist', (req, res) => {
 });
 
 app.post('/passwordRecov', (req, res) => {
-  User.findOne({"username":req.body.username}).then((user) => {
+  User.findOne({"email":req.body.username}).then((user) => {
     if(user != null){
       console.log('password recovery request from', user.name);
       var mobile = user.phone;
@@ -213,11 +211,11 @@ app.post('/passwordRecov', (req, res) => {
 
 app.post('/passwordReset', authenticate, (req, res) => {
   var password = req.body.password;
-  var username = req.user.username;
+  var email = req.user.username;
   if(!req.user.passChangeRequest){
     return res.status(401).send(e);
   }
-  User.findOne({"username": username}).then((user) => {
+  User.findOne({"email": email}).then((user) => {
     user.password = password;
     user.passChangeRequest = false;
     user.save().then(() => {
@@ -234,8 +232,8 @@ app.post('/postProfileData', authenticate, (req, res) => {
   console.log(req.body);
   var basicData = req.body.basicdata;
   var basicProfileData = req.body.basicprofiledata;
-  basicData.username = req.user.username;
-  basicProfileData.username = req.user.username;
+  basicData.email = req.user.email;
+  basicProfileData.email = req.user.email;
   var user = req.user;
   var newUserData = new UserData(basicData);
   newUserData.save().then( (data) => {

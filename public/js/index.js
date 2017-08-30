@@ -11,7 +11,6 @@ $(document).ready(function (){
   doConnect();
   $('#login-wrapper').load('./pages/login');
   $('#register-wrapper').load('./pages/register');
-  $('#login-box').load('./pages_mobile/login-form');
 });
 
 function doConnect() {
@@ -33,40 +32,53 @@ $(document.body).on('submit', '#login-form', function (e) {
   if( ($('#login-form input[name=username]').val() == "") || ( $('#login-form input[name=password]').val() == "")){
     return showErrorMessage('Fields can\'t be empty !',$('#login-form'));
   }
-  authenticate();
+  var credentials = {
+    username: $('#login-form input[name=username]').val(),
+    password: $('#login-form input[name=password]').val()
+  };
+  authenticate(credentials);
 });
 $(document.body).on('submit', '#register-form', function (e) {
   e.preventDefault();
   if(!passwordCheck){
     return showErrorMessage('Passwords do not match!', $('#register-form input[name=password2]'));
   }
-  console.log('hit');
-  registerUser();
+  var formData = {
+    name: $('#register-form input[name="firstname"]').val() + ' ' +  $('#register-form input[name="lastname"]').val(),
+    email: $('#register-form input[name="email"]').val(),
+    phone: $('#register-form input[name="phone"]').val(),
+    password: $('#register-form input[name="password"]').val()
+  };
+  registerUser(formData);
 });
 
-$(document.body).on('focusout', '#register-form input[name=username]', function (e) {
-  var elem = $('#register-form input[name=username]');
+$(document.body).on('focusout', '#register-form input[name=email]', function (e) {
+  var elem = $('#register-form input[name=email]');
   if(elem.val().length < 6){
     if(elem.val().length >= 1){
       regflag1 = false;
-      return showErrorMessage('Username must be atleast 6 characters!', elem);
+      return showErrorMessage('Email must be atleast 6 characters!', elem);
     }
   }
-  $('#register-form input[name="username"]').css('color', '#fff');
+  var email = $('#register-form input[name="email"]').val();
+  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  if((!emailReg.test( email )) && email.length != 0){
+    regflag2 = false;
+    return showErrorMessage('Provide a valid Email id!',$('#register-form input[name="email"]'));
+  }else if(email.length >= 1){
+    regflag2 = true;
+  }
+  $('#register-form input[name="email"]').css('color', '#000');
   var key =  String.fromCharCode(e.which);
-  var elem = $('#register-form input[name=username]');
-  if(/^[a-zA-Z0-9]*$/.test(elem.val()) == false) {
-    elem.val(elem.val().substr(0, elem.val().length-1));
-    showErrorMessage('No special character is allowed!', elem);
-    return regflag1 = false;
-  }else if(elem.val().length >= 6){
+  var elem = $('#register-form input[name=email]');
+  if(elem.val().length >= 6){
     checkAvailability();
   }
 });
 
 function checkAvailability(){
   var userdata = {
-    username: $('#register-form input[name="username"]').val()
+    email: $('#register-form input[name="email"]').val()
   };
   $.ajax({
     url: '/userExist',
@@ -76,30 +88,19 @@ function checkAvailability(){
   })
   .done(function (res) {
     if(res.status == "found"){
-      showErrorMessage('Username not Available!',$('#register-form input[name="username"]'));
+      showErrorMessage('Email already in use!',$('#register-form input[name="email"]'));
       regflag1 = false;
-      return $('#register-form input[name="username"]').focus();
+      return $('#register-form input[name="email"]').focus();
     }
-    showErrorMessage('Username Available!',$('#register-form input[name="username"]'), "success");
+    showErrorMessage('Email Available!',$('#register-form input[name="email"]'), "success");
     $('#register-form input[name="username"]').css('color', '#4f4');
     regflag1 = true;
   })
   .fail(function (err) {
-    showErrorMessage('Connection Problem!',$('#register-form input[name="username"]'));
+    showErrorMessage('Connection Problem!',$('#register-form input[name="email"]'));
     regflag1 = true;
   });
 }
-
-$(document.body).on('focusout', '#register-form input[name=email]', function (e) {
-  var email = $('#register-form input[name="email"]').val();
-  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-  if((!emailReg.test( email )) && email.length != 0){
-    regflag2 = false;
-    return showErrorMessage('Provide a valid Email id!',$('#register-form input[name="email"]'));
-  }else if(email.length >= 1){
-    regflag2 = true;
-  }
-});
 
 $(document.body).on('focusout', '#register-form input[name=password]', function () {
   var elem = $('#register-form input[name=password]');
@@ -154,7 +155,7 @@ function makeitRed(e){
 }
 function makeitNormal(e){
   $(e).css({
-    'color': "#fff",
+    'color': "#000",
     'border':'1px solid #299'
   });
 }
@@ -214,11 +215,8 @@ $(document.body).on('click', '#back-to-login', function () {
   $('#register-wrapper').css({'visibility': 'hidden'});
   $('#login-wrapper').css({'visibility': 'visible'});
 });
-function authenticate() {
-  var credentials = {
-    username: $('#login-form input[name=username]').val(),
-    password: $('#login-form input[name=password]').val()
-  };
+function authenticate(credentials) {
+  console.log(credentials);
   $.ajax({
     url: '/loginUser',
     method: 'POST',
@@ -245,14 +243,8 @@ function authenticate() {
     showErrorMessage('Invalid username/password !', $('#login-form'));
   });
 }
-function registerUser() {
-  var formData = {
-    name: $('#register-form input[name="name"]').val(),
-    username: $('#register-form input[name="username"]').val(),
-    email: $('#register-form input[name="email"]').val(),
-    phone: $('#register-form input[name="phone"]').val(),
-    password: $('#register-form input[name="password"]').val()
-  };
+function registerUser(formData) {
+
   $.ajax({
     url: '/registerUser',
     method: 'POST',
