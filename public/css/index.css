@@ -233,6 +233,7 @@ html,body {
   margin-left: 2vw;
   border: 1px dashed white;
   width: 65%;
+  font-family: calibri;
 }
 #link-container a{
   text-decoration: none;
