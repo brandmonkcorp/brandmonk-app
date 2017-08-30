@@ -181,12 +181,13 @@
   #loading{
     position: fixed;
     float: left;
-    width: 5vw;
-    height: 5vw;
+    width: 10vw;
+    height: 10vw;
     left: 45%;
     top: 40%;
     background-image: url('../images/icons/loading.gif');
     background-size: 100% 100%;
-    display:none;
+    display: block;
+    visibility: hidden;
   }
 }
