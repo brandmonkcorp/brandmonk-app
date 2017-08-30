@@ -23,6 +23,7 @@ html,body {
 }
 #login-box{
   position: relative;
+  margin-right: 4vw;
   float: right;
   width: auto;
   height: 7vh;
@@ -59,7 +60,7 @@ html,body {
 }
 #forgot-password{
   position: absolute;
-  left: 1vw;
+  right: 0vw;
   bottom: 1vh;
   font-size: 1vw;
   color: #fff;
@@ -120,29 +121,33 @@ html,body {
   height: 70vh;
 }
 #right-half-text{
-  font-size: 6.5vh;
+  font-size: 6vh;
+  font-weight: bold;
   font-family: candara;
   color: #0070c0;
 }
 #register-box{
-  margin-top: 8vh;
+  margin-top: 5vh;
   padding-right: 10vh;
 }
 #register-form{
-  font-family: Candara;
-  font-size: 3vh;
+
 }
 .input-label{
-  float: left;
+  font-family: Calibari;
+  font-size: 3vh;
 }
 #register-form input {
   width: 17vw;
-  font-size: 2.4vh;
   float: right;
+  font-size: 3vh;
   border: 1px solid #0070c0;
 }
+.register-input{
+  margin-top: 2vh;
+}
 .privacy-policy{
-  margin-top: 5vh;
+  margin-top: 6vh;
   font-size: 2vh;
 }
 #register{
@@ -153,9 +158,9 @@ html,body {
   padding-right: 7vh;
   padding-top: 0.3vh;
   padding-bottom: 0.3vh;
-  margin-top: 6vh;
+  margin-top: 3vh;
   font-size: 3vh;
-  margin-left: 23vw;
+  margin-left: 24vw;
   transition: all 0.5s;
 }
 #foot{
@@ -217,17 +222,13 @@ html,body {
 }
 #icon-container1{
   position: absolute;
-  top: 0;
+  margin-top: 2.5vh;
   padding-right: 2px;
-  left: 75%;
+  left: 80%;
 }
-#icon-container2{
-  position: absolute;
-  padding-right: 2px;
-  left: 75%;
-  bottom: 0;
-}
+
 #link-container{
+  position: absolute;
   margin-top: 3.2vh;
   margin-left: 2vw;
   border: 1px dashed white;
