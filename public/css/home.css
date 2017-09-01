@@ -97,7 +97,6 @@ box-shadow: 0 0 20px #888888;
   float:left;
 }
 .videodivs{
-    background:green;
     width:155px;
     height:70px;
     margin:5px;
@@ -119,7 +118,7 @@ box-shadow: 0 0 20px #888888;
 video{
   opacity: 1.0;
   position: absolute;
-  top: 30vh;
+  top: 25vh;
   left: 25vw;
   width: 50vw;
   border: 1px solid black;

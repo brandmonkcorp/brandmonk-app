@@ -120,10 +120,10 @@ function playNextFunc() {
    });
 }
 
-$(document.body).on('click', '.video-divs', function () {
+$(document.body).on('click', '.videodivs', function () {
 
   var id = $(this).attr('id');
-  $("video").attr("src",`https://1930455220.rsc.cdn77.org/bmonk/pos${id}.mp4`);
+  $("video").attr("src",`https://1915921624.rsc.cdn77.org/BrandMonkCorp/pos${id}.mp4`);
   $("#overlay").show();
   $('#vidPlayer').get(0).load();
 
