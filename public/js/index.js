@@ -1,22 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @brandmonkcorp
- Sign out
- Watch 0
-  Star 0
-  Fork 0 brandmonkcorp/brandmonk-app
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Settings Insights
-Branch: master Find file Copy pathbrandmonk-app/public/js/index.js
-a476cf9  2 days ago
-@brandmonkcorp brandmonkcorp landscape
-2 contributors @brandmonkcorp @Sayak93
-RawBlameHistory
-266 lines (252 sloc)  8.27 KB
 var passwordCheck, passwordCheck2, regflag1 = regflag2 = regflag3 = regflag4 = false, activeFlag = false;
 var token = Cookies.get('_LOC_authFirstPID');
 if(!token){
