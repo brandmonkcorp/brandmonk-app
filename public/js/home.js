@@ -55,14 +55,33 @@ function getProfileData(token) {
 //your code
 function playNextFunc() {
 
-  for (var i=1; i<=10; i++){
-    var videoDiv = $(`<div id="Vid-${i}" class="video-divs"></div>`);
+  for (var i=1; i<=20; i++){
+    var videoDiv = $(`<div id="Vid-${i}" class="videodivs"></div>`);
     var title = $(`<div id="title-${i}" class="Tcontainer"></div>`);
-    $('#vid-container').append(videoDiv);
+    $('#list').append(videoDiv);
     $(`#Vid-${i}`).append(title);
     $(`#Vid-${i}`).css('background-image', `url('./images/thumbnails/AdSnippet- (${i}).png')`);
     $(`#title-${i}`).html(`Ad Snippet Title-${i}`);
   }
+    var $videodivs = $('div.videodivs'),
+        visible = 2.4,
+        index = 0,
+        endIndex = ( $videodivs.length / visible ) - 1;
+
+    $('div#arrowR').click(function(){
+        if(index < endIndex ){
+          index++;
+          $videodivs.animate({'left':'-=300px'});
+        }
+    });
+
+    $('div#arrowL').click(function(){
+        if(index > 0){
+          index--;
+          $videodivs.animate({'left':'+=300px'});
+        }
+        });
+
   $.getJSON("../data/duration.json")
   .done(function(data_json){
     var duration = [];
@@ -87,8 +106,19 @@ function playNextFunc() {
   $("#vidPlayer").on("contextmenu",function(e){
        return false;
     });
+    $('#right-button').click(function() {
+      event.preventDefault();
+      $('#content').animate({
+        marginLeft: "-=200px"
+      }, "fast");
+   });
+   $('#left-button').click(function() {
+      event.preventDefault();
+      $('#content').animate({
+        marginLeft: "+=200px"
+      }, "fast");
+   });
 }
-
 
 $(document.body).on('click', '.video-divs', function () {
 

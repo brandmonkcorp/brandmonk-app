@@ -44,176 +44,70 @@ html,body{
   background-color: #299;
   color: white;
 }
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #054f93;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    transition: 0.3s;
-    float: left;
-}
-
-.info {
-    text-decoration: none;
-    margin-top:5px;
-    padding-left: 5px;
-    font-size: 1.45vw;
-    color: white;
-    display: block;
-    transition: 0.3s;
-    border: 1px solid transparent;
-}
-
-.info:hover, .info:focus{
-    border: 1px solid white;
-    cursor: pointer;
-}
-.sidenav a {
-    margin-left: 2px
-    color: rgb(129, 129, 129);
-    display: block;
-    text-decoration: none;
-    transition: 0.3s;
-    color: white;
-}
-.closeNav {
-  position: relative;
-  font-size: 36px;
-  margin-left: 20vw;
-  cursor: pointer;
-  color: white;
-}
-
-.closePref{
-  position: relative;
-  font-size: 36px;
-  margin-right: 90vw;
-  cursor: pointer;
-  color: white;
-}
-
-.navBtn{
-  position: absolute;
-  top: 2vh;
-  left: 2vw;
-  font-size: relative;
-  cursor:pointer;
-  color:white;
-}
-.container{
-  position:relative;
-  margin-bottom: 5px;
-  left:3.3vw;
-  height: 30vh;
-  width: 15vw;
-  border-radius: 50%;
-}
-.dropbtn {
-    background-color: #054f93;
-    border: 1px solid transparent;
-    text-decoration: none;
-    width: 100vw;
-    font-size: 1.25vw;
-    color: white;
-    display: block;
-    cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    border: 1px solid white;
-}
-#myInput {
-    border-box: box-sizing;
-    font-size: 1.2vw;
-    padding: 14px 20px 12px 45px;
-    border: 1px solid transparent;
-    background-color:#054f93;
-    color: white;
-}
-#myInput:focus{
-    border: 1px solid white;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    height: 0%;
-    width: 0%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color:  #054f93;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    z-index: 1;
-    transition: 0.3s;
-    float: left;
-
-}
-
-.dropdown-content a {
-  margin-left:5px;
-  text-decoration: none;
-  font-size: 1.5vw;
-  color: white;
-  display: block;
-  transition: 0.3s;
-  border: 1px solid transparent;
-}
-
-.dropdown a:hover {
-  border: 1px solid white;
-  color: ##f1f1f1;
-}
-
-.show {display:block;}
-
-.tabs{
-  text-align: center;
-  position: relative;
-  margin-top: 0.5vh;
+.earning{
+  font-size: 1.25vw;
+  font-family: "century gothic";
   float: right;
-  width: 100%;
-  height: 5vh;
-  background-color: white;
+  margin-top: 5vh;
+  margin-right: 10vw;
 }
-.tabBtn{
-  font-weight: bold;
-  color: #1f1f7a;
-  font-size: 1.3vw;
-  padding-left: 0.5vw;
-  padding-right: 0.5vw;
+#arrowR{
+    padding-top: 30px;
+    font-weight: bold;
+    width:20px;
+    height:100%;
+    float:right;
+    cursor:pointer;
+    font-size: 30px;
+    margin-right: 2px;
 }
-.tabBtn:hover, .tabBtn:focus{
-  border-bottom:2px solid blue;
-  cursor: pointer;
+#arrowR:hover{
+box-shadow: 0 0 20px #888888;
 }
-
+#arrowL{
+    font-weight: bold;
+    padding-top: 30px;
+    padding-left: 3px;
+    width:20px;
+    height:100%;
+    float:left;
+    cursor:pointer;
+    font-size: 30px;
+    margin-left: 2px;
+}
+#arrowL:hover{
+box-shadow: 0 0 20px #888888;
+}
 #vid-container{
   position: absolute;
-  left: 3.5vw;
-  top: 15vh;
-  width: 93%;
-  height: auto;
-  background-color: #fff;
+  bottom: 2px;
+  width:100%;
+  height:80px;
+  overflow-y: hidden;
 }
-.video-divs{
-  position: relative;
-  margin: 10px;
-  float: left;
-  width: 230px;
-  height: 200px;
-  background-size: 100% 65%;
-  background-repeat: no-repeat;
+#list-container{
+  overflow:hidden;
+  margin-left: 3%;
+  width: 90%;
+  float:left;
 }
-.video-divs:hover{
+#list{
+  background:#eee;
+  min-width:4000px;
+  float:left;
+}
+.videodivs{
+    background:green;
+    width:155px;
+    height:70px;
+    margin:5px;
+    float:left;
+    position:relative;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 11px;
+}
+.videodivs:hover{
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 225, 0.6), 0 6px 20px 0 rgba(0, 0, 225, 0.6);
 }
@@ -222,118 +116,27 @@ html,body{
   padding-right: 5vh;
   padding-top: 5vw;
 }
-#overlay {
-    position: fixed;
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.85);
-    z-index: 2;
-    cursor: pointer;
-}
 video{
   opacity: 1.0;
   position: absolute;
-  top: 20vh;
+  top: 30vh;
   left: 25vw;
   width: 50vw;
-  box-shadow: 0 4px 8px 0 rgba(255,255,255, 0.8), 0 6px 20px 0 rgba(255,255,255, 0.8);
-}
-#text{
-  position: relative;
-  float: none;
-  width: 100%;
-  font-size: 2.5vw;
-  font-weight: bold;
-  text-align: center;
-  color: #444;
+  border: 1px solid black;
 }
 .Tcontainer{
   position: absolute;
-  top: 67%;
+  bottom : 2px;
   left: 0%;
   font-size: 15px;
   color: black;
   font-weight: bold;
 }
-.closePref:hover {
-   transform: rotate(-45deg);
-   -webkit-transform: rotate(-45deg);
-   -ms-transform: rotate(-45deg);
-}
-.earning{
-  margin-left: 5px;
-  margin-top: 5px;
-  font-size: 1.5vw;
-  color: white;
-  display: block;
-}
-.score{
-  float: right;
-  margin-right: 5px;
-  font-size: 1.5vw;
-  color: white;
-  display: block;
-}
-.views{
-  margin-left:5px;
-  margin-top: 5px;
-  font-size: 1.5vw;
-  color: white;
-  display: block;
-}
-.survey{
-  margin-left:5px;
-  margin-top: 5px;
-  font-size: 1.5vw;
-  color: white;
-  display: block;
-}
-.connections{
-  margin-left:5px;
-  margin-top: 5px;
-  font-size: 1.5vw;
-  color: white;
-  display: block;
-}
 .duration{
+  position: absolute;
   margin-left:5px;
-  color: white;
+  color: black;
   float: right;
-  margin-top: 49%;
-}
-.offCode{
-  font-weight: bold;
-  padding-left:5px;
-  margin-top: 5px;
-  font-size: 1.5vw;
-  background-color: white;
-  color: #054f93;
-  display: block;
-}
-.offIn{
-  padding-top: 5px;
-}
-#offInput{
-  width: 100%;
-}
-.sub{
-  font-weight: bold;
-  float: right;
-  padding-top: 2px;
-  margin-right: 7px;
-  font-size: 1.2vw;
-  background-color: white;
-  color: #054f93;
-  cursor: pointer;
-}
-.sub:hover{
-  background-color: #054f93;
-  color: white;
-  transition: 0.5s;
-}
-#clk{
-  pointer-events: none;
+  top: 5%%;
+  right: 2%
 }
