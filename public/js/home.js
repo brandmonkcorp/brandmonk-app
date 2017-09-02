@@ -136,6 +136,7 @@ $(".offcodebtn").on('click', function(){
   $(".surbtn").css('visibility', 'visible');
   $(".offcode").css('visibility', 'visible');
   $(".offsurvey").toggle();
+  $("#surTitle").html("Take your Surveys Here!!");
 });
 
 $("#offcode").on('click', function(){
