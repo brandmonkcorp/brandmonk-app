@@ -1,0 +1,8 @@
+@media screen and (max-width: 480px) and (max-height: 853px){
+  body{
+    background-color: #249;
+  }
+  #head, #body-container,#foot, #foot-mobile{
+    display: none;
+  }
+}
