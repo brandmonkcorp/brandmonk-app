@@ -16,9 +16,10 @@
         <form id="login-form">
           <input type="text" placeholder="username" name="username" autocomplete="off"/>
           <input type="password" placeholder="password" name="password" autocomplete="off"/>
+          <span id = "remember"><input type = "checkbox" name = "remember">Remember Me</span>
           <button id="login">Log in</button>
         </form>
-        <span id="forgot-password">forgot password?</span>
+        <span id="forgot-password">Forgot Password?</span>
       </div>
     </div>
 
@@ -36,18 +37,30 @@
         <span id="right-half-text">Register now, it's free forever</span>
         <div id="register-box">
           <form id="register-form">
+            <div class = "register-input">
             <span class="input-label">First Name</span>
-            <input type="text" name="first-name" /><br>
+            <input type="text" name="first-name">
+            </div>
+            <div class = "register-input">
             <span class="input-label">Last Name</span>
-            <input type="text" name="last-name" /><br>
+            <input type="text" name="last-name" />
+            </div>
+            <div class = "register-input">
             <span class="input-label">Email</span>
-            <input type="email" name="email" /><br>
+            <input type="email" name="email" />
+            </div>
+            <div class = "register-input">
             <span class="input-label">Phone</span>
-            <input type="text" length="10" name="phone" /><br>
+            <input type="text" length="10" name="phone"/>
+            </div>
+            <div class = "register-input">
             <span class="input-label">Password</span>
-            <input type="password" name="password" /><br>
+            <input type="password" name="password" />
+            </div>
+            <div class = "register-input">
             <span class="input-label">Retype Password</span>
-            <input type="password" name="password2" /><br>
+            <input type="password" name="password2" />
+            </div>
           </form>
          </div>
          <div class="privacy-policy">
@@ -84,26 +97,10 @@
         <a class="a2a_button_facebook"></a>
         <a class="a2a_button_twitter"></a>
         <a class="a2a_button_google_plus"></a>
-        <a class="a2a_button_linkedin"></a>
+        <a class="a2a_button_skype"></a>
         <a class="a2a_button_whatsapp"></a>
-        <a class="a2a_button_kik"></a>
-        <a class="a2a_button_line"></a>
         </div>
       </div>
-
-        <div id="icon-container2">
-          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-          <a class="a2a_button_skype"></a>
-          <a class="a2a_button_viber"></a>
-          <a class="a2a_button_wechat"></a>
-          <a class="a2a_button_yahoo_messenger"></a>
-          <a class="a2a_button_outlook_com"></a>
-          <a class="a2a_button_telegram"></a>
-          <a class="a2a_button_evernote"></a>
-        </div>
-      </div>
-    </div>
-
     <div id="loading"></div>
   </body>
   <script async src="https://static.addtoany.com/menu/page.js"></script>

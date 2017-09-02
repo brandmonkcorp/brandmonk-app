@@ -38,7 +38,7 @@ $(document.body).on('submit', '#login-form', function (e) {
   };
   authenticate(credentials);
 });
-$(document.body).on('submit', '#register-form', function (e) {
+$(document.body).on('click', '#register', function (e) {
   e.preventDefault();
   if(!passwordCheck){
     return showErrorMessage('Passwords do not match!', $('#register-form input[name=password2]'));

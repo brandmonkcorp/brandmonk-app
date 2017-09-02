@@ -13,86 +13,31 @@
     <div id="head">
       <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
       <span id="logout" class="head-button">Logout</span>
+      <span id="profile" class="head-button">Profile</span>
+      <span id="payments" class="head-button">Payments</span>
+      <span id="offers" class="head-button">Offers</span>
     </div>
-  <div class="sidenav vanish">
-    <div class="vanish">
-      <a href="javascript:void(0)" class="closeNav">&#8656;</a>
+    <div class="earning">
+      Earnings <span id="earn">00</span>
     </div>
-  <div>
-    <img class="container vanish" src="../images/user_profile_male.jpg" alt="User Image">
-  </div>
-  <div class="info">
-    <span onclick="">User Name</span>
-  </div>
-  <div class="info">
-    <span onclick="">Full Name</span>
-  </div>
-  <div class="info">
-    <span onclick="">Profile</span>
-  </div>
-  <div class="info">
-    <span onclick="">History</span>
-  </div>
-  <div class="earning" id="clk">
-    Earning<span class="score">00</span>
-  </div>
-  <div class="views" id="clk">
-    Ads Viewed<span class="score">00</span>
-  </div>
-  <div class="survey" id="clk">
-    Surveys Taken<span class="score">00</span>
-  </div>
-  <div class="connections" id="clk">
-    Connections<span class="score">00</span>
-  </div>
-  <div class="offCode" id="clk">
-    Enter Your Offline Code Here
-</div>
-<div class="offIn">
-  <input type="text" class="vanish" id="offInput" placeholder="Enter Offline Code">
-</div>
-<div style="padding-top:5px">
-  <span class="sub vanish">Submit</span>
-</div>
-</div>
-<div class="navBtn">
-  <span>&#9776;</span>
-</div>
-<div class="tabs">
-    <span class="tabBtn" onclick="">Home</span>
-    <span class="tabBtn" onclick="">Trending</span>
-    <span class="tabBtn" onclick="">Most Viewed</span>
-    <div class="dropdown">
-      <span id="adPref" onclick="myFunction()" class="tabBtn">Ad Preferences</span>
-    <div id="myDropdown" class="dropdown-content vanish" style="text-align:left;">
-      <span href="javascript:void(0)" class="closePref" id="closePref">&#8658;</span>
-        <a href="#">Movies & TV Shows</a>
-        <a href="#">Financial Products</a>
-        <a href="#">Apps & Games</a>
-        <a href="#">Mobiles & Accessories</a>
-        <a href="#">Computer & Accessories</a>
-        <a href="#">Household Appliances</a>
-        <a href="#">Fashion</a>
-        <a href="#">Medical Services</a>
-        <a href="#">Home, Kitchen & Pets</a>
-        <a href="#">Beauty & Healthcare</a>
-        <a href="#">Food & Grocery</a>
-        <a href="#">Sports & Fitness</a>
-        <a href="#">Wallets, Bags & Luggages</a>
-        <a href="#">Toys & Baby Products</a>
-        <a href="#">Vehicles</a>
-        <a href="#">Industrial Appliances</a>
-      </div>
+
+    <div>
+      <video id="vidPlayer" controls controlsList="nodownload" preload="none">
+      </video>
     </div>
-</div>
 
 <div id="vid-container" >
+  <div id="arrowL" class="myClickDisabledElm">
+    <
+    </div>
+    <div id="arrowR" class="myClickDisabledElm">
+      >
+    </div>
+ <div id="list-container">
+   <div id="list">
 
-
-</div>
-<div id="overlay">
-  <video id="vidPlayer" controls controlsList="nodownload" preload="none">
-  </video>
+   </div>
+ </div>
 </div>
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="./js/js-cookie.js"></script>
