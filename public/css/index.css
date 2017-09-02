@@ -250,3 +250,6 @@ html,body {
   font-size: 1.2vw;
   padding: 1vw;
 }
+#mobile-buttons, #privacy-policy-mobile{
+  display: none;
+}

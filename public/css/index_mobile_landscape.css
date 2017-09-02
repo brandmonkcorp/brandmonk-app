@@ -1,4 +1,4 @@
-@media screen and (max-height: 480px) and (max-width: 853px){
+@media screen and (min-height: 340px) and (max-width: 853px) and (min-width: 480px) and (max-height: 480px){
   body{
     background-color: #eee;
   }
