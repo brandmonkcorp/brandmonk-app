@@ -1,8 +1,100 @@
 @media screen and (max-width: 480px) and (max-height: 853px){
   body{
-    background-color: #249;
+    background-color: #248;
   }
-  #head, #body-container,#foot, #foot-mobile{
+  #foot, #foot-mobile{
     display: none;
+  }
+  #login-box{
+    display: none;
+  }
+  #head{
+    visibility: hidden;
+  }
+  #brandmonk{
+    position: relative;
+    float: left;
+    margin: 0%;
+    padding: 0%;
+    width: 100vw;
+    margin-top: 20vw;
+    visibility: visible;
+    font-size: 11vw;
+    text-align: center;
+  }
+  #body-container{
+    visibility: visible;
+  }
+  #right-half{
+    display: none;
+  }
+  #left-half{
+    position: relative;
+    float: left;
+    visibility: hidden;
+    padding-top: 0%;
+    height: auto;
+  }
+  #left-half-text{
+    display: none;
+  }
+  #left-half-text-mobile{
+    position: relative;
+    float: left;
+    width: 100vw;
+    margin-top: 15vw;
+    visibility: visible;
+    display: block;
+    font-size: 5vw;
+    color: #fff;
+    font-family: candara;
+  }
+  #mobile-buttons{
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .button-mobile{
+    position: relative;
+    float: center;
+    margin-left: 33vw;
+    margin-top: 5vw;
+    width: 30vw;
+    padding: 2vw;
+    font-size: 5vw;
+    border: 1px solid white;
+    color: white;
+    border-radius: 2vw;
+  }
+  .button-mobile:hover{
+    cursor: pointer;
+  }
+  #mobile-login-button{
+    background-color: #fff;
+    color: #248;
+  }
+  #mobile-login-button:active{
+    background-color: #248;
+    color: #fff;
+  }
+  #mobile-register-button:active{
+    background-color: #fff;
+    color: #248;
+  }
+  #privacy-policy-mobile{
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 3.5vw;
+    color: white;
+    margin-top: 15vw;
+    font-family: calibri;
+  }
+  a{
+    color: yellow;
   }
 }
