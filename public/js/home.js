@@ -187,8 +187,12 @@ $(document.body).on('mouseup', function (e) {
 });
 $("#vidPlayer").on("ended", function() {
    document.webkitExitFullscreen();
-   document.mozCancelFullscreen();
-   document.exitFullscreen();
+   if(document.mozFullScreen){
+     document.mozCancelFullscreen();
+   }
+   if(document.fullscreenElement){
+     document.exitFullscreen();
+   }
    $(".surbtn").css('visibility', 'hidden');
    $(".offcode").css('visibility', 'hidden');
    $(".offsurvey").toggle();
