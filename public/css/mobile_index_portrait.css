@@ -71,7 +71,7 @@
   .button-mobile:hover{
     cursor: pointer;
   }
-  #mobile-login-button{
+  #mobile-login-button, #login-mobile, #register-user-mobile{
     background-color: #fff;
     color: #248;
   }
@@ -79,7 +79,7 @@
     background-color: #248;
     color: #fff;
   }
-  #mobile-register-button:active{
+  #mobile-register-button:active, #register-mobile:active, #back-to-login:active{
     background-color: #fff;
     color: #248;
   }
@@ -96,5 +96,67 @@
   }
   a{
     color: #999;
+  }
+  #login-form-mobile, #register-form{
+    position: relative;
+    float: left;
+    margin-top: 10vw;
+  }
+  input, #register-form input{
+    position: relative;
+    float: left;
+    width: 85%;
+    margin: 5vw;
+    font-size: 5vw;
+    padding: 2vw;
+    font-family: calibri;
+    border: 1px solid #fff;
+    border-radius: 2vw;
+  }
+  #login-mobile, #register-user-mobile{
+    margin-bottom: 5vw;
+    margin-left: 35vw;
+    width: 30vw;
+    font-family: 'times new roman';
+  }
+  #loading{
+    position: fixed;
+    float: left;
+    width: 15vw;
+    height: 15vw;
+    left: 45%;
+    top: 40%;
+    background-image: url('../images/icons/loading.gif');
+    background-size: 100% 100%;
+    display: block;
+    visibility: hidden;
+  }
+  #forgot-password{
+    position: relative;
+    float: left;
+    right: 0;
+    width: 100vw;
+    text-align: center;
+  }
+  #register-mobile, #back-to-login{
+    position: relative;
+    float: left;
+    margin-left: 35vw;
+    margin-bottom: 10vw;
+    width: 30vw;
+    display: block;
+    background-color: transparent;
+    font-family: 'times new roman';
+  }
+  .errormessage{
+    position: relative;
+    float: left;
+    width: 87%;
+    margin-left: 5vw;
+    padding: 1.5vw;
+    font-family: "century gothic";
+    border-radius: 2vw;
+    background-color: #a44;
+    color: #fff;
   }
 }
