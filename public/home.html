@@ -20,6 +20,42 @@
     <div class="earning">
       Earnings <span id="earn">00</span>
     </div>
+    <div class="profInfo">
+      <div class="userName">
+        UserName
+      </div><br>
+
+      <div class="info">
+        <span class="infoVal">00</span><span class="infoTxt">Adviews</span><br>
+        <span class="infoVal">00</span><span class="infoTxt">Connections</span>
+      </div>
+      <div class="profImage">
+
+      </div><br>
+    </div>
+    <div class="survey">
+      <span id="surTitle">Take your Surveys Here!!</span><br>
+      <span id="sas" class="surbtn">Populate Stand-alone Survey</span><br>
+      <span id="offcode" class="surbtn">Enter Offline Code</span><br>
+      <div class="offcode">
+        <input type="number" name="offcode" placeholder="Enter your code here"/><br>
+        <span class="codebtn">Submit</span>
+      </div>
+      <div class="offsurvey">
+        <span class="cls">X</span>
+        <form id="survey">
+          <span class="surQus">Question No 1</span><br>
+          <textarea placeholder="Enter your answer here" form="survey" name="ans" rows="4" cols="80"></textarea><br>
+          <span class="surQus">Question No 2</span><br>
+          <textarea form="survey" placeholder="Enter your answer here" name="ans" rows="4" cols="80"></textarea><br>
+          <span class="surQus">Question No 3</span><br>
+          <textarea form="survey" placeholder="Enter your answer here" name="ans" rows="4" cols="80"></textarea><br>
+          <span class="surQus">Enter the code below</span><br>
+          <input type="number" name="codeHolder" placeholder="Enter the Code here">
+        </form>
+        <span class="offcodebtn">Submit</span>
+      </div>
+    </div>
 
     <div>
       <video id="vidPlayer" controls controlsList="nodownload" preload="none">

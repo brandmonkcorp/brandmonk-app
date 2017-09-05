@@ -119,6 +119,32 @@ function playNextFunc() {
       }, "fast");
    });
 }
+$("#sas").on('click', function(){
+  $(".surbtn").css('visibility', 'hidden');
+  $(".offcode").css('visibility', 'hidden');
+  $(".offsurvey").toggle();
+  $("#surTitle").html("Stand-alone Survey No.1");
+});
+
+$(".cls").on('click', function(){
+  $(".surbtn").css('visibility', 'visible');
+  $(".offcode").css('visibility', 'visible');
+  $(".offsurvey").toggle();
+  $("#surTitle").html("Take your Surveys Here!!");
+});
+$(".offcodebtn").on('click', function(){
+  $(".surbtn").css('visibility', 'visible');
+  $(".offcode").css('visibility', 'visible');
+  $(".offsurvey").toggle();
+  $("#surTitle").html("Take your Surveys Here!!");
+});
+
+$("#offcode").on('click', function(){
+  $(".offcode").toggle();
+});
+$(".codebtn").on('click', function(){
+  $(".offcode").toggle();
+});
 
 $(document.body).on('click', '.videodivs', function () {
 
@@ -159,10 +185,15 @@ $(document.body).on('mouseup', function (e) {
     $(".sidenav").css("height", "0%");
   }
 });
-$("#vidPlayer").bind("ended", function() {
+$("#vidPlayer").on("ended", function() {
    document.webkitExitFullscreen();
    document.mozCancelFullscreen();
    document.exitFullscreen();
+   $(".surbtn").css('visibility', 'hidden');
+   $(".offcode").css('visibility', 'hidden');
+   $(".offsurvey").toggle();
+   $("#surTitle").html("Take Your Survey Now");
+   console.log('Video has ended!');
 });
 
 function myFunction(){
