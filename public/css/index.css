@@ -8,15 +8,14 @@ html,body {
   position: relative;
   float: left;
   width: 100%;
-  height: 8.5vh;
+  height: 9vh;
   background-color: #0070c0;
 }
 #brandmonk{
   position: relative;
   float: left;
-  margin-top: .5vh;
-  margin-left: 6vw;
-  font-size: 2.5vw;
+  margin-left: 3.5vw;
+  font-size: 3vw;
   font-weight: bold;
   font-family: Candara;
   color: #fff;
@@ -33,7 +32,7 @@ html,body {
 #login-box input{
   position: relative;
   float: left;
-  margin-top: .8vh;
+  margin-top: .6vh;
   margin-left: 1vh;
   margin-right: 1vh;
   margin-bottom: 2vh;
@@ -46,32 +45,37 @@ html,body {
   float: left;
   font-size: 1vw;
   background-color: #0070c0;
-  margin-top: 1vh;
-  margin-left: 22vh;
+  margin-top: 0.8vh;
+  margin-left: 1vh;
   border: 1px solid #fff;
   color: #fff;
   padding: .5%;
   width: 5vw;
+  transition-duration: 0.4s;
 }
 #login-box button:hover{
   background-color: #fff;
   color: #0070c0;
   cursor: pointer;
+  transition-duration: 0.4s;
 }
 #login-box button:active{
   background-color: #0070c0;
   color: #fff;
 }
 #remember{
-  position: absolute;
+  position: relative;
+  float: left;
   margin-top: 1vh;
   color: white;
+  font-family: calibri;
 }
 #forgot-password{
   position: absolute;
   right: 23.5vw;
   margin-top: 4.2vh;
   color: #fff;
+  font-family: calibri;
 }
 #forgot-password:hover{
   cursor: pointer;
@@ -85,8 +89,9 @@ html,body {
   width: 50%;
   height: 50vh;
   text-align: center;
-  padding-top: 20vh;
+  padding-top: 15vh;
   margin-top: 5vh;
+  padding-bottom: 5vh;
 }
 #left-half-text{
   font-family: Candara;
@@ -142,7 +147,7 @@ html,body {
 
 }
 .input-label{
-  font-family: Calibari;
+  font-family: Calibri;
   font-size: 3vh;
 }
 #register-form input {
@@ -155,8 +160,9 @@ html,body {
   margin-top: 2vh;
 }
 .privacy-policy{
+  font-family: calibri;
   margin-top: 6vh;
-  font-size: 2vh;
+  font-size: 2.3vh;
 }
 #register{
   background-color: #0070c0;
@@ -190,7 +196,7 @@ html,body {
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -10px;
+  right: -45px;
   transition: 0.5s;
   color: #fff;
 }
@@ -232,7 +238,7 @@ html,body {
   position: absolute;
   margin-top: 2.5vh;
   padding-right: 2px;
-  left: 80%;
+  left: 80.5%;
 }
 
 #link-container{
@@ -240,8 +246,7 @@ html,body {
   margin-top: 3.2vh;
   margin-left: 1vw;
   padding-left: 2vw;
-  border: 1px dashed white;
-  width: 62%;
+  width: 65%;
   font-family: calibri;
 }
 #link-container a{
@@ -252,4 +257,14 @@ html,body {
 }
 #mobile-buttons, #privacy-policy-mobile{
   display: none;
+}
+.errormessage{
+  position: absolute;
+  left: 7.5vw;
+  top: 83vh;
+  padding: 0.5vw;
+  font-family: "century gothic";
+  border-radius: 0.5vw;
+  background-color: #a44;
+  color: #fff;
 }
