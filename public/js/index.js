@@ -41,7 +41,7 @@ $(document.body).on('submit', '#login-form', function (e) {
 $(document.body).on('click', '#register', function (e) {
   e.preventDefault();
   if(!passwordCheck){
-    return showErrorMessage('Passwords do not match!', $('#register-form input[name=password2]'));
+    return showErrorMessage('Passwords do not match!', $('#login-form'));
   }
   var formData = {
     name: $('#register-form input[name="firstname"]').val() + ' ' +  $('#register-form input[name="lastname"]').val(),
@@ -53,7 +53,7 @@ $(document.body).on('click', '#register', function (e) {
 });
 
 $(document.body).on('focusout', '#register-form input[name=email]', function (e) {
-  var elem = $('#register-form input[name=email]');
+  var elem = $('#login-form');
   if(elem.val().length < 6){
     if(elem.val().length >= 1){
       regflag1 = false;
@@ -64,13 +64,13 @@ $(document.body).on('focusout', '#register-form input[name=email]', function (e)
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
   if((!emailReg.test( email )) && email.length != 0){
     regflag2 = false;
-    return showErrorMessage('Provide a valid Email id!',$('#register-form input[name="email"]'));
+    return showErrorMessage('Provide a valid Email id!',$('#login-form'));
   }else if(email.length >= 1){
     regflag2 = true;
   }
   $('#register-form input[name="email"]').css('color', '#000');
   var key =  String.fromCharCode(e.which);
-  var elem = $('#register-form input[name=email]');
+  var elem = $('#login-form');
   if(elem.val().length >= 6){
     checkAvailability();
   }
@@ -88,22 +88,22 @@ function checkAvailability(){
   })
   .done(function (res) {
     if(res.status == "found"){
-      showErrorMessage('Email already in use!',$('#register-form input[name="email"]'));
+      showErrorMessage('Email already in use!',$('#login-form'));
       regflag1 = false;
       return $('#register-form input[name="email"]').focus();
     }
-    showErrorMessage('Email Available!',$('#register-form input[name="email"]'), "success");
+    showErrorMessage('Email Available!',$('#login-form'), "success");
     $('#register-form input[name="username"]').css('color', '#4f4');
     regflag1 = true;
   })
   .fail(function (err) {
-    showErrorMessage('Connection Problem!',$('#register-form input[name="email"]'));
+    showErrorMessage('Connection Problem!',$('#login-form'));
     regflag1 = true;
   });
 }
 
 $(document.body).on('focusout', '#register-form input[name=password]', function () {
-  var elem = $('#register-form input[name=password]');
+  var elem = $('#login-form');
   if(elem.val().length < 6 && elem.val().length >= 1){
     showErrorMessage('Password must be atleast 6 characters long!', elem);
     passwordCheck2 = false;
@@ -162,7 +162,7 @@ function makeitNormal(e){
 
 $(document.body).on('keyup', '#register-form input[name="phone"]', function (e) {
   var key =  String.fromCharCode(e.which);
-  var elem = $('#register-form input[name="phone"]');
+  var elem = $('#login-form');
   if(/^[0-9]*$/.test(elem.val()) == false) {
     elem.val(elem.val().substr(0, elem.val().length-1));
     showErrorMessage('Only Digits!', elem);
@@ -172,7 +172,7 @@ $(document.body).on('keyup', '#register-form input[name="phone"]', function (e) 
   }
 });
 $(document.body).on('focusout', '#register-form input[name="phone"]', function (e) {
-  var elem = $('#register-form input[name="phone"]');
+  var elem = $('#login-form');
   if(elem.val().length != 10 && elem.val().length >= 1){
     regflag3 = false;
     return showErrorMessage('Not a valid Phone Number!', elem);
@@ -257,7 +257,7 @@ function registerUser(formData) {
       window.location.replace('../profile');
   })
   .fail(function(error){
-      showErrorMessage(error.responseJSON.message, $('#register-form'));
+      showErrorMessage(error.responseJSON.message, $('#login-form'));
   });
 }
 $(document.body).on('click', '#forgot-password', function () {
