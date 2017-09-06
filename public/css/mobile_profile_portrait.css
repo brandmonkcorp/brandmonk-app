@@ -1,0 +1,92 @@
+@media screen and (max-width: 480px) and (max-height: 853px){
+  body{
+    background-color: #248;
+  }
+  #foot, #foot-mobile{
+    display: none;
+  }
+  #login-box{
+    display: none;
+  }
+  #head{
+    visibility: visible;
+    height: 15vw;
+    background-color: #248;
+  }
+  #brandmonk{
+    position: relative;
+    float: left;
+    margin: 5%;
+    margin-left: 12%;
+    padding: 0%;
+    margin-top: 2vw;
+    visibility: visible;
+    font-size: 8vw;
+    text-align: center;
+    font-weight: bold;
+    font-family: Candara;
+    color: #fff;
+  }
+  #logout{
+    position: relative;
+    float: right;
+    height: 50%;
+    font-size: 4vw;
+    padding: 1vw;
+    height: auto;
+    margin: 3.5vw;
+    border-radius: 1vw;
+  }
+  #mail-sent{
+    position: relative;
+    float: left;
+    width: 30vw;
+    height: 30vw;
+    margin-top: 20%;
+    margin-left: 35%;
+    background-image: url('../images/icons/mail_sent.png');
+    background-size: 100% 100%;
+  }
+  #intro{
+    position: relative;
+    float: left;
+    top: 0%;
+    margin-top: 10vw;
+    width: 100%;
+  }
+  #text{
+    color: #fff;
+    font-size: 5vw;
+  }
+  #start{
+    font-size: 4vw;
+    padding: 2vw;
+  }
+  #tab-container{
+    display: none;
+  }
+  #container{
+    background-color: #248;
+  }
+  #inputs{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    margin: 0%;
+  }
+  .info-class{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    border: 1px solid white;
+    background-color: transparent;
+  }
+  #photo-container{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    border: 1px solid white;
+  }
+}
