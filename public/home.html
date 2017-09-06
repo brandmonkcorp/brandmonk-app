@@ -17,47 +17,89 @@
       <span id="payments" class="head-button">Payments</span>
       <span id="offers" class="head-button">Offers</span>
     </div>
-    <div class="earning">
-      Earnings <span id="earn">00</span>
+    <div class="userNearn">
+      <hr align="right" width="80%">
+      <div class="earning">
+        Your Earnings till date is <span id="earn">1255</span>
+      </div>
+      <div class="userName">
+        User Name
+      </div>
+    </div>
+    <div class="statUpdate">
+      <input type="text" name="statBox" placeholder="&emsp;Set Your Status Update Here. How Are You Feeling Now?"><span class="update">Update</span>
     </div>
     <div class="profInfo">
-      <div class="userName">
-        UserName
-      </div><br>
-
       <div class="info">
-        <span class="infoVal">00</span><span class="infoTxt">Adviews</span><br>
-        <span class="infoVal">00</span><span class="infoTxt">Connections</span>
+        <span class="infoVal">XX</span><span class="infoTxt">Adviews</span><br>
+        <span class="infoVal">XXX</span><span class="infoTxt">Connections</span>
       </div>
       <div class="profImage">
 
       </div><br>
     </div>
-    <div class="survey">
-      <span id="surTitle">Take your Surveys Here!!</span><br>
-      <span id="sas" class="surbtn">Populate Stand-alone Survey</span><br>
-      <span id="off_code" class="surbtn">Enter Offline Code</span><br>
-      <div class="offcode">
-        <input type="number" name="offcode" placeholder="Enter your code here"/><br>
-        <span class="codebtn">Submit</span>
+    <div class="left">
+      <div class="adsource">
+        <select>
+          <option selected disabled>Select Your Ad Source</option>
+          <option value="src1">TV</option>
+          <option value="src2">Magazine</option>
+          <option value="src3">Radio</option>
+          <option value="src4">Internet</option>
+          <option value="src5">Bill Boards</option>
+          <option value="src5">Fliers</option>
+        </select>
+        </div>
+        <input type="text" name="code" placeholder="Enter Offline Ad Code"><br>
+        <span id="offcodesub">Submit</span>
       </div>
-      <div class="offsurvey">
-        <span class="cls">X</span>
-        <form id="survey">
-          <span class="surQus">Question No 1</span><br>
-          <textarea placeholder="Enter your answer here" form="survey" name="ans" rows="4" cols="80"></textarea><br>
-          <span class="surQus">Question No 2</span><br>
-          <textarea form="survey" placeholder="Enter your answer here" name="ans" rows="4" cols="80"></textarea><br>
-          <span class="surQus">Question No 3</span><br>
-          <textarea form="survey" placeholder="Enter your answer here" name="ans" rows="4" cols="80"></textarea><br>
-          <span class="surQus">Enter the code below</span><br>
-          <input type="number" name="codeHolder" placeholder="Enter the Code here">
+    </div>
+    <div class="survey">
+      <div class="qus">
+        Question Number 1 <br>
+        <form id="answer1">
+          <input type="radio" name="ans1"> Yes
+          <input type="radio" name="ans2"> No
+          <input type="radio" name="ans3"> Maybe
         </form>
-        <span class="offcodebtn">Submit</span>
+      </div>
+      <div class="qus">
+        Question Number 2 <br>
+        <form id="answer2">
+          <input type="radio" name="ans1"> Yes
+          <input type="radio" name="ans2"> No
+          <input type="radio" name="ans3"> Maybe
+        </form>
+      </div>
+      <div class="qus">
+        Question Number 3 <br>
+        <form id="answer3">
+          <input type="radio" name="ans1"> Yes
+          <input type="radio" name="ans2"> No
+          <input type="radio" name="ans3"> Maybe
+        </form>
+      </div>
+      <div class="qus">
+        Question Number 4 <br>
+        <form id="answer4">
+          <input type="radio" name="ans1"> Yes
+          <input type="radio" name="ans2"> No
+          <input type="radio" name="ans3"> Maybe
+        </form>
+      </div>
+      <div class="qus">
+        Question Number 5 <br>
+        <form id="answer5">
+          <input type="radio" name="ans1"> Yes
+          <input type="radio" name="ans2"> No
+          <input type="radio" name="ans3"> Maybe
+        </form>
+      </div>
+      <div class="feedback">
+        <textarea name="feedback" rows="4" required placeholder="Leave your feedback here..."></textarea>
       </div>
     </div>
 
-    <div>
       <video id="vidPlayer" controls controlsList="nodownload" preload="none">
       </video>
     </div>
@@ -74,6 +116,22 @@
 
    </div>
  </div>
+</div>
+<div class="sub">
+  <input type="text" name="code" placeholder="Enter Unique Ad Code"><span class="subBtn">Submit</span><span class="subBtn">Like and Recommend</span>
+</div>
+<div>
+<div class="footer">
+  <div id = "link-container">
+    <a href = "#">About Us</a>
+    <a href = "#">Partner With Us</a>
+    <a href = "#">About Us</a>
+    <a href = "#">Terms & Condition</a>
+    <a href = "#">Blog</a>
+    <a href = "#">Grievance Policy</a>
+    <a href = "#">Partners</a>
+    <a href = "#">Join Us</a>
+  </div>
 </div>
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="./js/js-cookie.js"></script>

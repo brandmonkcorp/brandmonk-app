@@ -3,14 +3,14 @@ html,body{
   padding: 0%;
   height: 100%;
   width: 100%;
-  font-family: "century gothic";
+  font-family: "candara";
   background: #eee;
 }
 #head{
   position: relative;
   float: left;
   width: 100%;
-  height: 8vh;
+  height: 6vh;
   background-color: #0070c0;
 
 }
@@ -21,7 +21,7 @@ html,body{
   float: left;
   height:100%;
   width: 20vw;
-  font-family: verdana arial "century gothic";
+  font-family: verdana arial "candara";
   font-size: 2.3vw;
   font-weight: bold;
   color: #eee;
@@ -44,15 +44,69 @@ html,body{
   background-color: #299;
   color: white;
 }
+hr {
+  position: absolute;
+  left: 15vw;
+  top: 9vh;
+}
+.userName{
+  position: absolute;
+  top: 6vh;
+  color: black;
+  font-size: 1.6vw;
+  font-weight: bold;
+  left: 16vw;
+}
 .earning{
-  font-size: 1.25vw;
-  font-family: "century gothic";
-  float: right;
-  margin-top: 5vh;
-  margin-right: 10vw;
+  position: absolute;
+  top: 7vh;
+  color: black;
+  font-size: 1.2vw;
+  left: 82vw;
+}
+#earn{
+  margin-left:5px;
+  background-color: red;
+  color: white;
+  font-size: 1.3vw;
+  font-weight: bold;
+  border-radius: 20%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.statUpdate{
+  position: absolute;
+  top: 11vh;
+  left: 15vw;
+}
+.update{
+  margin-left: 1vw;
+  background-color: #0070c0;
+  color: white;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  cursor: pointer;
+}
+.update:hover{
+  border: 1px solid #0070c0;
+  background-color: white;
+  color: #0070c0;
+  font-weight: bold;
+}
+.statUpdate input{
+  width: 43.3vw;
+}
+.statUpdate input::placeholder{
+  color: #0070c0;
+}
+.feedback textarea::placeholder{
+  color: #0070c0;
+}
+.sub input::placeholder{
+  color: #0070c0;
 }
 #arrowR{
-    padding-top: 40px;
+    padding-top: 25px;
     font-weight: bold;
     width:20px;
     height:80px;
@@ -66,7 +120,7 @@ box-shadow: 0 0 20px #888888;
 }
 #arrowL{
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 25px;
     padding-left: 3px;
     width:20px;
     height:80px;
@@ -80,9 +134,9 @@ box-shadow: 0 0 20px #888888;
 }
 #vid-container{
   position: absolute;
-  bottom: 2px;
+  bottom: 8vh;
   width:100%;
-  height:130px;
+  height:100px;
   overflow-y: hidden;
 }
 #list-container{
@@ -97,12 +151,13 @@ box-shadow: 0 0 20px #888888;
   float:left;
 }
 .videodivs{
-    width:155px;
-    height:140px;
-    margin:5px;
+    width:140px;
+    height:90px;
+    margin-left:5px;
+    margin-right: 5px;
     float:left;
     position:relative;
-    background-size: 100% 70%;
+    background-size: 100% 75%;
     background-repeat: no-repeat;
     margin: 11px;
 }
@@ -118,15 +173,15 @@ box-shadow: 0 0 20px #888888;
 video{
   opacity: 1.0;
   position: relative;
-  margin-left: 20vw;
-  margin-top: 10vh;
+  margin-left: 15vw;
+  margin-top: 9vh;
   width: 50vw;
   border: 1px solid black;
   background-color: #333;
 }
 .Tcontainer{
   position: absolute;
-  top : 100px;
+  top : 70px;
   left: 0%;
   font-size: 15px;
   color: black;
@@ -141,169 +196,123 @@ video{
   right: 1%;
   font-weight: bold;
 }
-.earning{
-  position: absolute;
-  width: auto;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  text-align: center;
-  top: 5vh;
-  right: 6vw;
-  font-size: 1.2vw;
-  background-color: #0070c0;
-  color: white;
-}
-.userName{
-  position: absolute;
-  width: auto;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  text-align: center;
-  top: 10vh;
-  left: 12vw;
-  font-size: 1.2vw;
-  background-color: #0070c0;
-  color: white;
-}
+
 .profImage{
   background-image: url('../images/user_profile_male.jpg');
   background-size: 100% 100%;
   width: 10vw;
   height: 20vh;
   position: absolute;
-  top: 10vh;
-  left: 4.5vw;
+  top: 7vh;
+  left: 2.5vw;
+  border: 3px solid black;
   border-radius: 50%;
 }
 .info{
-  border: 1px dashed #0070c0;
+  text-align: center;
+  border: 2px solid #0070c0;
   position: absolute;
   top: 18vh;
   left:2vw;
-  width: 15vw;
-  height: 10vh;
-  padding-top: 15vh;
+  width: 11.2vw;
+  height: 7vh;
+  padding-top: 12vh;
   font-weight: bold;
-  color: white;
-  background-color: #0070c0;
+  color: black;
   font-size: 1.2vw;
 }
 .infoVal{
   padding-left: 5px;
-  float: left;
+  padding-right: 5px;
 }
 .infoTxt{
   padding-right: 5px;
-  float: right;
+  padding-left: 5px;
 }
 .survey{
-  border: 1px solid white;
-  width: 25vw;
-  height: 60vh;
+  border: 1px solid #0070c0;
+  width: 32vw;
+  height: 55vh;
   position: absolute;
-  top: 18vh;
+  top: 15vh;
   right: 2vw;
-  background-color: #0070c0;
+  background-color: white;
 
 }
-.surbtn{
-  margin-top: 10vh;
-  color: white;
+.qus{
+  margin: 1vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   font-size: 1.2vw;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: 1s;
-  float: left;
-  width: 100%;
 }
-.surbtn:hover{
-  border: 2px solid white;
-  transition: 1s;
+.qus input{
+  margin: 1vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
-.offcode{
-  display: none;
-}
-.offcode input{
-  margin-top: 5vh;
+.feedback textarea{
   width: 99%;
-  text-align: center;
-}
-.codebtn{
   position: absolute;
   bottom: 0;
-  text-align: center;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  width: 100%;
-  height: auto;
-  font-size: 1.4vw;
-  font-weight: bold;
-  background-color: white;
-  color: #0070c0;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: 1s;
 }
-.codebtn:hover{
+.sub{
+position: absolute;
+top: 71vh;
+right: 1.5vw;
+cursor: pointer;
+}
+.subBtn{
   background-color: #0070c0;
   color: white;
-  transition: 1s;
-  border: 1px solid white;
+  margin: 1vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
-#surTitle{
-  color:white;
-  margin-left:3.5vw;
-  margin-top:5px;
-  font-weight:bold;
-  font-size:1.5vw;
-}
-.cls{
-  color: white;
+.left{
   position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
+  top: 40vh;
+  left: 4vh;
+  width: 11.5vw;
+  height: 25vh;
 }
-.offsurvey{
-    display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 5vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-#chkbx{
-  position: absolute;
-}
-.surQus{
-  color: white;
-}
-.ans{
-height: 20%;
-}
-#survey{
-  width: 100%;
-  height: 100%;
-}
-#survey input{
-  margin-top: 2%;
-  width: 100%;
-  text-align: center;
-}
-.offcodebtn{
-  position: absolute;
-  bottom:5vh;
-  background-color: white;
-  color: #0070c0;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
+.adsource select{
   border: 1px solid #0070c0;
 }
-.offcodebtn:hover{
+.left input{
+  width: 100%;
+  border: 1px solid #0070c0;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+#offcodesub{
+  padding-left: 4vw;
+  padding-right: 4vw;
+  text-align: center;
   background-color: #0070c0;
   color: white;
-  border: 1px solid white;
+  font-weight: bold;
+  margin-top: 1vh;
+  cursor: pointer;
+}
+.footer{
+  position: absolute;
+  width: 100%;
+  height: 7vh;
+  background-color: #0070c0;
+  bottom: 0;
+  overflow-y: hidden;
+}
+#link-container{
+  position: absolute;
+  margin-top: 1.6vh;
+  margin-left: 20vw;
+  padding-left: 2vw;
+  width: 65%;
+  font-family: calibri;
+}
+#link-container a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.2vw;
+  padding: 1vw;
 }

@@ -64,7 +64,7 @@ function playNextFunc() {
     $(`#title-${i}`).html(`Ad Snippet Title-${i}`);
   }
     var $videodivs = $('div.videodivs'),
-        visible = 2.4,
+        visible = 2.8,
         index = 0,
         endIndex = ( $videodivs.length / visible ) - 1;
 
@@ -154,6 +154,11 @@ $(document.body).on('click', '.videodivs', function () {
   $('#vidPlayer').get(0).load();
 
 });
+$(document.body).on('click', '.videodivs', function(){
+  var id = $(this).attr('id');
+  $(`#${id}`).remove();
+
+});
 
 $("#adPref").click(function(){
 
@@ -199,10 +204,6 @@ $("#vidPlayer").on("ended", function() {
    $("#surTitle").html("Take Your Survey Now");
    console.log('Video has ended!');
 });
-
-function myFunction(){
-  document.getElementById("myDropdown").classList.toggle("show");
-}
 
 var video = document.getElementById('vidPlayer');
 var supposedCurrentTime = 0;
