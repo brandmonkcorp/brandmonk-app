@@ -30,11 +30,11 @@ function doConnect() {
 }
 $(document.body).on('submit', '#login-form', function (e) {
   e.preventDefault();
-  if( ($('#login-form input[name=username]').val() == "") || ( $('#login-form input[name=password]').val() == "")){
+  if( ($('#login-form input[name=email]').val() == "") || ( $('#login-form input[name=password]').val() == "")){
     return showErrorMessage('Fields can\'t be empty !',$('#login-form'));
   }
   var credentials = {
-    username: $('#login-form input[name=username]').val(),
+    email: $('#login-form input[name=email]').val(),
     password: $('#login-form input[name=password]').val()
   };
   authenticate(credentials);

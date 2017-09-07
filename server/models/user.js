@@ -100,9 +100,9 @@ UserSchema.statics.removeToken = function (token) {
     }
   });
 }
-UserSchema.statics.findByCredentials = function (username, password) {
+UserSchema.statics.findByCredentials = function (email, password) {
   var User = this;
-  return User.findOne({username}).then((user) => {
+  return User.findOne({email}).then((user) => {
     if(!user){
       return Promise.reject();
     }
