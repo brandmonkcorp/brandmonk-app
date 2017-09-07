@@ -148,4 +148,11 @@
   background-color: white;
   box-shadow: none;
 }
+#infor{
+  position: absolute;
+  width: 95vw;
+  top: -15vw;
+  left: -10vw;
+  color: #fff;
+}
 }
