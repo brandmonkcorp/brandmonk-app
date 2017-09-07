@@ -260,8 +260,8 @@ html,body {
 }
 .errormessage{
   position: absolute;
-  left: 7.5vw;
-  top: 83vh;
+  right: 3vw;
+  top: 10vh;
   padding: 0.5vw;
   font-family: "century gothic";
   border-radius: 0.5vw;

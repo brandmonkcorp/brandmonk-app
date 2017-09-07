@@ -157,7 +157,9 @@
     padding: 1.5vw;
     font-family: "century gothic";
     border-radius: 2vw;
-    background-color: #a44;
+    background: #a44;
     color: #fff;
+    left: 0;
+    top: 0;
   }
 }

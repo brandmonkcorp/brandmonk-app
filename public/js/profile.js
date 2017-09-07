@@ -16,7 +16,7 @@ $(document).ready(function () {
 });
 $('#start').click(function () {
   $('#intro').fadeOut(1000, function () {
-    $('#container').css('visibility', 'visible');
+    $('#container').show();
     $('#basic-info').css('visibility', 'visible');
   });
 });

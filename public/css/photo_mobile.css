@@ -1,3 +1,4 @@
+@media screen and (max-width: 480px) and (max-height: 853px){
 #Photo-form{
   position: relative;
   float: left;
@@ -146,4 +147,12 @@
 .button:active{
   background-color: white;
   box-shadow: none;
+}
+#infor{
+  position: absolute;
+  width: 95vw;
+  top: -15vw;
+  left: -10vw;
+  color: #fff;
+}
 }
