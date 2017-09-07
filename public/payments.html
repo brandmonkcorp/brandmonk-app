@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Payments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/payments.css">
+    <link rel="stylesheet" href="./css/error.css">
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
+  </head>
+  <body style="visibility: hidden">
+    <div id="head">
+      <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
+      <span id="logout" class="head-button">Logout</span>
+      <span id="profile" class="head-button">Profile</span>
+      <span id="payments" class="head-button">Payments</span>
+      <span id="offers" class="head-button">Offers</span>
+    </div>
+      <hr class="hline1" align="right" width="96%">
+      <hr class="hline2" align="right" width="96%">
+      <hr class="hline3" align="right" width="96%">
+      <hr class="hline4" align="right" width="96%">
+      <hr class="vline1" align="right" width="12%">
+      <hr class="vline2" align="right" width="12%">
+    <div class="profInfo">
+      <div class="username">
+        User Name
+      </div>
+      <div class="profImg">
+
+      </div>
+
+    </div>
+    <div class="adTrack">
+      <span id="heading">Advertisement Tracking</span><br><br>
+      <span style="float:left;margin-left:6vw;text-decoration: underline;">Ad Type</span><span style="float:right;margin-right:6vw;text-decoration: underline;">Count</span><br>
+      <span id="type">Video</span><span id="val">000</span><br>
+      <span id="type">TV</span><span id="val">000</span><br>
+      <span id="type">Radio</span><span id="val">000</span><br>
+      <span id="type">Magazines</span><span id="val">000</span><br>
+      <span id="type">BillBoards</span><span id="val">000</span><br>
+      <span id="type">Internet</span><span id="val">000</span>
+    </div>
+    <div class="revenue">
+      <span id="heading">Revenue</span><br><br><br><br>
+      <span id="type">Total Earnings</span><span id="val">000 &#8377;</span><br>
+      <span id="type">Discount Coupons</span><span id="val">000 &#8377;</span><br>
+      <span id="type">Redeemed</span><span id="val">000 &#8377;</span><br>
+      <span id="type">Remaining</span><span id="val">000 &#8377;</span>
+    </div>
+    <div class="socioSharing">
+      <span id="heading">Social Sharing Revenues</span><br><br><br>
+      <span id="type">Referrals</span><span id="val">000</span><br><br>
+      <span id="type">Gift Vouchers</span><span id="val">000</span><br><br>
+      <span id="type">Shares</span><span id="val">000</span>
+    </div>
+    <div class="trans">
+      <span id="heading">Paytment</span><br><br>
+      <span id="type">Enter Amount</span> <input id="amt" type="number" placeholder="Amount &#8377;" ><br><br>
+        <span id="type">Select Transfer Mode</span>
+          <select id="select" class="required" style="position:absolute;right:6vw;">
+            <option value="0" selected disabled>Select Your Transfer mode</option>
+            <option value="1">Bank</option>
+            <option value="2">Digital Wallet</option>
+            <option value="3">SWIFT</option>
+          </select><br>
+        <span id="ift2">Please Selet An Option</span><br>
+        <span id="ift">Amount cannot be EMPTY!!</span>
+    </div>
+    <div class="credentials">
+      <br>
+      <table>
+        <tr>
+          <td><span id="credType">Aadhaar Number</span></td><td><span id="credVal">xxxx-xxxx-xxxx</span></td><td><span id="credType">mobile</span></td><td><span id="credVal">xxxxxxxxxx</span></td><td><span id="credType">Bank A/C</span></td><td><span id="credVal">34649811782</span></td>
+        </tr>
+        <tr>
+          <td><span id="credType">PAN</span></td><td><span id="credVal">xxxxxxxxxx</span></td><td>  <span id="credType">Digital Wallet</span></td><td><span id="credVal">PayTm</span></td><td><span id="credType">Email</span></td><td><span id="credVal">xxxx@xxxxx.com</span></td>
+        </tr>
+      </table>
+
+
+    </div>
+
+    <div class="privacy-policy">
+      <input id="chbx" type="checkbox" name="i agree" value="I Agree">
+      By clicking "Initiate Payment", You agree to the BrandMonk
+      <a href = "">User Agreement</a>, <a href = "">Privacy Policy</a>
+      and <a href = "">Cookie Policy</a>.
+      <span id="ini">Initiate Payment</span>
+    </div>
+    <div class="footer">
+      <div id = "link-container">
+        <a href = "#">About Us</a>
+        <a href = "#">Partner With Us</a>
+        <a href = "#">About Us</a>
+        <a href = "#">Terms & Condition</a>
+        <a href = "#">Blog</a>
+        <a href = "#">Grievance Policy</a>
+        <a href = "#">Partners</a>
+        <a href = "#">Join Us</a>
+      </div>
+    </div>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/js-cookie.js"></script>
+    <script src="./js/payments.js"></script>
+    <script src="./js/logout.js"></script>
+  </body>
+</html>

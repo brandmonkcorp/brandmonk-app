@@ -25,6 +25,7 @@ html,body{
   font-size: 2.3vw;
   font-weight: bold;
   color: #eee;
+  cursor: pointer;
 }
 .head-button{
   position: relative;

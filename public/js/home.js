@@ -51,8 +51,8 @@ function getProfileData(token) {
   });
 });
 }
-
-//your code
+//Rambo's Code up-above
+//MaDa's code
 function playNextFunc() {
 
   for (var i=1; i<=20; i++){
@@ -180,6 +180,15 @@ $(".closeNav").on("click", function(){
   $(".sidenav").css("height", "0");
 });
 
+$(document.body).on('click', '#payments', function () {
+  location.href='payments.html';
+});
+$(document.body).on('click', '#offers', function () {
+  location.href='offers.html';
+});
+$(document.body).on('click', '#brandmonk', function () {
+  location.reload();
+});
 
 $(document.body).on('mouseup', function (e) {
   var container = $('.vanish');
