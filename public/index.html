@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/mobile_index_portrait.css">
-    <link rel="stylesheet" href="./css/index_mobile_landscape.css">
   </head>
   <body>
     <div id="head">
       <span id="brandmonk">BrandMonk</span>
       <div id="login-box">
         <form id="login-form">
-          <input type="text" placeholder="username" name="username" autocomplete="off"/>
-          <input type="password" placeholder="password" name="password" autocomplete="off"/>
+          <input type="text" placeholder="email" name="username" autocomplete="off" required/>
+          <input type="password" placeholder="password" name="password" autocomplete="off" required/>
           <span id = "remember"><input type = "checkbox" name = "remember">Remember Me</span>
           <button id="login">Log in</button>
         </form>
@@ -39,28 +38,29 @@
           <form id="register-form">
             <div class = "register-input">
             <span class="input-label">First Name</span>
-            <input type="text" name="first-name">
+            <input type="text" name="firstname" required/>
             </div>
             <div class = "register-input">
             <span class="input-label">Last Name</span>
-            <input type="text" name="last-name" />
+            <input type="text" name="lastname" required/>
             </div>
             <div class = "register-input">
             <span class="input-label">Email</span>
-            <input type="email" name="email" />
+            <input type="email" name="email" required/>
             </div>
             <div class = "register-input">
             <span class="input-label">Phone</span>
-            <input type="text" length="10" name="phone"/>
+            <input type="text" length="10" name="phone"/ required>
             </div>
             <div class = "register-input">
             <span class="input-label">Password</span>
-            <input type="password" name="password" />
+            <input type="password" name="password" required/>
             </div>
             <div class = "register-input">
             <span class="input-label">Retype Password</span>
-            <input type="password" name="password2" />
+            <input type="password" name="password2" required/>
             </div>
+            <button id="register-form-submit" style="display:none"></button>
           </form>
          </div>
 
