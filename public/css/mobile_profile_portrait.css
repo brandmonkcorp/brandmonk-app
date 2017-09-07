@@ -5,9 +5,6 @@
   #foot, #foot-mobile{
     display: none;
   }
-  #login-box{
-    display: none;
-  }
   #head{
     visibility: visible;
     height: 15vw;
