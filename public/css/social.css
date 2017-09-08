@@ -1,0 +1,113 @@
+html,body {
+  padding: 0%;
+  margin: 0%;
+  height: 100%;
+  width: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+.header {
+    border: 1px solid black;
+    width: 100%;
+    height: 9vh;
+    background-color: #0070c0;
+}
+#brandmonk{
+  position: relative;
+  float: left;
+  margin-left: 3.5vw;
+  font-size: 3vw;
+  font-weight: bold;
+  font-family: Candara;
+  color: #eee;
+  cursor: pointer;
+}
+.head-button{
+  position: relative;
+  padding: 3vh;
+  float: right;
+  width: auto;
+  font-size: 1.25vw;
+  color: #eee;
+}
+.head-button:hover{
+  background-color: #eee;
+  color: #299;
+  cursor: pointer;
+}
+.head-button:active{
+  background-color: #299;
+  color: white;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-2.5 {width: 20%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-9"] {
+    float: left;
+    border: 1px solid black;
+}
+[class*="col-3"] {
+    float: left;
+    border: 1px solid black;
+}
+
+.left-upper{
+  border: 1px solid red;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+.right-upper{
+  border: 1px solid green;
+}
+.left-down{
+  border: 1px solid blue;
+}
+.right-down{
+  border: 1px solid orange;
+}
+#uname{
+  font-size: 2vw;
+}
+#userpic{
+  background-image: url('../images/user_profile_male.jpg');
+  background-size: 100% 100%;
+  width: 5vw;
+  height: 10vh;
+  margin-left: 3vw;
+  position: relative;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+#userstatus{
+  height: 10vh;
+  margin-left: 2vw;
+}
+#userstat input{
+  height: 10vh;
+  width: 100%;
+  font-size: 1vw;
+}
+[class*="col-12"] {
+    float: left;
+    border: 1px solid black;
+}
+#useraction{
+  font-size: 1.5vw;
+}
