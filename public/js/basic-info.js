@@ -32,6 +32,7 @@ function saveBasicData() {
 
 function goBasicNext() {
   c1 = true;
+  $('#social-address').text(basicdata.address);
   $('#basic-info-tab').removeClass('tabs-now');
   if($('#container').innerWidth() >= '480'){
     $('#basic-info').css('visibility', 'hidden');
