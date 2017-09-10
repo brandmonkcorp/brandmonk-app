@@ -6,9 +6,11 @@
     display: none;
   }
   #head{
+    position: fixed;
     visibility: visible;
     height: 15vw;
     background-color: #248;
+    z-index: 2;
   }
   #brandmonk{
     position: relative;
@@ -23,6 +25,9 @@
     font-weight: bold;
     font-family: Candara;
     color: #fff;
+  }
+  .head-fix{
+    box-shadow: 0px 5px 5px 0px rgba(22,22,80,0.3), 0px 5px 5px 0px rgba(22,22,80,0.3);
   }
   #logout{
     position: relative;
@@ -48,7 +53,7 @@
     position: relative;
     float: left;
     top: 0%;
-    margin-top: 10vw;
+    margin-top: 35vw;
     width: 100%;
   }
   #text{
@@ -64,6 +69,7 @@
   }
   #container{
     background-color: #248;
+    margin-top: 20vw;
   }
   #inputs{
     width: 100%;

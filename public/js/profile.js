@@ -97,9 +97,19 @@ function nextLoad(doc) {
     $('#social-phone').text(doc.sendData.mobile);
   });
 }
+$(window).scroll(function (event) {
+  if($('#container').innerWidth() <= '480'){
+    var scroll = $(window).scrollTop();
+    if(scroll >= $('#head').innerHeight()){
+      $('#head').addClass('head-fix');
+    }else{
+      $('#head').removeClass('head-fix');
+    }
+  }
+});
 function scrollDown() {
   var headerHeight = $('#head').innerHeight();
   var divHeight = $('#container').innerHeight();
   var scrollHeight = headerHeight + divHeight;
-  $(document.body).animate({ scrollTop: scrollHeight}, 1000);
+  $(document.body).animate({ scrollTop: scrollHeight * .99}, 1000);
 }
