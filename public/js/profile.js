@@ -18,6 +18,7 @@ $('#start').click(function () {
   $('#intro').fadeOut(1000, function () {
     $('#container').show();
     $('#basic-info').css('visibility', 'visible');
+    $('#basic-info').css('display', 'block');
   });
 });
 function showErrorMessage(message, elem, status) {
@@ -95,4 +96,10 @@ function nextLoad(doc) {
     $('#social-email').text(doc.sendData.email);
     $('#social-phone').text(doc.sendData.mobile);
   });
+}
+function scrollDown() {
+  var headerHeight = $('#head').innerHeight();
+  var divHeight = $('#container').innerHeight();
+  var scrollHeight = headerHeight + divHeight;
+  $(document.body).animate({ scrollTop: scrollHeight}, 1000);
 }

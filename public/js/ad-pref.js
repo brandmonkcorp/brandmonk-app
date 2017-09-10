@@ -125,7 +125,12 @@ function savePrefData() {
 function goPrefNext() {
   c2 = true;
   $('#ad-pref-tab').removeClass('tabs-now');
-  $('#ad-pref').css('visibility', 'hidden');
+  if($('#container').innerWidth() >= '480'){
+    $('#ad-pref').css('visibility', 'hidden');
+  }else{
+    scrollDown();
+    $('#identification').show();
+  }
   $('#identification').css('visibility', 'visible');
   $('#identification-tab').addClass('tabs-now');
 }

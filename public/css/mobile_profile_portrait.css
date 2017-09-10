@@ -71,19 +71,238 @@
     background-color: transparent;
     margin: 0%;
   }
+  .mobile-header{
+    position: relative;
+    float: left;
+    margin-top: 10vw;
+    margin-left: 5vw;
+    width: auto;
+    text-align: left;
+    font-size: 5vw;
+    color: #fff;
+    padding: 1vw;
+    border: 1px solid #fff;
+    border-radius: 1vw;
+    display: block;
+  }
   .info-class{
     position: relative;
     float: left;
     width: 100%;
     height: auto;
-    border: 1px solid white;
     background-color: transparent;
+    display: none;
+    visibility: visible;
   }
   #photo-container{
     position: relative;
     float: left;
     width: 100%;
     height: auto;
+  }
+  .right-column{
+    float: left;
+    margin-top: 20vw;
+    width: 100%;
+    margin: 0;
+  }
+  .label{
+    position: relative;
+    float: left;
+    width: 85%;
+    margin-left: 5vw;
+    margin-top: 1vw;
+    font-size: 4vw;
+    font-family: calibri;
+    border-radius: 2vw;
+    color: #fff;
+  }
+  select, input,.multiselect{
+    position: relative;
+    float: left;
+    width: 85%;
+    margin: 5vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-size: 5vw;
+    padding: 2vw;
+    font-family: calibri;
+    border: 1px solid #fff;
+    border-radius: 2vw;
+  }
+  .multiselect{
+    height: 7vw;
+  }
+  .multiselect:hover{
+    box-shadow: none;
+  }
+  .input-panel{
+    left: 5vw;
+    top: 13vh;
+    font-size: 5vw;
+    width: 85vw;
+    height: 45vw;
+    box-shadow: none;
+  }
+  .selected-lang{
+    margin-left: .5vw;
+    padding: .8%;
+    background-color: #295;
+    font-size: 4vw;
+    color: #eee;
+  }
+  .select-class{
+    font-size: 5vw;
+    width: 90%;
+  }
+  input:hover, select:hover{
+    box-shadow: none;
+  }
+  #submit-container{
+    float: left;
+    width: 100%;
+  }
+  .save-button{
+    float: left;
+    margin-top: 5vh;
+    margin-left: 33vw;
+    margin-bottom: 2vh;
+    width: auto;
+    padding: 2vw 5vw 2vw 5vw;
+    background-color: #295;
+    color: #eee;
+    font-size: 4vw;
+    border-radius: 2vw;
+  }
+  .save-button:hover {
+    box-shadow: none;
+  }
+  .save-button:active{
+    background-color: #eee;
+    border: #295;
+    color: #295;
+  }
+  #policy{
+    float: left;
+    width: 93vw;
+    font-size: 3vw;
+    text-align: center;
+    padding: 1vw;
+    color: #fff;
+  }
+  .left-column{
+    width: 100%;
+    height: auto;
+  }
+  #ad-pref .right-column{
+    width: 100%;
+    margin-top: 20vw;
+  }
+  .select-all{
+    margin-top: 4vh;
+    margin-left: 5vw;
+    font-size: 4vw;
+    color: #000;
+  }
+  .select-all:hover{
+    box-shadow: none;
+  }
+  .selected-all{
+    background-color: #f44;
+    color: #eee;
+  }
+  #count-selected{
+    margin-top: 4vh;
+    font-size: 4vw;
+    color: #fff;
+  }
+  #selected{
+    height: 5vw;
+    width: 5vw;
+  }
+  #ad-genre{
+    margin-left: 5vw;
+    width: 90vw;
+    height: 70vw;
     border: 1px solid white;
+    border-radius: 5px;
+  }
+  #text-pref{
+    position: absolute;
+    width: 90vw;
+    left: 5vw;
+    top: -3vh;
+    font-size: 4vw;
+    text-align: left;
+    color: #fff;
+  }
+  .genre-div{
+    font-size: 4vw;
+    color: #248;
+  }
+  .genre-div:hover{
+    box-shadow: none;
+  }
+  .genre-select{
+    border: 1px solid #ddd;
+    background-color: transparent;
+    color: #ddd;
+  }
+  #identification .right-column{
+    display: none;
+  }
+  #text-iden{
+    display: none;
+  }
+  #verify{
+    width: 25vw;
+    margin-top: 5vw;
+    text-align: center;
+  }
+  #identification .save-button{
+    margin-left: 30vw;
+  }
+  #profile #left-div{
+    margin-top: 10vw;
+    width: 100%;
+    height: auto;
+  }
+  #social-photo{
+    height: 40vw;
+    width: 35vw;
+    margin-left: 30vw;
+  }
+  #social-name{
+    float: left;
+    width: 85vw;
+    font-size: 5vw;
+    color: #fff;
+    margin-left: 5vw;
+  }
+  .social-info{
+    float: left;
+    width: 82vw;
+    font-size: 4vw;
+    margin-left: 5vw;
+    border-left: 6px solid #f44;
+  }
+  #social-edit{
+    float: left;
+    width: 95%;
+    height: auto;
+  }
+  #social-brief, #social-account-text{
+    display: none;
+  }
+  #social-form{
+    position: relative;
+    float: left;
+    width: 95vw;
+  }
+  #social-edit #submit-data-prof{
+    width: 75vw;
+    float: left;
+    margin-left: 5vw;
+    text-align: center;
   }
 }

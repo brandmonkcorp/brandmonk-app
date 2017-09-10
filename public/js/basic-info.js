@@ -5,6 +5,10 @@ $(document.body).on('click', '#save-basic', function () {
 $('#basic-info-form').submit(function (e) {
     e.preventDefault();
     if($('#Photo-form input[name=picture]').val() == ''){
+      if($('#container').innerWidth() <= '481'){
+        console.log('upload ');
+        return alert('Please upload a profile picture.');
+      }
       $('#message').text('Please upload a picture.');
       return $('#messageBox').css('visibility', 'visible');
     }
@@ -29,7 +33,12 @@ function saveBasicData() {
 function goBasicNext() {
   c1 = true;
   $('#basic-info-tab').removeClass('tabs-now');
-  $('#basic-info').css('visibility', 'hidden');
+  if($('#container').innerWidth() >= '480'){
+    $('#basic-info').css('visibility', 'hidden');
+  }else{
+    scrollDown();
+    $('#ad-pref').show();
+  }
   $('#ad-pref').css('visibility', 'visible');
   $('#ad-pref-tab').addClass('tabs-now');
 }

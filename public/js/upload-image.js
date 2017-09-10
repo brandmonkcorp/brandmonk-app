@@ -6,6 +6,9 @@ if(window.File && window.FileReader){
       if(file.size >= 1024 * 1024 * 4){
         $('#messageBox').css('visibility', 'visible');;
         $('#loading').css('visibility', 'hidden');
+        if($('#container').innerWidth() <= '481px'){
+          return alert('Choose a lower quality image.');
+        }
         return $('#message').text("Choose a lower quality image.");
       }
       $('#messageBox').css('visibility', 'hidden');
@@ -15,6 +18,7 @@ if(window.File && window.FileReader){
         x = 0, y =0;
         drawToCanvas(e.target.result, function () {
           $('#canvas-holder').css('visibility', 'visible');
+          $('#canvas-holder').show();
           var canvas = document.getElementById('resize');
           var url = canvas.toDataURL('image/png');
           $('#picture-box').css('background-image', `url(${url})`);
@@ -24,9 +28,6 @@ if(window.File && window.FileReader){
           $('#resize').ready(function () {
             $('#loading').css('visibility', 'hidden');
           });
-        });
-        $('#canvas-holder').ready(function () {
-
         });
 
       }

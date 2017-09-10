@@ -30,12 +30,12 @@ function doConnect() {
 }
 $(document.body).on('submit', '#login-form', function (e) {
   e.preventDefault();
-  if( ($('#login-form input[name=email]').val() == "") || ( $('#login-form input[name=password]').val() == "")){
+  if( ($('#login-form input[name=email-log]').val() == "") || ( $('#login-form input[name=password-log]').val() == "")){
     return showErrorMessage('Fields can\'t be empty !',$('#login-form'));
   }
   var credentials = {
-    email: $('#login-form input[name=email]').val(),
-    password: $('#login-form input[name=password]').val()
+    email: $('#login-form input[name=email-log]').val(),
+    password: $('#login-form input[name=password-log]').val()
   };
   authenticate(credentials);
 });
