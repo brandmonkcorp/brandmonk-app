@@ -180,6 +180,9 @@ $(".closeNav").on("click", function(){
   $(".sidenav").css("height", "0");
 });
 
+$(document.body).on('click', '#social', function () {
+  location.href='social.html';
+});
 $(document.body).on('click', '#payments', function () {
   location.href='payments.html';
 });

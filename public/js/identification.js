@@ -29,7 +29,12 @@ function saveIdData() {
 function goIdNext() {
   c3 = true;
   $('#identification-tab').removeClass('tabs-now');
-  $('#identification').css('visibility', 'hidden');
+  if($('#container').innerWidth() >= '480'){
+    $('#identification').css('visibility', 'hidden');
+  }else{
+    scrollDown();
+    $('#profile').show();
+  }
   $('#profile').css('visibility', 'visible');
   $('#profile-tab').addClass('tabs-now');
 }

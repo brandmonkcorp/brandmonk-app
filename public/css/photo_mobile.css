@@ -6,8 +6,8 @@
   height: auto;
 }
 #headline{
-  margin-left: 1.5vw;
-  width: 90%;
+  margin-left: 0vw;
+  width: 92vw;
   text-align: center;
   color: #fff;
 }
@@ -82,6 +82,7 @@
   width: auto;
   height: auto;
   border: none;
+  display: none;
 }
 #resize{
   position: relative;

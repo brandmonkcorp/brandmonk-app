@@ -86,6 +86,9 @@ body,html{
   float: left;
   width: 100%;
 }
+.mobile-header{
+  display: none;
+}
 #tab-container{
   position: relative;
   float: left;
