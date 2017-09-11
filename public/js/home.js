@@ -184,10 +184,10 @@ $(document.body).on('click', '#social', function () {
   location.href='social.html';
 });
 $(document.body).on('click', '#payments', function () {
-  location.href='payments.html';
+  location.href='payments';
 });
 $(document.body).on('click', '#offers', function () {
-  location.href='offers.html';
+  location.href='offers';
 });
 $(document.body).on('click', '#brandmonk', function () {
   location.reload();
