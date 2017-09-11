@@ -63,4 +63,12 @@ function playNextFunc(){
   $(document.body).on('click', '#brandmonk', function () {
     location.href='home.html'
   });
+  for (var i = 1; i <= 18; i++) {
+    var offer = $(`<div class='offr' id='offr${i}'>`);
+    var offrttl = $(`<div class='offrTtl' id='offrTtl${i}'>`);
+    $('.container').append(offer);
+    $(`#offr${i}`).append(offrttl);
+    $(`#offr${i}`).css('background-image', `url('./images/staticAds/offersnippet (${i}).jpg')`);
+    $(`#offr${i}`).html(`Offer Title ${i}`);
+  }
 }
