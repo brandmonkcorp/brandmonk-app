@@ -6,6 +6,9 @@ html,body{
   font-family: "candara";
   background: #eee;
 }
+* {
+    box-sizing: border-box;
+}
 #head{
   position: relative;
   float: left;
