@@ -13,9 +13,8 @@ html,body{
   position: relative;
   float: left;
   width: 100%;
-  height: 6vh;
+  height: 8vh;
   background-color: #0070c0;
-
 }
 #brandmonk{
   position: relative;
@@ -28,13 +27,14 @@ html,body{
   font-size: 2.3vw;
   font-weight: bold;
   color: #eee;
+  cursor: pointer;
 }
 .head-button{
   position: relative;
   padding: 2vh;
   float: right;
   width: auto;
-  height: 50%;
+  height: 100%;
   font-size: 1.25vw;
   color: #eee;
 }
@@ -68,7 +68,7 @@ html,body{
 
 [class*="col-9"] {
     float: left;
-    border: 1px solid black;
+    border: 1px solid #eee;
 }
 [class*="col-3"] {
     float: left;
@@ -76,54 +76,102 @@ html,body{
 }
 
 .left-upper{
-  border: 1px solid red;
-  padding-left: 3vw;
-  padding-right: 3vw;
+
 }
 .right-upper{
   border: 1px solid green;
 }
 .left-down{
   border: 1px solid blue;
+  margin-top: 5vh;
 }
 .right-down{
   border: 1px solid orange;
 }
-#uname{
-  font-size: 2vw;
+.profInfo{
+  position: absolute;
+  top: 6.5vh;
+  width: 80%;
+  height: 8vh;
+  left: 2vw;
 }
-#userpic{
-  background-image: url('../images/user_profile_male.jpg');
+.profImg{
+  background-image: url('../images/user_profile_female.jpg');
+  position: absolute;
+  top :2vh;
+  left: 4vw;
+  width: 6vw;
+  height: 12vh;
   background-size: 100% 100%;
-  width: 5vw;
-  height: 10vh;
-  margin-left: 3vw;
-  position: relative;
-  border: 3px solid black;
   border-radius: 50%;
+  border: 1px solid black;
 }
-#userstatus{
-  height: 10vh;
-  margin-left: 2vw;
+.username{
+  position: absolute;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  top: 2.5vh;
+  left: 11vw;
+  border: 2px solid #0070c0;
+  font-size: 1.4vw;
+  font-weight: bold;
 }
-#userstat input{
-  height: 10vh;
-  width: 100%;
-  font-size: 1vw;
+.statUpdate{
+  position: absolute;
+  top: 14.5vh;
+  left: 13vw;
 }
-[class*="col-12"] {
-    float: left;
-    border: 1px solid black;
+.stat{
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
-#useraction{
-  font-size: 1.5vw;
+.statUpdate textarea::placeholder{
+  color: #0070c0;
 }
+.update{
+  position: absolute;
+  margin-top: 1vh;
+  margin-left: 1vw;
+  background-color: #0070c0;
+  color: white;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  cursor: pointer;
+}
+.update:hover{
+  border: 1px solid #0070c0;
+  background-color: white;
+  color: #0070c0;
+  font-weight: bold;
+}
+.statUpdate input{
+  width: 43.3vw;
+}
+.statUpdate input::placeholder{
+  color: #0070c0;
+}
+#vid-container{
+
+}
+#list-container{
+  overflow:hidden;
+  margin-left: 3%;
+  width: 90%;
+  float:left;
+}
+#list{
+  background:#eee;
+  min-width:4000px;
+  float:left;
+}
+
 .footer{
   position: absolute;
   width: 100%;
   height: 6vh;
   background-color: #0070c0;
   bottom: 0px;
+  overflow-y: hidden;
 }
 #link-container{
   position: absolute;
