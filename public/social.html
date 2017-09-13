@@ -2,51 +2,44 @@
 <html>
 <head>
   <meta charset="utf-8">
-  
+  <title>BrandMonK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/social.css">
   <link rel="stylesheet" href="./css/error.css">
   <link rel="shortcut icon" type="image/png" href="./favicon.png">
 </head>
 <body style="visibility: hidden">
 
-<div class="header">
-  <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
-  <span id="logout" class="head-button">Logout</span>
-  <span id="profile" class="head-button">Profile</span>
-  <span id="payments" class="head-button">Payments</span>
-  <span id="social" class="head-button">Social</span>
-  <span id="offers" class="head-button">Offers</span>
-</div>
+  <div id="head">
+    <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
+    <span id="logout" class="head-button">Logout</span>
+    <span id="profile" class="head-button">Profile</span>
+    <span id="payments" class="head-button">Payments</span>
+    <span id="offers" class="head-button">Offers</span>
+    <span id="social" class="head-button">Social</span>
+  </div>
 
 <div class="row">
   <div class="col-9 left-upper">
-    <div class = "col-12" id = "username">
-      <span id = "uname">Shubhadeep Chowdhuery</span>
+    <div class="profInfo">
+      <div class="username">
+        User Name
+      </div>
+      <div class="profImg">
+      </div>
     </div>
-    <div class = "col-3" id = "userpic">
+    <div class="statUpdate">
+      <textarea class="stat" name="statBox" rows="2" cols="50" placeholder="Set Your Status Update Here. How Are You Feeling Now?"></textarea><span class="update">Update</span>
+    </div>
 
-    </div>
-    <div class = "col-9" id = "userstatus">
-      <span id = "userstat"><input type = "text" name = "status" placeholder = " Set Your Status Update Here. How Are You Feeling Now? "></span>
-    </div>
-    <div class = "col-12" id = "useraction">
-      <div class = "col-3" id = "view-post" align = "center">
-        View Post
-      </div>
-      <div class = "col-3" id = "comment" align = "center">
-        Comment
-      </div>
-      <div class = "col-3" id = "like" align = "center">
-        Like
-      </div>
-      <div class = "col-3" id = "" align = "center">
-        Work
-      </div>
-    </div>
   </div>
   <div class="col-3 right-upper">
-    <div id = "username">
-      <p>Shubhadeep</p>
+    <div id="vid-container" >
+      <div id="list-container">
+        <div id="list">
+
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-9 left-down">
@@ -57,7 +50,21 @@
   <div class="col-3 right-down">
     <div id = "username">
       <p>Shubhadeep</p>
+      <p>Shubhadeep</p>
     </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div id = "link-container">
+    <a href = "#">About Us</a>
+    <a href = "#">Partner With Us</a>
+    <a href = "#">About Us</a>
+    <a href = "#">Terms & Condition</a>
+    <a href = "#">Blog</a>
+    <a href = "#">Grievance Policy</a>
+    <a href = "#">Partners</a>
+    <a href = "#">Join Us</a>
   </div>
 </div>
 
@@ -65,5 +72,6 @@
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="./js/js-cookie.js"></script>
 <script src="./js/logout.js"></script>
+<script src="./js/social.js"></script>
 </body>
 </html>

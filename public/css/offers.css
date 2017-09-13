@@ -6,19 +6,11 @@ html,body{
   font-family: "candara";
   background: #eee;
 }
-html,body{
-  margin: 0%;
-  padding: 0%;
-  height: 100%;
-  width: 100%;
-  font-family: "candara";
-  background: #eee;
-}
 #head{
   position: relative;
   float: left;
   width: 100%;
-  height: 6vh;
+  height: 8vh;
   background-color: #0070c0;
 
 }
@@ -33,6 +25,7 @@ html,body{
   font-size: 2.3vw;
   font-weight: bold;
   color: #eee;
+  cursor: pointer;
 }
 .head-button{
   position: relative;
@@ -52,24 +45,84 @@ html,body{
   background-color: #299;
   color: white;
 }
+.profInfo{
+  position: absolute;
+  top: 6.5vh;
+  width: 80%;
+  height: 8vh;
+  left: 2vw;
+}
+.profImg{
+  background-image: url('../images/user_profile_female.jpg');
+  position: absolute;
+  top :0vh;
+  left: 5vw;
+  width:5.5vw;
+  height: 11vh;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.username{
+  position: absolute;
+  padding-left: 2vw;
+  padding-right: 1vw;
+  top: 2vh;
+  left: 10vw;
+  border: 2px solid #0070c0;
+  font-size: 1.4vw;
+  font-weight: bold;
+}
+.lbl{
+    position: absolute;
+    top: 20vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    left: 7vw;
+    border: 1px solid black;
+    font-size: 1.2vw;
+    color: white;
+    background-color: #0070c0;
+    font-weight: bold;
+  }
+.container{
+  position: absolute;
+  top: 23.5vh;
+  width: 95%;
+  height: 65vh;
+  left: 2vw;
+  border: 1px solid black;
+  float: left;
+  display: inline-block;
+}
+.offr{
+  width:12vw;
+  height:20vh;
+  margin-top: 2.5vh;
+  margin-left: 3.3vw;
+  float:left;
+  position:relative;
+  background-size: 100% 75%;
+  background-repeat: no-repeat;
+}
+.offrTtl{
+  position: absolute;
+  bottom: 0;
+}
+.share{
 
-
-
-
-
-
+}
 .footer{
   position: absolute;
   width: 100%;
-  height: 7vh;
+  height: 6vh;
   background-color: #0070c0;
-  bottom: 0;
+  bottom: 0vh;
   overflow-y: hidden;
 }
 #link-container{
   position: absolute;
   margin-top: 1.6vh;
-  margin-left: 20vw;
   padding-left: 2vw;
   width: 65%;
   font-family: calibri;

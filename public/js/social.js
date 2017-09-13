@@ -67,4 +67,13 @@ function playNextFunc(){
   $(document.body).on('click', '#brandmonk', function () {
     location.href='home.html';
   });
+
+  for (var i=1; i<=5; i++){
+    var videoDiv = $(`<div id="Vid-${i}" class="videodivs"></div>`);
+    var title = $(`<div id="title-${i}" class="Tcontainer"></div>`);
+    $('#list').append(videoDiv);
+    $(`#Vid-${i}`).append(title);
+    $(`#Vid-${i}`).css('background-image', `url('./images/thumbnails/AdSnippet- (${i}).png')`);
+    $(`#title-${i}`).html(`Friend-${i}`);
+  }
 }
