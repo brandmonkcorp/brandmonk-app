@@ -181,13 +181,13 @@ $(".closeNav").on("click", function(){
 });
 
 $(document.body).on('click', '#social', function () {
-  location.href='social.html';
+  location.href='social';
 });
 $(document.body).on('click', '#payments', function () {
-  location.href='payments.html';
+  location.href='payments';
 });
 $(document.body).on('click', '#offers', function () {
-  location.href='offers.html';
+  location.href='offers';
 });
 $(document.body).on('click', '#brandmonk', function () {
   location.reload();
@@ -229,4 +229,7 @@ video.addEventListener('seeking', function() {
 });
 video.addEventListener('ended', function() {
     supposedCurrentTime = 0;
+});
+$('#footer-button').click(function () {
+  $('.footer').toggleClass('footer-show');
 });

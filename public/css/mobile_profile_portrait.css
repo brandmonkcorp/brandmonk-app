@@ -12,11 +12,29 @@
     background-color: #248;
     z-index: 2;
   }
+  #footer-button{
+    position: relative;
+    float: left;
+    width: 8vw;
+    height: 8vw;
+    margin-left: 4vw;
+    margin-top: 2.5vw;
+    font-size: 6vw;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: .3vw;
+    border-radius: 1vw;
+    display: block;
+  }
+  #footer-button:active{
+    color: #888;
+  }
   #brandmonk{
     position: relative;
     float: left;
     margin: 5%;
-    margin-left: 12%;
+    margin-left: 2%;
     padding: 0%;
     margin-top: 2vw;
     visibility: visible;
@@ -39,12 +57,47 @@
     margin: 3.5vw;
     border-radius: 1vw;
   }
+  .footer{
+    position: fixed;
+    top: 15vw;
+    width: 0vw;
+    height: 90vh;
+    background-color: #eee;
+    display: block;
+    box-shadow: 5px 5px 5px 0px rgba(22,22,80,0.3), 5px 5px 5px 0px rgba(22,22,80,0.3);
+    transition: all 0.1s ease;
+  }
+  .footer-show{
+    width: 45vw;
+  }
+  #link-container{
+    font-family: calibri;
+    position:relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #link-container a{
+    position: relative;
+    float: left;
+    width: 90%;
+    font-size: 4vw;
+    color: #555;
+    padding: 2vw;
+    border-bottom: 1px solid #ddd;
+    overflow-x: wrap;
+  }
+  #link-container a:hover{
+    background-color: #ddd;
+  }
   #mail-sent{
     position: relative;
     float: left;
     width: 30vw;
     height: 30vw;
-    margin-top: 20%;
+    margin-top: 30%;
     margin-left: 35%;
     background-image: url('../images/icons/mail_sent.png');
     background-size: 100% 100%;
@@ -69,7 +122,7 @@
   }
   #container{
     background-color: #248;
-    margin-top: 20vw;
+    margin-top: 18vw;
   }
   #inputs{
     width: 100%;

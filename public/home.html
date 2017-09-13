@@ -5,24 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/mobile_home_portrait.css">
     <link rel="stylesheet" href="./css/error.css">
     <link rel="shortcut icon" type="image/png" href="./favicon.png">
   </head>
 
   <body style="visibility: hidden">
-
     <div id="head">
+      <div id="footer-button">&#9776;</div>
       <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
       <span id="logout" class="head-button">Logout</span>
-      <span id="profile" class="head-button">Profile</span>
-      <span id="payments" class="head-button">Payments</span>
-      <span id="offers" class="head-button">Offers</span>
-      <span id="social" class="head-button">Social</span>
+      <div id="head-extra-button">
+        <span id="profile" class="head-button">Profile</span>
+        <span id="payments" class="head-button">Payments</span>
+        <span id="offers" class="head-button">Offers</span>
+        <span id="social" class="head-button">Social</span>
+      </div>
     </div>
     <div class="userNearn">
       <hr align="right" width="80%">
       <div class="earning">
-        Your Earnings till date is <span id="earn">1255</span>
+        Total Earning <span id="earn">1255</span>
       </div>
       <div class="userName">
         User Name
@@ -115,7 +118,6 @@
     </div>
  <div id="list-container">
    <div id="list">
-
    </div>
  </div>
 </div>
@@ -125,6 +127,12 @@
 <div>
 <div class="footer">
   <div id = "link-container">
+    <div id="mob-head-link">
+      <a id="profile">Profile</a>
+      <a id="payments">Payments</a>
+      <a id="offers">Offers</a>
+      <a id="social">Social</a>
+    </div>
     <a href = "#">About Us</a>
     <a href = "#">Partner With Us</a>
     <a href = "#">About Us</a>

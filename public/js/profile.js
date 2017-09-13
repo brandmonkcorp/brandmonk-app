@@ -113,3 +113,7 @@ function scrollDown() {
   var scrollHeight = headerHeight + divHeight;
   $(document.body).animate({ scrollTop: scrollHeight * .99}, 1000);
 }
+
+$('#footer-button').click(function () {
+  $('.footer').toggleClass('footer-show');
+});

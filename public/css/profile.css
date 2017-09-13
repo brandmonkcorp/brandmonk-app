@@ -11,7 +11,13 @@ body,html{
   float: left;
   width: 100%;
   height: 8vh;
-  background-color: #054f93;
+  background-color: #0070c0;
+}
+#footer-button{
+  display: none;
+}
+#footer-button{
+  display: none;
 }
 #brandmonk{
   position: relative;
@@ -20,10 +26,11 @@ body,html{
   float: left;
   height:100%;
   width: 20vw;
-  font-family: verdana arial "century gothic";
+  font-family: "candara";
   font-size: 2.3vw;
   font-weight: bold;
-  color: #fff;
+  color: #eee;
+  cursor: pointer;
 }
 .head-button{
   position: relative;
@@ -43,7 +50,29 @@ body,html{
   background-color: #299;
   color: white;
 }
-
+.footer{
+  position: absolute;
+  width: 100%;
+  height: 7vh;
+  background-color: #0070c0;
+  bottom: 0;
+  overflow-y: hidden;
+  display: block;
+}
+#link-container{
+  position: absolute;
+  margin-top: 1.6vh;
+  margin-left: 20vw;
+  padding-left: 2vw;
+  width: 65%;
+  font-family: calibri;
+}
+#link-container a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.2vw;
+  padding: 1vw;
+}
 #intro{
   position: absolute;
   float: none;
