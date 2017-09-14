@@ -202,7 +202,7 @@ $(document.body).on('mouseup', function (e) {
     $(".sidenav").css("height", "0%");
   }
 });
-$('#survey-container').click( function () {
+$('#survey-submit').click( function () {
   if($(document.body).innerWidth() <= '480'){
     $('#survey-container').hide();
   }

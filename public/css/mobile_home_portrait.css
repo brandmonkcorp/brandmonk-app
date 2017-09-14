@@ -70,6 +70,7 @@
     height: auto;
     margin: 3.5vw;
     border-radius: 1vw;
+    border: 1px solid white;
   }
   #head-extra-button{
     display: none;
@@ -139,7 +140,7 @@
     position: relative;
     float: left;
     height: 35vw;
-    min-width: 920vw;
+    min-width: 870vw;
     width: auto;
     word-wrap: normal;
     overflow-x: hidden;
@@ -150,6 +151,8 @@
     float: left;
     width: 40vw;
     height: 25vw;
+    margin-left: 3vw;
+    margin-right: 0;
     background-size: 100% 100%;
     box-shadow: 5px 5px 5px 0px rgba(22,22,80,0.3), 0px 5px 5px 0px rgba(22,22,80,0.3);
   }
