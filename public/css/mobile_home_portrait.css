@@ -228,6 +228,10 @@
     left: 0;
     margin: 2vw;
   }
+  .sub input{
+    width: 30vw;
+    font-size: 3vw;
+  }
   #link-container{
     font-family: calibri;
     position:relative;
