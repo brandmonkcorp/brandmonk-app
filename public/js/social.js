@@ -68,10 +68,10 @@ function playNextFunc(){
     location.href='home.html';
   });
 
-  for (var i=1; i<=5; i++){
+  for (var i=1; i<=8; i++){
     var videoDiv = $(`<div id="Vid-${i}" class="videodivs"></div>`);
     var title = $(`<div id="title-${i}" class="Tcontainer"></div>`);
-    $('#list').append(videoDiv);
+    $('#friend').append(videoDiv);
     $(`#Vid-${i}`).append(title);
     $(`#Vid-${i}`).css('background-image', `url('./images/thumbnails/AdSnippet- (${i}).png')`);
     $(`#title-${i}`).html(`Friend-${i}`);

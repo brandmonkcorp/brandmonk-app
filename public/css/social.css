@@ -150,19 +150,18 @@ html,body{
 .statUpdate input::placeholder{
   color: #0070c0;
 }
-#vid-container{
+#friend{
+  position: relative;
+  padding-left: 1vw;
 
 }
-#list-container{
-  overflow:hidden;
-  margin-left: 3%;
-  width: 90%;
-  float:left;
-}
-#list{
-  background:#eee;
-  min-width:4000px;
-  float:left;
+.videodivs{
+  position: relative;
+  width: 4.7vw;
+  height: 4.7vw;
+  background-size: 100% 100%;
+  margin: 1.2vh;
+  float: left;
 }
 
 .footer{
