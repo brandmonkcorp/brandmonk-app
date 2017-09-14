@@ -13,6 +13,9 @@ html,body{
   height: 8vh;
   background-color: #0070c0;
 }
+#head-extra-button{
+  height: 8vh;
+}
 #mob-head-link{
   display: none;
 }
@@ -37,7 +40,7 @@ html,body{
   padding: 2vh;
   float: right;
   width: auto;
-  height: 50%;
+  height: 100%;
   font-size: 1.25vw;
   color: #eee;
 }
