@@ -265,10 +265,11 @@ video{
   bottom: 0;
 }
 .sub{
-position: absolute;
-top: 73vh;
-right: 1.5vw;
-cursor: pointer;
+  position: absolute;
+  top: 57vh;
+  width: 33vw;
+  right: -1vw;
+  cursor: pointer;
 }
 .subBtn{
   background-color: #0070c0;

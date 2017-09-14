@@ -156,7 +156,7 @@ $(document.body).on('click', '.videodivs', function () {
 });
 $(document.body).on('click', '.videodivs', function(){
   var id = $(this).attr('id');
-  $(`#${id}`).remove();
+  //$(`#${id}`).remove();
 
 });
 
@@ -202,15 +202,24 @@ $(document.body).on('mouseup', function (e) {
     $(".sidenav").css("height", "0%");
   }
 });
+$('#survey-container').click( function () {
+  if($(document.body).innerWidth() <= '480'){
+    $('#survey-container').hide();
+  }
+});
 $("#vidPlayer").on("ended", function() {
    document.webkitExitFullscreen();
-   document.mozCancelFullscreen();
-   document.exitFullscreen();
+   if(document.mozFullScreen) {
+      document.mozCancelFullScreen();
+    }else if (document.fullscreenElement) {
+    document.exitFullscreen()
+    }
+   $('#survey-container').show();
    $(".surbtn").css('visibility', 'hidden');
    $(".offcode").css('visibility', 'hidden');
    $(".offsurvey").toggle();
    $("#surTitle").html("Take Your Survey Now");
-   console.log('Video has ended!');
+   //console.log('Video has ended!');
 });
 
 var video = document.getElementById('vidPlayer');
