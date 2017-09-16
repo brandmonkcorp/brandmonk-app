@@ -72,23 +72,19 @@ html,body{
 }
 [class*="col-3"] {
     float: left;
-    border: 1px solid black;
 }
 
 .left-upper{
 float:left;
 }
 .right-upper{
-  border: 1px solid green;
   float: right;
 }
 .left-down{
-  border: 1px solid blue;
-  margin-top: 17vh;
+  margin-top: 10vh;
   float: left;
 }
 .right-down{
-  border: 1px solid orange;
   float: right;
 }
 .profInfo{
@@ -155,12 +151,12 @@ float:left;
   color: #0070c0;
 }
 #friend{
-  padding-left: 1vw;
+
 
 }
 .f_image{
-  width: 4.5vw;
-  height: 4.5vw;
+  width: 4.8vw;
+  height: 4.8vw;
   background-size: 100% 100%;
   border-color: white;
   background-repeat: no-repeat;
@@ -179,28 +175,34 @@ float:left;
 }
 .post{
   width: 80%;
-  height: 10vw;
+  min-height: 8vw;
+  max-height: 20vw;
   background-size: 100% 100%;
-  border-color: white;
   background-repeat: no-repeat;
   margin: 0.6vw;
   float: left;
   border: 1px solid black;
 }
-.post_u_name{
-
+.postedby{
+  border: 1px solid black;
+}
+.originalpost{
+  border: 1px solid red;
+  width: 100%;
+  min-height: 8vw;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .like{
   border: 1px solid black;
-  width: 50%;
+  width: 20%;
   float:left;
-  margin-top: 15vh;
 }
 .comment{
   border: 1px solid black;
-  width: 50%;
-  float:right;
-  margin-top: 15vh;
+  width: 20%;
+  float:left;
 }
 .ref_vid{
   width: 15%;
@@ -208,6 +210,7 @@ float:left;
   background-size: 100% 86%;
   background-repeat: no-repeat;
   margin: 0.6vw;
+  margin-top: 3vh;
   float: right;
   border: 1px solid black;
 }
@@ -215,6 +218,35 @@ float:left;
   border: 1px solid black;
   margin-top: 15vh;
   text-align: center;
+}
+#banner{
+  padding: 1vw;
+}
+.banner_add{
+  width: 100%;
+  float: left;
+  margin-bottom: 2vh;
+}
+.banner_name{
+  border: 1px solid red;
+  width: 70%;
+  height: 7vw;
+  float: left;
+  border-radius: 5%;
+}
+.banner_add_share{
+  border: 1px solid green;
+  border-radius: 50%;
+  width: 30%;
+  height: 7vw;
+  float: right;
+}
+.banner_add_share_text{
+position: relative;
+float: left;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 }
 
 .footer{

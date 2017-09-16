@@ -78,14 +78,17 @@ function playNextFunc(){
   }
   for (var j=1; j<=10; j++){
     var post = $(`<div id="post_text-${j}" class="post"></div>`);
-    var post_u_name = $(`<div id="u_name-${j}" class="post_u_name"></div>`);
+    var postedby = $(`<div id="postedby-${j}" class="postedby"></div>`);
+    var originalpost = $(`<div id="originalpost-${j}" class="originalpost"></div>`);
     var like = $(`<div id="like-${j}" class="like"></div>`);
     var comment = $(`<div id="comment-${j}" class="comment"></div>`);
     $('#user_post').append(post);
-    $(`#post_text-${j}`).append(post_u_name);
+    $(`#post_text-${j}`).append(postedby);
+    $(`#post_text-${j}`).append(originalpost);
     $(`#post_text-${j}`).append(like);
     $(`#post_text-${j}`).append(comment);
-    $(`#u_name-${j}`).html(`Post-${j}`);
+    $(`#postedby-${j}`).html(`Postedby`);
+    $(`#originalpost-${j}`).css('background-image', `url('../images/post.png')`);
     $(`#like-${j}`).html(`Like`);
     $(`#comment-${j}`).html(`comment`);
 
@@ -99,5 +102,16 @@ function playNextFunc(){
     $(`#ref_vid_name-${j}`).html(`Add-${j}`);
     $(`#share-${j}`).html(`share`);
   }
-
+  for (var j=1; j<=10; j++){
+    var banner_add = $(`<div id="banner_add-${j}" class="banner_add"></div>`);
+    var banner_name = $(`<div id="banner_name-${j}" class="banner_name"></div>`);
+    var banner_add_share = $(`<div id="banner_add_share-${j}" class="banner_add_share"></div>`);
+    var banner_add_share_text = $(`<div id="banner_add_share_text-${j}" class="banner_add_share_text"></div>`);
+    $('#banner').append(banner_add);
+    $(`#banner_add-${j}`).append(banner_name);
+    $(`#banner_add-${j}`).append(banner_add_share);
+    $(`#banner_name-${j}`).html(`Banner-Add-${j}`);
+    $(`#banner_add_share-${j}`).append(banner_add_share_text);
+    $(`#banner_add_share_text-${j}`).html(`Share`);
+  }
 }
