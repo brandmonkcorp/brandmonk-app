@@ -139,6 +139,10 @@
   }
    .revenue,.socioSharing, .trans, .credentials, .privacy-policy{
     display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   hr{
     display: none;
@@ -157,7 +161,7 @@
     margin: 2vw;
     margin-top: 20vw;
     margin-bottom: 10vw;
-    width: 90%;
+    width: 92vw;
     top: 0;
     height: auto;
     padding: 1vw;
@@ -273,15 +277,16 @@
   }
   .credentials{
     margin-top: 0;
+    margin-bottom: 5vw;
   }
   .privacy-policy{
     position: relative;
     float: left;
-    width: 90%;
-    margin-left: 5vw;
+    width:98%;
     margin-top: 5vw;
-    font-size: 4vw;
+    font-size: 3.5vw;
     color: #fff;
+    text-align: center;
   }
   .privacy-policy a{
     color: #999;
@@ -290,10 +295,12 @@
   #ini{
     position: relative;
     float: left;
-    margin-top: 5vw;
-    margin-left: 25vw;
+    margin-top: 10vw;
+    margin-left: 30vw;
     font-size: 5vw;
     padding: .5vh;
     margin-bottom: 10vw;
+    border-radius: 2px;
+
   }
 }
