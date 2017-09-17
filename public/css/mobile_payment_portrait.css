@@ -1,0 +1,299 @@
+@media screen and (max-width: 480px) and (max-height: 853px){
+  body{
+    background-color: #248;
+  }
+  #foot, #foot-mobile{
+    display: none;
+  }
+  #head{
+    position: fixed;
+    visibility: visible;
+    height: 15vw;
+    background-color: #248;
+    z-index: 2;
+  }
+  #footer-button{
+    position: relative;
+    float: left;
+    width: 8vw;
+    height: 8vw;
+    margin-left: 4vw;
+    margin-top: 2.5vw;
+    font-size: 6vw;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: .3vw;
+    border-radius: 1vw;
+    display: block;
+  }
+  #footer-button:active{
+    color: #888;
+  }
+  #brandmonk{
+    position: relative;
+    float: left;
+    margin: 5%;
+    margin-left: 2%;
+    padding: 0%;
+    margin-top: 2vw;
+    visibility: visible;
+    font-size: 8vw;
+    text-align: center;
+    font-weight: bold;
+    font-family: Candara;
+    color: #fff;
+  }
+  .head-fix{
+    box-shadow: 0px 5px 5px 0px rgba(22,22,80,0.3), 0px 5px 5px 0px rgba(22,22,80,0.3);
+  }
+  .footer{
+    position: fixed;
+    top: 15vw;
+    width: 0vw;
+    height: 90vh;
+    background-color: #eee;
+    display: block;
+    box-shadow: 5px 5px 5px 0px rgba(22,22,80,0.3), 5px 5px 5px 0px rgba(22,22,80,0.3);
+    transition: all 0.1s ease;
+    overflow: auto;
+  }
+  .footer-show{
+    width: 45vw;
+  }
+  #logout{
+    position: relative;
+    float: right;
+    height: 50%;
+    font-size: 4vw;
+    padding: 1vw;
+    height: auto;
+    margin: 3.5vw;
+    border-radius: 1vw;
+    border: 1px solid white;
+  }
+  #head-extra-button{
+    display: none;
+  }
+  .username{
+    position: absolute;
+    top: 15vw;
+    left: 21vw;
+    font-size: 5vw;
+    color: #9ff;
+    border: none;
+  }
+  .profInfo{
+    position: relative;
+    float: left;
+    top: 0;
+    left: 0;
+
+  }
+  .profImg{
+    position: absolute;
+    top: 15vw;
+    height: 15vw;
+    width: 15vw;
+    border: 1px solid white;
+  }
+  .earning{
+    position: absolute;
+    top: 16vw;
+    font-size: 3vw;
+    color: #fff;
+  }
+  #earn{
+    position: absolute;
+    font-size: 4vw;
+    font-family: 'century gothic';
+    top: 5vw;
+    right: 0;
+    border-radius: 5px;
+  }
+
+  #link-container{
+    font-family: calibri;
+    position:relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #mob-head-link{
+    display: block;
+  }
+  #link-container a, #mob-head-link a{
+    position: relative;
+    float: left;
+    width: 90%;
+    font-size: 4vw;
+    color: #555;
+    padding: 2vw;
+    border-bottom: 1px solid #ddd;
+    overflow-x: wrap;
+  }
+  #link-container a:hover{
+    background-color: #ddd;
+  }
+   .revenue,.socioSharing, .trans, .credentials, .privacy-policy{
+    display: none;
+  }
+  hr{
+    display: none;
+  }
+  #details-container{
+    position: relative;
+    float: left;
+    height: auto;
+    width: auto;
+    background-color: #248;
+  }
+  .details{
+    border: 1px solid white;
+    position: relative;
+    float: left;
+    margin: 2vw;
+    margin-top: 20vw;
+    margin-bottom: 10vw;
+    width: 90%;
+    top: 0;
+    height: auto;
+    padding: 1vw;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px rgba(22,22,80,0.3), 5px 5px 5px 0px rgba(22,22,80,0.3);
+    background-color: transparent;
+  }
+   #heading{
+    font-size: 5vw;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+  }
+  .desk-head{
+    display: none;
+  }
+  .mobile-head-type{
+    position: relative;
+    float: left;
+    display: block;
+    width: 45%;
+    color: #fff;
+    margin-bottom: 5vw;
+    text-align: center;
+    background-color: #eee;
+    color: #248;
+    border-radius: 2px;
+    padding: 1vw;
+  }
+  #mobile-count{
+    float: right;
+  }
+  .row{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+  }
+  #type{
+    position: relative;
+    float: left;
+    color: #fff;
+    font-size: 5vw;
+    width: 55%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    margin-bottom: 2vh;
+  }
+  #val{
+    position: relative;
+    float: right;
+    width: 40%;
+    color: #fff;
+    font-size: 5vw;
+    margin: 0;
+    right: 0;
+    padding: 0;
+    text-align: right;
+    background-color: transparent;
+    text-align: center;
+    margin-bottom: 2vh;
+  }
+  .mobile-next-button{
+    display: block;
+    position: relative;
+    float: left;
+    font-size: 4vw;
+    padding: 2vw;
+    background-color: #fff;
+    color: #248;
+    border-radius: 2px;
+    margin-top: 5vw;
+    margin-left: 40vw;
+  }
+  .mobile-next-button:active{
+    background-color: #248;
+    color: #fff;
+    border: 1px solid white;
+  }
+  .trans input{
+    width: 40vw;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 4vw;
+    padding: .5vw;
+    color: white;
+  }
+  .trans select{
+    font-size: 4vw;
+  }
+  td{
+    position: relative;
+    float: left;
+    width: 45%;
+    margin-bottom: 1vh;
+  }
+  #credType{
+    width: 55vw;
+    font-size: 3.5vw;
+    color: #fff;
+    margin: 0;
+  }
+  #credVal{
+    width: 40vw;
+    font-size: 3.5vw;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #248;
+    padding: .5vh;
+  }
+  .credentials{
+    margin-top: 0;
+  }
+  .privacy-policy{
+    position: relative;
+    float: left;
+    width: 90%;
+    margin-left: 5vw;
+    margin-top: 5vw;
+    font-size: 4vw;
+    color: #fff;
+  }
+  .privacy-policy a{
+    color: #999;
+    text-decoration: none;
+  }
+  #ini{
+    position: relative;
+    float: left;
+    margin-top: 5vw;
+    margin-left: 25vw;
+    font-size: 5vw;
+    padding: .5vh;
+    margin-bottom: 10vw;
+  }
+}

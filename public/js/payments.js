@@ -19,9 +19,9 @@ function checkHomeAuth () {
       }
     }
   }
-
   getProfileData(token);
 }
+
 function getProfileData(token) {
   $.ajax({
     url: '/profileData',
@@ -98,6 +98,27 @@ $('#ift2').delay(3000).fadeOut('slow');
       alert("Your Payment Has Been Initiated!");
       location.href='home.html';
     });
+}
+$('#footer-button').click(function () {
+  $('.footer').toggleClass('footer-show');
+});
+$('.mobile-next-button').click(function (){
+  scrollDown();
+});
 
-
+$(window).scroll(function (event) {
+  if($(document.body).innerWidth() <= '480'){
+    var scroll = $(window).scrollTop();
+    if(scroll >= $('#head').innerHeight()){
+      $('#head').addClass('head-fix');
+    }else{
+      $('#head').removeClass('head-fix');
+    }
+  }
+});
+function scrollDown() {
+  var headerHeight = $('#head').innerHeight();
+  var divHeight = $('#details-container').innerHeight();
+  var scrollHeight = headerHeight + divHeight;
+  $(document.body).animate({ scrollTop: scrollHeight * .99}, 1000);
 }

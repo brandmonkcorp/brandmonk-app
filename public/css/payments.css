@@ -12,7 +12,9 @@ html,body{
   width: 100%;
   height: 8vh;
   background-color: #0070c0;
-
+}
+#footer-button{
+  display: none;
 }
 #brandmonk{
   position: relative;
@@ -27,12 +29,18 @@ html,body{
   color: #eee;
   cursor: pointer;
 }
+.mobile-head-type{
+  display: none;
+}
+.mobile-next-button{
+  display: none;
+}
 .head-button{
   position: relative;
   padding: 2vh;
   float: right;
   width: auto;
-  height: 50%;
+  height: 4vh;
   font-size: 1.25vw;
   color: #eee;
 }
@@ -141,7 +149,6 @@ html,body{
   bottom: 23vh;
   width: 45%;
   height: 30%;
-
 }
 .trans{
   position: absolute;
@@ -149,7 +156,15 @@ html,body{
   bottom: 23vh;
   width: 45%;
   height: 30%;
-
+}
+.row{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 18px;
+}
+#mob-head-link{
+  display: none;
 }
 .credentials{
   position: absolute;

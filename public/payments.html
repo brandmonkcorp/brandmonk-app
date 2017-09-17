@@ -5,17 +5,21 @@
     <title>Payments</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/payments.css">
+    <link rel="stylesheet" href="./css/mobile_payment_portrait.css">
     <link rel="stylesheet" href="./css/error.css">
     <link rel="shortcut icon" type="image/png" href="./favicon.png">
   </head>
   <body style="visibility: hidden">
     <div id="head">
+      <div id="footer-button">&#9776;</div>
       <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
       <span id="logout" class="head-button">Logout</span>
-      <span id="profile" class="head-button">Profile</span>
-      <span id="payments" class="head-button">Payments</span>
-      <span id="offers" class="head-button">Offers</span>
-      <span id="social" class="head-button">Social</span>
+      <div id="head-extra-button">
+        <span id="profile" class="head-button">Profile</span>
+        <span id="payments" class="head-button">Payments</span>
+        <span id="offers" class="head-button">Offers</span>
+        <span id="social" class="head-button">Social</span>
+      </div>
     </div>
       <hr class="hline1" align="right" width="96%">
       <hr class="hline2" align="right" width="96%">
@@ -23,44 +27,53 @@
       <hr class="hline4" align="right" width="96%">
       <hr class="vline1" align="right" width="12%">
       <hr class="vline2" align="right" width="12%">
+      <div id="details-container">
     <div class="profInfo">
       <div class="username">
         User Name
       </div>
       <div class="profImg">
-
       </div>
+    </div>
 
-    </div>
-    <div class="adTrack">
+    <div class="adTrack details">
       <span id="heading">Advertisement Tracking</span><br><br>
-      <span style="float:left;margin-left:6vw;text-decoration: underline;">Ad Type</span><span style="float:right;margin-right:6vw;text-decoration: underline;">Count</span><br>
-      <span id="type">Video</span><span id="val">000</span><br>
-      <span id="type">TV</span><span id="val">000</span><br>
-      <span id="type">Radio</span><span id="val">000</span><br>
-      <span id="type">Magazines</span><span id="val">000</span><br>
-      <span id="type">BillBoards</span><span id="val">000</span><br>
-      <span id="type">Internet</span><span id="val">000</span>
+      <span class="desk-head" style="float:left;margin-left:6vw;text-decoration: underline;">Ad Type</span>
+      <span class="desk-head" style="float:right;margin-right:6vw;text-decoration: underline;">Count</span><br>
+      <span id="mobile-type" class="mobile-head-type">Ad Type</span>
+      <span id="mobile-count" class="mobile-head-type">Count</span>
+      <div class="row"><span id="type">Video</span><span id="val">000</span></div>
+      <div class="row"><span id="type">TV</span><span id="val">000</span></div>
+      <div class="row"><span id="type">Radio</span><span id="val">000</span></div>
+      <div class="row"><span id="type">Magazines</span><span id="val">000</span></div>
+      <div class="row"><span id="type">BillBoards</span><span id="val">000</span></div>
+      <div class="row"><span id="type">Internet</span><span id="val">000</span></div>
+      <span class="mobile-next-button" onclick="$('.revenue').show();">Next</span>
     </div>
-    <div class="revenue">
+
+    <div class="revenue details">
       <span id="heading">Revenue</span><br><br><br><br>
       <span id="type">Total Earnings</span><span id="val">000 &#8377;</span><br>
       <span id="type">Discount Coupons</span><span id="val">000 &#8377;</span><br>
       <span id="type">Redeemed</span><span id="val">000 &#8377;</span><br>
       <span id="type">Remaining</span><span id="val">000 &#8377;</span>
+      <span class="mobile-next-button" onclick="$('.socioSharing').show();">Next</span>
     </div>
-    <div class="socioSharing">
+
+    <div class="socioSharing details">
       <span id="heading">Social Sharing Revenues</span><br><br><br>
       <span id="type">Referrals</span><span id="val">000</span><br><br>
       <span id="type">Gift Vouchers</span><span id="val">000</span><br><br>
       <span id="type">Shares</span><span id="val">000</span>
+      <span class="mobile-next-button" onclick="$('.trans').show(); $('.credentials').show();$('.privacy-policy').show();">Next</span>
     </div>
-    <div class="trans">
-      <span id="heading">Paytment</span><br><br>
+
+    <div class="trans details">
+      <span id="heading">Payment</span><br><br>
       <span id="type">Enter Amount</span> <input id="amt" type="number" placeholder="Amount &#8377;" ><br><br>
         <span id="type">Select Transfer Mode</span>
           <select id="select" class="required" style="position:absolute;right:6vw;">
-            <option value="0" selected disabled>Select Your Transfer mode</option>
+            <option value="0" selected disabled>Select</option>
             <option value="1">Bank</option>
             <option value="2">Digital Wallet</option>
             <option value="3">SWIFT</option>
@@ -68,18 +81,27 @@
         <span id="ift2">Please Selet An Option</span><br>
         <span id="ift">Amount cannot be EMPTY!!</span>
     </div>
-    <div class="credentials">
+
+    <div class="credentials details">
       <br>
       <table>
         <tr>
-          <td><span id="credType">Aadhaar Number</span></td><td><span id="credVal">xxxx-xxxx-xxxx</span></td><td><span id="credType">mobile</span></td><td><span id="credVal">xxxxxxxxxx</span></td><td><span id="credType">Bank A/C</span></td><td><span id="credVal">34649811782</span></td>
+          <td><span id="credType">Aadhaar Number</span></td>
+          <td><span id="credVal">xxxx-xxxx-xxxx</span></td>
+          <td><span id="credType">mobile</span></td>
+          <td><span id="credVal">xxxxxxxxxx</span></td>
+          <td><span id="credType">Bank A/C</span></td>
+          <td><span id="credVal">34649811782</span></td>
         </tr>
         <tr>
-          <td><span id="credType">PAN</span></td><td><span id="credVal">xxxxxxxxxx</span></td><td>  <span id="credType">Digital Wallet</span></td><td><span id="credVal">PayTm</span></td><td><span id="credType">Email</span></td><td><span id="credVal">xxxx@xxxxx.com</span></td>
+          <td><span id="credType">PAN</span></td>
+          <td><span id="credVal">xxxxxxxxxx</span></td>
+          <td><span id="credType">Digital Wallet</span></td>
+          <td><span id="credVal">PayTm</span></td>
+          <td><span id="credType">Email</span></td>
+          <td><span id="credVal">xxxx@xxxxx.com</span></td>
         </tr>
       </table>
-
-
     </div>
 
     <div class="privacy-policy">
@@ -89,8 +111,15 @@
       and <a href = "">Cookie Policy</a>.
       <span id="ini">Initiate Payment</span>
     </div>
+  </div>
     <div class="footer">
       <div id = "link-container">
+        <div id="mob-head-link">
+          <a id="profile">Profile</a>
+          <a id="payments">Payments</a>
+          <a id="offers">Offers</a>
+          <a id="social">Social</a>
+        </div>
         <a href = "#">About Us</a>
         <a href = "#">Partner With Us</a>
         <a href = "#">About Us</a>
