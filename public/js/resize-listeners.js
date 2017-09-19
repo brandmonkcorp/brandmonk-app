@@ -68,7 +68,12 @@ function goLeft(){
 function setImage(){
   var canvas = document.getElementById('resize');
   var url = canvas.toDataURL('image/png');
+  var image = new Image();
+ image.source = url;
+ document.body.appendChild(image);
   $('#picture-box').css('background-image', `url(${url})`);
   $('#social-photo').css('background-image', `url(${url})`);
   $("#locopoco").val(url);
+  var img = $('#picture-box').css('background-image').replace(/^url\((.*?)\)$/, '$1');
+  $('#locopoco').val(img);
 }

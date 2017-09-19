@@ -1,5 +1,6 @@
 $(document.body).on('click', '#save-basic', function () {
   $('#basic-info-submit').click();
+  $('#profsubmit').click();
 });
 
 $('#basic-info-form').submit(function (e) {

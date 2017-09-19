@@ -11,8 +11,8 @@
 }
 #picture-box{
   position: relative;
-  height: 14vw;
-  width: 13vw;
+  height: 18vw;
+  width: 17vw;
   background-image: url('../images/user_profile_male.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;

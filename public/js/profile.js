@@ -14,6 +14,37 @@ $(document).ready(function () {
   basicdata = new basicData();
   basicprofiledata = new basicProfileData();
 });
+$(document.body).on('submit', '#uploadForm', function(e) {
+  console.log('ja ichha');
+    e.preventDefault();
+  var file = $('#picture').get(0).files[0];
+  sendFile(file);
+});
+function sendFile(file){
+
+    var formData = new FormData();
+    var xhr      = new XMLHttpRequest();
+
+    formData.append("userFile", file, file.name);
+
+    xhr.open("POST", "/api/file", true);
+    xhr.setRequestHeader('x-auth', X_PID_AUTH);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+                if(xhr.responseText.message == 'success'){
+                  alert('Profile photo uploaded');
+                }
+            } else {
+                console.error(xhr.statusText);
+                alert('Error uploading file');
+            }
+        }
+    };
+    xhr.send(formData);
+}
 $('#start').click(function () {
   $('#intro').fadeOut(1000, function () {
     $('#container').show();

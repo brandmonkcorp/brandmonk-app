@@ -10,7 +10,7 @@ const {UserProfileData} = require('./models/basicprofiledata');
 const {authenticate} = require('./middleware/authenticate');
 const publicPath = path.join(__dirname, '../public');
 var config = require('../config/config.json');
-
+var multer = require('multer')
 var api_key = config.mailgun_api_key;
 var domain = config.mailgun_main_domain;
 var from_who = "BrandMonk Team<support@brandmonk.online>";
@@ -250,8 +250,36 @@ app.post('/postProfileData', authenticate, (req, res) => {
     });;
   });
 });
+var em;
+var storage = multer.diskStorage({
+	destination: function(req, file, callback) {
+		callback(null, './ProfilePicture')
+	},
+	filename: function(req, file, callback) {
 
+		callback(null, em + path.extname(file.originalname))
+	}
+})
 
+app.post('/api/file',authenticate, function(req, res) {
+  console.log('req arrived');
+  em = req.user.email;
+  //console.log(em);
+	var upload = multer({
+		storage: storage,
+		 fileFilter: function(req, file, callback) {
+		 	var ext = path.extname(file.originalname)
+		 	if (ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
+		 		return callback(res.end('Only images are allowed'), null)
+		 	}
+		 	callback(null, true)
+		 }
+	}).single('userFile');
+	upload(req, res, function(err) {
+		res.send({'message': 'success'});
+    console.log('file uploaded', err);
+	})
+})
 
 app.listen(port, () =>{
   console.log(`Server deployed on port ${port}`);

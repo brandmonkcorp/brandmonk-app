@@ -17,17 +17,17 @@ if(window.File && window.FileReader){
       reader.onload = function (e) {
         x = 0, y =0;
         drawToCanvas(e.target.result, function () {
-          $('#canvas-holder').css('visibility', 'visible');
-          $('#canvas-holder').show();
+          //$('#canvas-holder').css('visibility', 'visible');
+          //$('#canvas-holder').show();
           var canvas = document.getElementById('resize');
           var url = canvas.toDataURL('image/png');
           $('#picture-box').css('background-image', `url(${url})`);
+          $('#loading').css('visibility', 'hidden');
           $('#social-photo').css('background-image', `url(${url})`);
-          $("#locopoco").val(url);
           $('#infor').fadeOut(8000);
-          $('#resize').ready(function () {
-            $('#loading').css('visibility', 'hidden');
-          });
+          var image = new Image();
+          image.source=url;
+          photofile = image;
         });
 
       }
@@ -40,6 +40,9 @@ if(window.File && window.FileReader){
     }
   });
 }
+// var em = $('#basic-info-form input[name=email]').val();
+// console.log(em);
+// $('#picture').attr('name', em);
 
 var x = 0, y = 0, clipwidth, clipheight, min;
 var canvas = document.getElementById('resize');
