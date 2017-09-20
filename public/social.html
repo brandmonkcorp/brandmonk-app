@@ -5,18 +5,23 @@
   <title>BrandMonK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/social.css">
+  <link rel="stylesheet" href="./css/mobile_social_portrait.css">
   <link rel="stylesheet" href="./css/error.css">
   <link rel="shortcut icon" type="image/png" href="./favicon.png">
 </head>
 <body style="visibility: hidden">
 
   <div id="head">
+    <div id="footer-button">&#9776;</div>
     <div id="brandmonk" ><span style="color: #eee">BrandMonk</span></div>
     <span id="logout" class="head-button">Logout</span>
-    <span id="profile" class="head-button">Profile</span>
-    <span id="payments" class="head-button">Payments</span>
-    <span id="offers" class="head-button">Offers</span>
-    <span id="social" class="head-button">Social</span>
+
+    <div id="head-extra-button">
+      <span id="profile" class="head-button">Profile</span>
+      <span id="payments" class="head-button">Payments</span>
+      <span id="offers" class="head-button">Offers</span>
+      <span id="social" class="head-button">Social</span>
+    </div>
   </div>
 
 <div class="row">
@@ -29,10 +34,14 @@
       </div>
     </div>
     <div class="statUpdate">
-      <textarea class="stat" name="statBox" rows="2" cols="50" placeholder="Set Your Status Update Here. How Are You Feeling Now?"></textarea><span class="update">Update</span>
+      <textarea class="stat" name="statBox" rows="2" cols="50" placeholder="How Are You Feeling Now?"></textarea><span class="update">Update</span>
     </div>
-
   </div>
+  <div id="mobile-last-viewed">
+    Last Videos you watched
+    <div id="vid-container"></div>
+  </div>
+  <span id="share">Share</span>
   <div class="col-3 right-upper">
     <div id = "friend">
 
@@ -52,6 +61,12 @@
 
 <div class="footer">
   <div id = "link-container">
+    <div id="mob-head-link">
+      <a id="profile">Profile</a>
+      <a id="payments">Payments</a>
+      <a id="offers">Offers</a>
+      <a id="social">Social</a>
+    </div>
     <a href = "#">About Us</a>
     <a href = "#">Partner With Us</a>
     <a href = "#">About Us</a>
@@ -62,11 +77,10 @@
     <a href = "#">Join Us</a>
   </div>
 </div>
-
-<script src="./js/social.js"></script>
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="./js/js-cookie.js"></script>
 <script src="./js/logout.js"></script>
 <script src="./js/social.js"></script>
+<script src="./js/mobile_social.js"></script>
 </body>
 </html>

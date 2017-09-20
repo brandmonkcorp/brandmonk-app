@@ -9,6 +9,9 @@ html,body{
 * {
     box-sizing: border-box;
 }
+#footer-button{
+  display: none;
+}
 #head{
   position: relative;
   float: left;
@@ -37,6 +40,9 @@ html,body{
   height: 100%;
   font-size: 1.25vw;
   color: #eee;
+}
+#mob-head-link,#mobile-last-viewed,#share{
+  display: none;
 }
 .head-button:hover{
   background-color: #eee;

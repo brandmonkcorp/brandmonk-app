@@ -113,3 +113,21 @@ function playNextFunc(){
     $(`#banner_add_share_text-${j}`).html(`Share`);
   }
 }
+$('#footer-button').click(function () {
+  $('.footer').toggleClass('footer-show');
+});
+$(document.body).on('click', '#profile', function () {
+  location.href='profile';
+});
+$(document.body).on('click', '#social', function () {
+  location.href='social';
+});
+$(document.body).on('click', '#payments', function () {
+  location.href='payments';
+});
+$(document.body).on('click', '#offers', function () {
+  location.href='offers';
+});
+$(document.body).on('click', '#brandmonk', function () {
+  location.reload();
+});
