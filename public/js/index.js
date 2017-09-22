@@ -71,7 +71,7 @@ $(document.body).on('focusout', '#register-form input[name=email]', function (e)
     }
   }
   var email = $('#register-form input[name="email"]').val();
-  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  var emailReg = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,8}|[0-9]{1,3})(\]?)$/;
   if((!emailReg.test( email )) && email.length != 0){
     regflag2 = false;
     showErrorMessage('Provide a valid Email id!',elem);

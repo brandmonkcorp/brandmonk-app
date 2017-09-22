@@ -1,4 +1,3 @@
-
 $(document).ready( function () {
   //dont delete this
   checkHomeAuth();
@@ -34,7 +33,7 @@ function getProfileData(token) {
   .done(function(doc, status, response){
     if(doc.message == 'redirect'){
       $(document.body).css('visibility', 'visible');
-      playNextFunc();
+      playNextFunc(token);
     }else if(doc.message == 'activated'){
       window.location.replace('../profile');
     }else if(doc.message == 'deactivated'){
@@ -51,9 +50,29 @@ function getProfileData(token) {
   });
 });
 }
+function getPaymentData(token) {
+  $.ajax({
+    url: '/paymentData',
+    method: 'GET',
+    contentType: 'application/json',
+    headers:{
+      'x-auth': token
+    }
+  })
+  .done(function(doc, status, response){
+    console.log(doc);
+    setData(doc);
+})
+.fail(function(error){
+  $(document.body).load('../pages/error', function () {
+      $(this).css('visibility', 'visible');
+  });
+});
+}
 //Rambo's Code up-above
 //MaDa's Code
-function playNextFunc(){
+function playNextFunc(token){
+  getPaymentData(token);
   var v1=0;
   var v2=0;
   $(document.body).on('click', '#payments', function () {
@@ -121,4 +140,15 @@ function scrollDown() {
   var divHeight = $('#details-container').innerHeight();
   var scrollHeight = headerHeight + divHeight;
   $(document.body).animate({ scrollTop: scrollHeight * .99}, 1000);
+}
+function setData(doc){
+  var pic = doc.data.email;
+  $('.username').text(doc.name);
+  $('.profImg').css('background-image', `url("../ProfilePicture/${pic}.png")`);
+  $('.adTrack1').text(doc.data.adtrack.video);
+  $('.adTrack2').text(doc.data.adtrack.tv);
+  $('.adTrack3').text(doc.data.adtrack.radio);
+  $('.adTrack4').text(doc.data.adtrack.magazine);
+  $('.adTrack5').text(doc.data.adtrack.billboard);
+  $('.adTrack6').text(doc.data.adtrack.internet);
 }

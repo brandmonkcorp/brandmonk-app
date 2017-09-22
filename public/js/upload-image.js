@@ -46,7 +46,7 @@ if(window.File && window.FileReader){
 
 var x = 0, y = 0, clipwidth, clipheight, min;
 var canvas = document.getElementById('resize');
-var ctx = canvas.getContext('2d');
+//var ctx = canvas.getContext('2d');
 var image = new Image;
 
 function drawToCanvas(url, callback){

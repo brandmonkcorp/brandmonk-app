@@ -7,6 +7,7 @@ const {mongoose} = require('./db/mongoose');
 const {User} = require('./models/user');
 const {UserData} = require('./models/basicdata');
 const {UserProfileData} = require('./models/basicprofiledata');
+const {PaymentStat} = require('./models/payments');
 const {authenticate} = require('./middleware/authenticate');
 const publicPath = path.join(__dirname, '../public');
 var config = require('../config/config.json');
@@ -122,11 +123,12 @@ app.get('/profileData', authenticate,  (req, res) => {
     "email": req.user.email,
     "mobile": req.user.phone
   };
+  var data = req.user;
   if(profileActivated){
     if(!setupCompleted)
       res.send({"message": 'activated', sendData});
     else {
-      res.send({'message': 'redirect'});
+      res.send({'message': 'redirect', data});
     }
   }else{
     var sendData = {
@@ -253,11 +255,11 @@ app.post('/postProfileData', authenticate, (req, res) => {
 var em;
 var storage = multer.diskStorage({
 	destination: function(req, file, callback) {
-		callback(null, './ProfilePicture')
+		callback(null, './public/ProfilePicture')
 	},
 	filename: function(req, file, callback) {
 
-		callback(null, em + path.extname(file.originalname))
+		callback(null, em + '.png');
 	}
 })
 
@@ -269,10 +271,10 @@ app.post('/api/file',authenticate, function(req, res) {
 		storage: storage,
 		 fileFilter: function(req, file, callback) {
 		 	var ext = path.extname(file.originalname)
-		 	if (ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
-		 		return callback(res.end('Only images are allowed'), null)
+		 	if (ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg' && ext !== '.JPEG' && ext !== '.JPG' && ext !== '.PNG') {
+		 		return callback(res.end('Only images are allowed'), null);
 		 	}
-		 	callback(null, true)
+		 	callback(null, true);
 		 }
 	}).single('userFile');
 	upload(req, res, function(err) {
@@ -283,4 +285,15 @@ app.post('/api/file',authenticate, function(req, res) {
 
 app.listen(port, () =>{
   console.log(`Server deployed on port ${port}`);
+});
+app.get('/paymentData', authenticate, function(req, res){
+  var email = req.user.email;
+  var name  = req.user.name;
+  PaymentStat.findOne({'email': email}).then( (data) => {
+    console.log(data);
+    res.send({"name": name, data});
+  }).catch( () => {
+    res.status(400).send();
+  });
+
 });

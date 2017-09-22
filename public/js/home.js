@@ -3,7 +3,6 @@ $(document).ready( function () {
   //dont delete this
   checkHomeAuth();
 });
-
 //checking for authentication, profile status
 function checkHomeAuth () {
   var token = Cookies.get('_LOC_authFirstPID');
@@ -34,6 +33,7 @@ function getProfileData(token) {
   .done(function(doc, status, response){
     if(doc.message == 'redirect'){
       $(document.body).css('visibility', 'visible');
+      console.log(doc);
       playNextFunc();
     }else if(doc.message == 'activated'){
       window.location.replace('../profile');
@@ -119,6 +119,7 @@ function playNextFunc() {
       }, "fast");
    });
 }
+
 $("#sas").on('click', function(){
   $(".surbtn").css('visibility', 'hidden');
   $(".offcode").css('visibility', 'hidden');

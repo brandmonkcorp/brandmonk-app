@@ -115,6 +115,7 @@ html,body{
   width:5.5vw;
   height: 11vh;
   background-size: 100% 100%;
+  background-repeat: no-repeat;
   border-radius: 50%;
   border: 1px solid black;
 }
