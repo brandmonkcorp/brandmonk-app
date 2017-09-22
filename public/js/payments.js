@@ -124,6 +124,21 @@ $('#footer-button').click(function () {
 $('.mobile-next-button').click(function (){
   scrollDown();
 });
+$(document.body).on('click', '#profile', function () {
+  location.href='profile';
+});
+$(document.body).on('click', '#social', function () {
+  location.href='social';
+});
+$(document.body).on('click', '#payments', function () {
+  location.href='payments';
+});
+$(document.body).on('click', '#offers', function () {
+  location.href='offers';
+});
+$(document.body).on('click', '#brandmonk', function () {
+  location.reload();
+});
 
 $(window).scroll(function (event) {
   if($(document.body).innerWidth() <= '480'){
