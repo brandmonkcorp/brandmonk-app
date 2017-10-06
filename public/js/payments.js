@@ -20,7 +20,6 @@ function checkHomeAuth () {
   }
   getProfileData(token);
 }
-
 function getProfileData(token) {
   $.ajax({
     url: '/profileData',
