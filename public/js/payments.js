@@ -59,8 +59,27 @@ function getPaymentData(token) {
     }
   })
   .done(function(doc, status, response){
-    console.log(doc);
+    //console.log(doc);
     setData(doc);
+})
+.fail(function(error){
+  $(document.body).load('../pages/error', function () {
+      $(this).css('visibility', 'visible');
+  });
+});
+}
+function getMobileData(token) {
+  $.ajax({
+    url: '/mobData',
+    method: 'GET',
+    contentType: 'application/json',
+    headers:{
+      'x-auth': token
+    }
+  })
+  .done(function(docMob, status, response){
+    //console.log(docMob);
+    setMobData(docMob);
 })
 .fail(function(error){
   $(document.body).load('../pages/error', function () {
@@ -72,6 +91,7 @@ function getPaymentData(token) {
 //MaDa's Code
 function playNextFunc(token){
   getPaymentData(token);
+  getMobileData(token);
   var v1=0;
   var v2=0;
   $(document.body).on('click', '#payments', function () {
@@ -165,4 +185,15 @@ function setData(doc){
   $('.adTrack4').text(doc.data.adtrack.magazine);
   $('.adTrack5').text(doc.data.adtrack.billboard);
   $('.adTrack6').text(doc.data.adtrack.internet);
+  $('.revenue1').text(doc.data.revenue.totalearning);
+  $('.revenue2').text(doc.data.revenue.discountcoupon);
+  $('.revenue3').text(doc.data.revenue.redeemed);
+  $('.revenue4').text(doc.data.revenue.remaining);
+  $('.share1').text(doc.data.sharerevenue.referrals);
+  $('.share2').text(doc.data.sharerevenue.giftvoucher);
+  $('.share3').text(doc.data.sharerevenue.share);
+}
+function setMobData(docMob){
+  $('.mobile').text(docMob.data.phone);
+  $('.mail').text(docMob.data.email);
 }

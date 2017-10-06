@@ -1,4 +1,3 @@
-
 $(document).ready( function () {
   //dont delete this
   checkHomeAuth();
@@ -19,7 +18,6 @@ function checkHomeAuth () {
       }
     }
   }
-
   getProfileData(token);
 }
 function getProfileData(token) {
@@ -34,7 +32,7 @@ function getProfileData(token) {
   .done(function(doc, status, response){
     if(doc.message == 'redirect'){
       $(document.body).css('visibility', 'visible');
-      playNextFunc();
+      playNextFunc(token);
     }else if(doc.message == 'activated'){
       window.location.replace('../profile');
     }else if(doc.message == 'deactivated'){
@@ -51,9 +49,29 @@ function getProfileData(token) {
   });
 });
 }
+function getnameandemail(token) {
+  $.ajax({
+    url: '/getNameAndEmail',
+    method: 'GET',
+    contentType: 'application/json',
+    headers:{
+      'x-auth': token
+    }
+  })
+  .done(function(doc, status, response){
+    //console.log(doc);
+    setData(doc);
+})
+.fail(function(error){
+  $(document.body).load('../pages/error', function () {
+      $(this).css('visibility', 'visible');
+  });
+});
+}
 //Rambo's Code up-above
 //MaDa's Code
-function playNextFunc(){
+function playNextFunc(token){
+  getnameandemail(token);
   $(document.body).on('click', '#payments', function () {
     location.href='payments.html'
   });
@@ -71,4 +89,9 @@ function playNextFunc(){
     $(`#offr${i}`).css('background-image', `url('./images/staticAds/offersnippet (${i}).jpg')`);
     $(`#offr${i}`).html(`Offer Title ${i}`);
   }
+}
+function setData(doc){
+  var pic = doc.data.email;
+  $('.username').text(doc.name);
+  $('.profImg').css('background-image', `url("../ProfilePicture/${pic}.png")`);
 }

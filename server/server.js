@@ -290,7 +290,7 @@ app.get('/paymentData', authenticate, function(req, res){
   var email = req.user.email;
   var name  = req.user.name;
   PaymentStat.findOne({'email': email}).then( (data) => {
-    console.log(data);
+    //console.log(data);
     res.send({"name": name, data});
   }).catch( () => {
     res.status(400).send();
@@ -301,7 +301,18 @@ app.get('/getNameAndEmail', authenticate, function(req, res){
   var email = req.user.email;
   var name  = req.user.name;
   PaymentStat.findOne({'email': email}).then( (data) => {
-    console.log(data);
+    //console.log(data);
+    res.send({"name": name, data});
+  }).catch( () => {
+    res.status(400).send();
+  });
+
+});
+app.get('/mobData', authenticate, function(req, res){
+  var email = req.user.email;
+  var name  = req.user.name;
+  User.findOne({'email': email}).then( (data) => {
+    //console.log(data);
     res.send({"name": name, data});
   }).catch( () => {
     res.status(400).send();

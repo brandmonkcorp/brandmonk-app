@@ -1,8 +1,8 @@
-
 $(document).ready( function () {
   //dont delete this
   checkHomeAuth();
 });
+
 //checking for authentication, profile status
 function checkHomeAuth () {
   var token = Cookies.get('_LOC_authFirstPID');
@@ -18,7 +18,6 @@ function checkHomeAuth () {
       }
     }
   }
-
   getProfileData(token);
 }
 function getProfileData(token) {
@@ -33,8 +32,7 @@ function getProfileData(token) {
   .done(function(doc, status, response){
     if(doc.message == 'redirect'){
       $(document.body).css('visibility', 'visible');
-      console.log(doc);
-      playNextFunc();
+      playNextFunc(token);
     }else if(doc.message == 'activated'){
       window.location.replace('../profile');
     }else if(doc.message == 'deactivated'){
@@ -51,10 +49,29 @@ function getProfileData(token) {
   });
 });
 }
+function getnameandemail(token) {
+  $.ajax({
+    url: '/getNameAndEmail',
+    method: 'GET',
+    contentType: 'application/json',
+    headers:{
+      'x-auth': token
+    }
+  })
+  .done(function(doc, status, response){
+    //console.log(doc);
+    setData(doc);
+})
+.fail(function(error){
+  $(document.body).load('../pages/error', function () {
+      $(this).css('visibility', 'visible');
+  });
+});
+}
 //Rambo's Code up-above
 //MaDa's code
-function playNextFunc() {
-
+function playNextFunc(token) {
+  getnameandemail(token);
   for (var i=1; i<=20; i++){
     var videoDiv = $(`<div id="Vid-${i}" class="videodivs"></div>`);
     var title = $(`<div id="title-${i}" class="Tcontainer"></div>`);
@@ -246,3 +263,9 @@ video.addEventListener('ended', function() {
 $('#footer-button').click(function () {
   $('.footer').toggleClass('footer-show');
 });
+
+function setData(doc){
+  var pic = doc.data.email;
+  $('.userName').text(doc.name);
+  $('.profImage').css('background-image', `url("../ProfilePicture/${pic}.png")`);
+}
