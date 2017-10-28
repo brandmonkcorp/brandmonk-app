@@ -15,23 +15,11 @@ if(window.File && window.FileReader){
 
       var reader = new FileReader();
       reader.onload = function (e) {
-        x = 0, y =0;
-        drawToCanvas(e.target.result, function () {
-          //$('#canvas-holder').css('visibility', 'visible');
-          //$('#canvas-holder').show();
-          var canvas = document.getElementById('resize');
-          var url = canvas.toDataURL('image/png');
-          $('#picture-box').css('background-image', `url(${url})`);
-          $('#loading').css('visibility', 'hidden');
-          $('#social-photo').css('background-image', `url(${url})`);
-          $('#infor').fadeOut(8000);
-          var image = new Image();
-          image.source=url;
-          photofile = image;
-        });
-
+        $('#picture-box').css('background-image', `url('${e.target.result}')`);
+        $('#social-photo').css('background-image', `url('${e.target.result}')`);
       }
       reader.readAsDataURL(file);
+      $('#loading').css('visibility', 'hidden');
     }else{
       console.log('Cannot upload file');
       $('#messageBox').css('visibility', 'visible');;
@@ -39,36 +27,4 @@ if(window.File && window.FileReader){
       $('#message').text("Invalid File type.");
     }
   });
-}
-// var em = $('#basic-info-form input[name=email]').val();
-// console.log(em);
-// $('#picture').attr('name', em);
-
-var x = 0, y = 0, clipwidth, clipheight, min;
-var canvas = document.getElementById('resize');
-//var ctx = canvas.getContext('2d');
-var image = new Image;
-
-function drawToCanvas(url, callback){
-  image.onload = function () {
-    canvas.height = image.height;
-    canvas.width = image.width;
-    if(image.height <= image.width){
-      min = image.height;
-      clipheight = image.height;
-      clipwidth = image.height;
-      x = (image.width - image.height) / 2;
-    }else{
-      min = image.width;
-      clipheight = image.width;
-      clipwidth = image.width;
-        y = (image.height - image.width) / 2;
-    }
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(image, x, y, clipwidth, clipheight, 0, 0, canvas.width, canvas.height);
-  };
-  image.src = url;
-  setTimeout( function () {
-    callback();
-  },100 );
 }
