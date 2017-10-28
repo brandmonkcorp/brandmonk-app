@@ -16,9 +16,14 @@ $(document).ready(function (){
         $("#left-half-user").show();
         $("#left-half").hide();
     });
-    $(document.body).on('click', '#brandmonk', function () {
-      location.reload();
-    });
+  $(document.body).on('click', '#brandmonk', function () {
+    location.reload();
+  });
+  $("#Lets-Get-In-Touch").click(function(){
+      $("#right-half-company").show();
+      $("#right-half").hide();
+  });
+
 });
 
 function doConnect() {
