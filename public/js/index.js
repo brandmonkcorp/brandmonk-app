@@ -12,6 +12,13 @@ $(document).ready(function (){
   doConnect();
   $('#login-wrapper').load('./pages/login');
   $('#register-wrapper').load('./pages/register');
+  $("#register-free").click(function(){
+        $("#left-half-user").show();
+        $("#left-half").hide();
+    });
+    $(document.body).on('click', '#brandmonk', function () {
+      location.reload();
+    });
 });
 
 function doConnect() {

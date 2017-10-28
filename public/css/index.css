@@ -19,6 +19,7 @@ html,body {
   font-weight: bold;
   font-family: Candara;
   color: #fff;
+  cursor: pointer;
 }
 #login-box{
   position: relative;
@@ -96,7 +97,7 @@ html,body {
 #left-half-text{
   font-family: Candara;
   font-size: 8vh;
-  font-weight: bold;
+  font-weight: ;
   color: #0070c0;
   padding-left: 1vw;
   padding-right: 2vw;
@@ -113,6 +114,44 @@ html,body {
 #register-mobile{
   display: none;
 }
+#register-free{
+  background-color: #0070c0;
+  color: #fff;
+  border: 1px solid transparent;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  padding-top: 0.3vh;
+  padding-bottom: 0.3vh;
+  margin-top: 6vh;
+  font-size: 3vh;
+  cursor: pointer;
+  width: 15vw;
+}
+#register-free span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#register-free span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+#register-free:hover span {
+  padding-right: 25px;
+}
+
+#register-free:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 #i-have-questions{
   background-color: #0070c0;
   color: #fff;
@@ -124,16 +163,45 @@ html,body {
   margin-top: 6vh;
   font-size: 3vh;
   cursor: pointer;
+  width: 15vw;
 }
-#right-half{
-  float: right;
-  margin: 0 auto;
-  width: 43%;
-  padding-top: 10vh;
-  padding-left: 5vw;
-  height: 70vh;
+#i-have-questions span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
-#right-half-text{
+
+#i-have-questions span:after {
+  content: '\003F';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+#i-have-questions:hover span {
+  padding-right: 25px;
+}
+
+#i-have-questions:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#left-half-user{
+  display: none;
+  border-right: 1px solid #0070c0;
+  float: left;
+  width: 50%;
+  height: 50vh;
+  text-align: center;
+  padding-top: 3vh;
+  margin-top: 5vh;
+  padding-bottom: 17vh;
+}
+#left-half-user-text{
   font-size: 6vh;
   font-weight: bold;
   font-family: candara;
@@ -209,31 +277,7 @@ html,body {
   opacity: 1;
   right: 0;
 }
-#i-have-questions span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
 
-#i-have-questions span:after {
-  content: '\003F';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -10px;
-  transition: 0.5s;
-  color: #fff;
-}
-
-#i-have-questions:hover span {
-  padding-right: 25px;
-}
-
-#i-have-questions:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 #icon-container1{
   position: absolute;
   margin-top: 2.5vh;
