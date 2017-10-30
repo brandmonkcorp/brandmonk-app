@@ -59,7 +59,7 @@ function getPaymentData(token) {
     }
   })
   .done(function(doc, status, response){
-    //console.log(doc);
+    console.log(doc);
     setData(doc);
 })
 .fail(function(error){
@@ -78,7 +78,7 @@ function getMobileData(token) {
     }
   })
   .done(function(docMob, status, response){
-    //console.log(docMob);
+    console.log(docMob);
     setMobData(docMob);
 })
 .fail(function(error){
