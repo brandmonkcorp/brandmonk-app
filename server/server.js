@@ -20,7 +20,9 @@ var port = 3000;
 var app = express();
 
 app.use(bodyParser.json());
+//app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.static(publicPath, {extensions:['html']}));
+app.use('/uploads', express.static('uploads'));
 
 app.get('/auth', authenticate, (req, res) => {
   if(!req.user.isLoggedIn){
@@ -255,7 +257,7 @@ app.post('/postProfileData', authenticate, (req, res) => {
 var em;
 var storage = multer.diskStorage({
 	destination: function(req, file, callback) {
-		callback(null, './public/ProfilePicture')
+		callback(null, './Uploads')
 	},
 	filename: function(req, file, callback) {
 
