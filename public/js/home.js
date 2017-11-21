@@ -59,7 +59,7 @@ function getnameandemail(token) {
     }
   })
   .done(function(doc, status, response){
-    //console.log(doc);
+    console.log(doc);
     setData(doc);
 })
 .fail(function(error){
