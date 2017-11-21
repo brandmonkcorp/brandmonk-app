@@ -267,5 +267,5 @@ $('#footer-button').click(function () {
 function setData(doc){
   var pic = doc.email;
   $('.userName').text(doc.name);
-  $('.profImage').css('background-image', `url("uploads/${pic}.png")`);
+  $('.profImage').css('background-image', `url("/Fuck_You_For_Inspecting_My_Code/${pic}.png")`);
 }
