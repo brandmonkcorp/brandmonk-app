@@ -303,7 +303,7 @@ app.get('/getNameAndEmail', authenticate, function(req, res){
   var name  = req.user.name;
   PaymentStat.findOne({'email': email}).then( (data) => {
     //console.log(data);
-    res.send({"name": name, data});
+    res.send({"name": name, "email": email});
   }).catch( () => {
     res.status(400).send();
   });
