@@ -19,6 +19,7 @@ html,body {
   font-weight: bold;
   font-family: Candara;
   color: #fff;
+  cursor: pointer;
 }
 #login-box{
   position: relative;
@@ -113,6 +114,44 @@ html,body {
 #register-mobile{
   display: none;
 }
+#register-free{
+  background-color: #0070c0;
+  color: #fff;
+  border: 1px solid transparent;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  padding-top: 0.3vh;
+  padding-bottom: 0.3vh;
+  margin-top: 6vh;
+  font-size: 3vh;
+  cursor: pointer;
+  width: 16vw;
+}
+#register-free span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#register-free span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+#register-free:hover span {
+  padding-right: 25px;
+}
+
+#register-free:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 #i-have-questions{
   background-color: #0070c0;
   color: #fff;
@@ -124,16 +163,45 @@ html,body {
   margin-top: 6vh;
   font-size: 3vh;
   cursor: pointer;
+  width: 16vw;
 }
-#right-half{
-  float: right;
-  margin: 0 auto;
-  width: 43%;
-  padding-top: 10vh;
+#i-have-questions span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#i-have-questions span:after {
+  content: '\003F';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+#i-have-questions:hover span {
+  padding-right: 25px;
+}
+
+#i-have-questions:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#left-half-user{
+  display: none;
+  border-right: 1px solid #0070c0;
+  float: left;
+  width: 45%;
+  height: 50vh;
+  padding-top: 3vh;
+  margin-top: 5vh;
+  padding-bottom: 17vh;
   padding-left: 5vw;
-  height: 70vh;
 }
-#right-half-text{
+#left-half-user-text{
   font-size: 6vh;
   font-weight: bold;
   font-family: candara;
@@ -142,9 +210,6 @@ html,body {
 #register-box{
   margin-top: 5vh;
   padding-right: 10vh;
-}
-#register-form{
-
 }
 .input-label{
   font-family: Calibri;
@@ -174,15 +239,8 @@ html,body {
   padding-bottom: 0.3vh;
   margin-top: 3vh;
   font-size: 3vh;
-  margin-left: 24vw;
+  margin-left: 25.5vw;
   transition: all 0.5s;
-}
-#foot{
-  position: absolute;
-  bottom: 0;
-  height: 10vh;
-  width: 100%;
-  background-color: #0070c0;
 }
 #register span {
   cursor: pointer;
@@ -209,15 +267,43 @@ html,body {
   opacity: 1;
   right: 0;
 }
-#i-have-questions span {
+
+#right-half{
+  float: right;
+  width: 40%;
+  padding-top: 7vw;
+  padding-right: 5vw;
+  height: 70vh;
+  text-align: center;
+}
+#right-half-text{
+  font-size: 6vh;
+  font-weight: bold;
+  font-family: candara;
+  color: #0070c0;
+}
+#Lets-Get-In-Touch{
+  background-color: #0070c0;
+  color: #fff;
+  border: 1px solid transparent;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  padding-top: 0.3vh;
+  padding-bottom: 0.3vh;
+  margin-top: 6vh;
+  font-size: 3vh;
+  cursor: pointer;
+  width: 18vw;
+}
+#Lets-Get-In-Touch span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-#i-have-questions span:after {
-  content: '\003F';
+#Lets-Get-In-Touch span:after {
+  content: '\00bb';
   position: absolute;
   opacity: 0;
   top: 0;
@@ -226,14 +312,99 @@ html,body {
   color: #fff;
 }
 
-#i-have-questions:hover span {
+#Lets-Get-In-Touch:hover span {
   padding-right: 25px;
 }
 
-#i-have-questions:hover span:after {
+#Lets-Get-In-Touch:hover span:after {
   opacity: 1;
   right: 0;
 }
+#right-half-company{
+  float: right;
+  width: 45%;
+  padding-top: 3vw;
+  padding-left: 4.5vw;
+  padding-bottom: 3vw;
+  display: none;
+}
+#right-half-company-text{
+  font-size: 6vh;
+  font-weight: bold;
+  font-family: candara;
+  color: #0070c0;
+}
+
+#company-register-box{
+  margin-top: 5vh;
+  padding-right: 10vh;
+}
+.company-input-label{
+  font-family: Calibri;
+  font-size: 3vh;
+}
+#company-register-form input {
+  width: 17vw;
+  float: right;
+  font-size: 2.5vh;
+  border: 1px solid #0070c0;
+}
+.company-register-input{
+  margin-top: 2vh;
+}
+.privacy-policy{
+  font-family: calibri;
+  margin-top: 6vh;
+  font-size: 2.3vh;
+}
+#company-register{
+  background-color: #0070c0;
+  color: #fff;
+  border: 1px solid transparent;
+  padding-left: 7vh;
+  padding-right: 7vh;
+  padding-top: 0.3vh;
+  padding-bottom: 0.3vh;
+  margin-top: 3vh;
+  font-size: 3vh;
+  margin-left: 27vw;
+  transition: all 0.5s;
+}
+#company-register span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#company-register span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -45px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+#company-register:hover span{
+  padding-right: 25px;
+}
+
+#company-register:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#foot{
+  position: absolute;
+  bottom: 0;
+  height: 10vh;
+  width: 100%;
+  background-color: #0070c0;
+}
+
+
 #icon-container1{
   position: absolute;
   margin-top: 2.5vh;
