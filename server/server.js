@@ -18,11 +18,16 @@ var from_who = "BrandMonk Team<support@brandmonk.online>";
 
 var port = 3000;
 var app = express();
+var helmet = require('helmet');
+
+app.use(helmet({
+  frameguard: {action: 'deny'}
+}));
 
 app.use(bodyParser.json());
-//app.use('/uploads', express.static(__dirname + '/uploads'));
+
 app.use(express.static(publicPath, {extensions:['html']}));
-app.use('/uploads', express.static('uploads'));
+app.use('/fuck_You_for_inspecting_my_code', express.static('uploads'));
 
 app.get('/auth', authenticate, (req, res) => {
   if(!req.user.isLoggedIn){

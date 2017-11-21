@@ -21,6 +21,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "helmet": "^3.9.0",
     "jsonwebtoken": "^7.4.2",
     "mailgun-js": "^0.13.1",
     "mongoose": "^4.5.9",
