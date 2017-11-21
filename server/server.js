@@ -21,7 +21,7 @@ var app = express();
 app.use(bodyParser.json());
 
 app.use(express.static(publicPath, {extensions:['html']}));
-app.use('/fuck_You_for_inspecting_my_code', express.static('uploads'));
+app.use('/uploads', express.static('uploads'));
 
 app.get('/auth', authenticate, (req, res) => {
   if(!req.user.isLoggedIn){
