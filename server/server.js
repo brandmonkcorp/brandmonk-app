@@ -18,12 +18,12 @@ var from_who = "BrandMonk Team<support@brandmonk.online>";
 
 var port = 3000;
 var app = express();
-var helmet = require('helmet');
-
+//var helmet = require('helmet');
+/*
 app.use(helmet({
   frameguard: {action: 'deny'}
 }));
-
+*/
 app.use(bodyParser.json());
 
 app.use(express.static(publicPath, {extensions:['html']}));
