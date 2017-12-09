@@ -14,6 +14,7 @@ function checkHomeAuth () {
         //No user logged in
             return $(document.body).load('../pages/error', function () {
             $(this).css('visibility', 'visible');
+            $("video").attr("src",`https://res.cloudinary.com/bmonk/video/upload/v1512824096/Agar_Tum_Saath_Ho_VIDEO_Song_-_Tamasha_-_Ranbir_Kapoor_Deepika_Padukone_-_T-Series_jqenqi.mp4`);
         });
       }
     }
