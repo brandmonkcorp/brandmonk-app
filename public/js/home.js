@@ -14,6 +14,7 @@ function checkHomeAuth () {
         //No user logged in
             return $(document.body).load('../pages/error', function () {
             $(this).css('visibility', 'visible');
+
         });
       }
     }
@@ -167,6 +168,7 @@ $(".codebtn").on('click', function(){
 $(document.body).on('click', '.videodivs', function () {
 
   var id = $(this).attr('id');
+  
   $("video").attr("src",`https://1915921624.rsc.cdn77.org/BrandMonkCorp/pos${id}.mp4`);
   $("#overlay").show();
   $('#vidPlayer').get(0).load();
