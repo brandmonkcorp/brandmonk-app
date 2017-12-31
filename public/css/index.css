@@ -210,6 +210,8 @@ html,body {
 #register-box{
   margin-top: 5vh;
   padding-right: 10vh;
+  padding-left: 10vh;
+  text-align: left;
 }
 .input-label{
   font-family: Calibri;
