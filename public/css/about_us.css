@@ -13,15 +13,16 @@ body,html{
   height: 9vh;
   background-color: #0070c0;
 }
-#brandmonk{
+#brandmonk a{
   position: relative;
   float: left;
   margin-left: 3.5vw;
   font-size: 3vw;
   font-weight: bold;
   font-family: Candara;
-  color: #fff;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
 #head-extra-button{
   float: right;
@@ -37,6 +38,11 @@ body,html{
   color: #eee;
 }
 .head-button:hover{
+  background-color: #eee;
+  color: #0070c0;
+  cursor: pointer;
+}
+#home:hover a{
   background-color: #eee;
   color: #0070c0;
   cursor: pointer;
@@ -159,4 +165,8 @@ input:hover{
   color: white;
   font-size: 1.2vw;
   padding: 1vw;
+}
+#home a{
+  text-decoration: none;
+  color: white;
 }
