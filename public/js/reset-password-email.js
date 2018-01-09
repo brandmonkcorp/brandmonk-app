@@ -17,7 +17,7 @@ $(document).ready(function () {
       if(data.status == "success"){
         $('#input-container').html('<span id="password-brief" style="font-size: 3vw;color: #295;text-align:center">Success!</span>');
         $('#input-container').append('<span id="home-button" class="button-password">Back to Home!</span>');
-        $('#icon-div').css('background-image', 'url("../images/icons/password-updated.png")');
+        $('#icon-div1').css('background-image', 'url("../images/icons/password-updated.png")');
       }
     })
     .fail(function (err) {

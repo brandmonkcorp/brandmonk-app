@@ -43,8 +43,8 @@ function sendPasswordResetRequest() {
   .done(function (data, status, response) {
 
       $('#input-container')
-      .html('<span id="password-brief" style="font-size: 3vw;color: #295;text-align:center">A password reset link has been sent to your registered email!</span>');
-      $('#input-container').append('<span id="home-button" class="button-password">Back to Home!</span>');
+      .html('<span id="password-brief1" style="font-size: 3vw;color: #295;text-align:center">A password reset link has been sent to your registered email!</span>');
+      $('#input-container').append('<span id="home-button" class="button-password1">Back to Home!</span>');
       $('#icon-div').css('background-image', 'url("../images/icons/password-updated.png")');
 
   })
