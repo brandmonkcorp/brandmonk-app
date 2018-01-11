@@ -21,7 +21,7 @@ var app = express();
 app.use(bodyParser.json());
 
 app.use(express.static(publicPath, {extensions:['html']}));
-app.use('/Fuck_You_For_Inspecting_My_Code', express.static('HoriBol'));
+app.use('/Fuck_You_For_Inspecting_My_Code', express.static(__dirname + 'HoriBol'));
 
 app.get('/auth', authenticate, (req, res) => {
   if(!req.user.isLoggedIn){
