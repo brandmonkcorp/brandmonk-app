@@ -214,7 +214,8 @@ app.post('/passwordRecov', (req, res) => {
 
 app.post('/passwordReset', authenticate, (req, res) => {
   var password = req.body.password;
-  var email = req.user.username;
+  var email = req.user.email;
+  console.log(password, ' ', email);
   if(!req.user.passChangeRequest){
     return res.status(401).send(e);
   }
