@@ -62,6 +62,58 @@ $(document.body).on('click', '#register', function () {
   $('#register-form-submit').click();
 });
 
+$(document.body).on('focusout', '#register-form input[name=firstname]', function (e){
+  var elem = $('#register-form input[name=firstname]');
+  if(elem.val().length == 0){
+    regflag1 = false;
+    return showErrorMessage('First Name cannot be empty!', elem);
+    return $('#register-form input[name="firstname"]').focus();
+  }
+});
+
+$(document.body).on('keyup', '#register-form input[name=firstname]', function(e){
+  var elem = $('#register-form input[name=firstname]');
+  var fname = $('#register-form input[name=firstname]').val();
+  var fnameReg = /^[a-zA-Z]+$/;
+  if((!fnameReg.test(fname))){
+    regflag2 = false;
+    return showErrorMessage('Please Enter Letters only!', elem);
+    return $('#register-form input[name="firstname"]').focus();
+  }
+  else if(firstname.length >= 1){
+    regflag2 = true;
+  }
+  $('#register-form input[name="firstname"]').css('color', '#000');
+  var key =  String.fromCharCode(e.which);
+  var elem = $('#register-form input[name="firstname"]');
+});
+
+$(document.body).on('focusout', '#register-form input[name=lastname]', function (e){
+  var elem = $('#register-form input[name=lastname]');
+  if(elem.val().length == 0){
+    regflag1 = false;
+    return showErrorMessage('Last Name cannot be empty!', elem);
+    return $('#register-form input[name="lastname"]').focus();
+  }
+});
+
+$(document.body).on('keyup', '#register-form input[name=lastname]', function(e){
+  var elem = $('#register-form input[name=lastname]');
+  var lname = $('#register-form input[name=lastname]').val();
+  var lnameReg = /^[a-zA-Z]+$/;
+  if((!lnameReg.test(lname))){
+    regflag2 = false;
+    return showErrorMessage('Please Enter Letters only!', elem);
+    return $('#register-form input[name="lastname"]').focus();
+  }
+  else if(firstname.length >= 1){
+    regflag2 = true;
+  }
+  $('#register-form input[name="firstname"]').css('color', '#000');
+  var key =  String.fromCharCode(e.which);
+  var elem = $('#register-form input[name="firstname"]');
+});
+
 $(document.body).on('focusout', '#register-form input[name=email]', function (e) {
   var elem = $('#register-form input[name=email]');
   if(elem.val().length < 6){
