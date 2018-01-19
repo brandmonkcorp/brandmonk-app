@@ -67,6 +67,7 @@ $(document.body).on('focusout', '#register-form input[name=firstname]', function
   if(elem.val().length == 0){
     regflag1 = false;
     return showErrorMessage('First Name cannot be empty!', elem);
+    $('#register-form input[name="firstname"]').css('color', '#000');
     return $('#register-form input[name="firstname"]').focus();
   }
 });
@@ -78,6 +79,7 @@ $(document.body).on('keyup', '#register-form input[name=firstname]', function(e)
   if((!fnameReg.test(fname))){
     regflag2 = false;
     return showErrorMessage('Please Enter Letters only!', elem);
+    $('#register-form input[name="firstname"]').css('color', '#000');
     return $('#register-form input[name="firstname"]').focus();
   }
   else if(firstname.length >= 1){
@@ -93,6 +95,7 @@ $(document.body).on('focusout', '#register-form input[name=lastname]', function 
   if(elem.val().length == 0){
     regflag1 = false;
     return showErrorMessage('Last Name cannot be empty!', elem);
+    $('#register-form input[name="lastname"]').css('color', '#000');
     return $('#register-form input[name="lastname"]').focus();
   }
 });
@@ -104,6 +107,7 @@ $(document.body).on('keyup', '#register-form input[name=lastname]', function(e){
   if((!lnameReg.test(lname))){
     regflag2 = false;
     return showErrorMessage('Please Enter Letters only!', elem);
+    $('#register-form input[name="lastname"]').css('color', '#000');
     return $('#register-form input[name="lastname"]').focus();
   }
   else if(firstname.length >= 1){
