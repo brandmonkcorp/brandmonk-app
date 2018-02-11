@@ -76,6 +76,12 @@ var sendPassChangeMail = (user, token) => {
         }
     });
 };
+app.post('/resend-activation', authenticate, (req, res) => {
+  var user = req.user;
+  var token = req.token;
+  sendActivateMail(user, token);
+  res.send();
+});
 var sendActivateMail = (user, token) => {
   var mail = new mailgun({apiKey: api_key, domain: domain});
   var mailBody = {

@@ -118,7 +118,7 @@ function addSubmitListener() {
     });
   });
   $(document.body).on('click', '#home-button', function () {
-    window.open('../index.html');
+    window.open('../');
   });
 
 function getParam() {
