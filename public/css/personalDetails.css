@@ -1,3 +1,36 @@
 #hw{
   color: red;
+
+}
+#left-half{
+  border-right: 1px solid #0070c0;
+  float: left;
+  width: 50%;
+  height: 40vh;
+  text-align: center;
+  padding-top: 5vh;
+  margin-top: 5vh;
+  padding-bottom: 5vh;
+}
+#left-half-text{
+  font-family: Candara;
+  font-size: 8vh;
+  font-weight: bold;
+  color: #0070c0;
+  padding-left: 1vw;
+  padding-right: 2vw;
+}
+#right-half{
+  float: right;
+  width: 40%;
+  padding-top: 7vw;
+  padding-right: 5vw;
+  height: 40vh;
+  text-align: center;
+}
+#right-half-text{
+  font-size: 6vh;
+  font-weight: bold;
+  font-family: candara;
+  color: #0070c0;
 }

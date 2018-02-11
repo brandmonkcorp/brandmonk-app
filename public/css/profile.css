@@ -75,8 +75,8 @@ html,body{
 .topnav {
   position: fixed;
   width: 95%;
-  left: 3.5vw;
-  top: 10vh;
+  margin-left: 2.5vw;
+  top: 15vh;
   text-align: center;
   border: 1px solid #0070c0;
 }
@@ -88,11 +88,9 @@ html,body{
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 5.8vw;
-  padding-right: 5.5vw;
+  width: 20%;
   text-decoration: none;
   font-size: 1.2vw;
-  border-left: 1px solid #0070c0;
 }
 
 .topnav span:hover {
@@ -136,8 +134,9 @@ html,body{
 }
 .pageContainer{
   position: absolute;
-  left: 3.5vw;
-  top: 20vh;
+  left: 2.5vw;
+  top: 25vh;
   width: 95%;
-  border: 0.5px solid #0070c0;
+  height: 65%;
+  border: 1px solid #0070c0;
 }
