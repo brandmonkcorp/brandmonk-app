@@ -1,4 +1,4 @@
-var X_PID_AUTH = Cookies.get('_PERM_authUID');
+/*var X_PID_AUTH = Cookies.get('_PERM_authUID');
 if(!X_PID_AUTH){
   X_PID_AUTH = Cookies.get('_LOC_authUID');
 
@@ -9,7 +9,8 @@ if(!X_PID_AUTH){
       $(document.body).load('../pages/error');
     }
   }
-}
+}*/
+//dont use auth till we are done making the ui!!!!!! -MaDa
 $(document).ready(function(){
   $("#pDetails").on('click', function(){
     $("#pageContainer").load("pages/personalDetails.html");
