@@ -1,42 +1,74 @@
 <html>
 <body>
-  <div id="left-half">
-    <span id="left-half-text">Monetise your free</span><br>
-    <span id="left-half-text">time with BrandMonk</span><br>
-    <span id="left-half-text">adview platform</span><br>
-    <button id="i-have-questions"><span>I have questions</span></button>
+  <div id="pd_left_half">
+    <form>
+    <div id="pd_register_box">
+    <div id="pd_register_form">
+      <div class = "pd_register_input">
+      <span class="pd_input_label">First Name</span>
+      <input type="text" name="firstname" autocomplete="off" required/>
+      </div>
+      <div class = "pd_register_input">
+      <span class="pd_input_label">Last Name</span>
+      <input type="text" name="lastname" autocomplete="off" required/>
+      </div>
+      <div class = "pd_register_input">
+      <span class="pd_input_label">Email</span>
+      <input type="email" name="email" autocomplete="off" required/>
+      </div>
+      <div class = "pd_register_input">
+      <span class="pd_input_label">Phone</span>
+      <input type="text" length="10" name="phone"/ autocomplete="off" required>
+      </div>
+      <div class = "pd_register_input">
+      <span class="pd_input_label">Password</span>
+      <input type="password" name="password" autocomplete="off" required/>
+      </div>
+      <div class = "pd_register_input">
+      <span class="pd_input_label">Retype Password</span>
+      <input type="password" name="password2" autocomplete="off" required/>
+      </div>
+      </div>
+    </div>
   </div>
 
-  <div id="right-half">
-    <span id="right-half-text">Register now, it's free forever</span>
-    <div id="register-box">
-      <form id="register-form">
-        <div class = "register-input">
-        <span class="input-label">First Name</span>
+  <div id="pd_right_half">
+    <div id="pd_register_box">
+      <div id="pd_register_form">
+        <div class = "pd_register_input">
+        <span class="pd_input_label">First Name</span>
         <input type="text" name="firstname" autocomplete="off" required/>
         </div>
-        <div class = "register-input">
-        <span class="input-label">Last Name</span>
+        <div class = "pd_register_input">
+        <span class="pd_input_label">Last Name</span>
         <input type="text" name="lastname" autocomplete="off" required/>
         </div>
-        <div class = "register-input">
-        <span class="input-label">Email</span>
+        <div class = "pd_register_input">
+        <span class="pd_input_label">Email</span>
         <input type="email" name="email" autocomplete="off" required/>
         </div>
-        <div class = "register-input">
-        <span class="input-label">Phone</span>
+        <div class = "pd_register_input">
+        <span class="pd_input_label">Phone</span>
         <input type="text" length="10" name="phone"/ autocomplete="off" required>
         </div>
-        <div class = "register-input">
-        <span class="input-label">Password</span>
+        <div class = "pd_register_input">
+        <span class="pd_input_label">Password</span>
         <input type="password" name="password" autocomplete="off" required/>
         </div>
-        <div class = "register-input">
-        <span class="input-label">Retype Password</span>
+        <div class = "pd_register_input">
+        <span class="pd_input_label">Retype Password</span>
         <input type="password" name="password2" autocomplete="off" required/>
         </div>
+
         <button id="register-form-submit" style="display:none"></button>
-      </form>
+      </div>
+     </div>
+     </form>
+     <div class="pd_privacy_policy">
+       By clicking Join Now, You agree to the BrandMonk
+       <a href = "">User Agreement</a>, <a href = "">Privacy Policy</a><br>
+       and <a href = "">Cookie Policy</a>. <br>
+       <button id="register"><span>Join Now</span></button>
      </div>
 </body>
 </html>

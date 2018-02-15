@@ -2,8 +2,8 @@
   color: red;
 
 }
-#left-half{
-  border-right: 1px solid #0070c0;
+#pd_left_half{
+  border-right: 1px  solid #0070c0;
   float: left;
   width: 50%;
   height: 40vh;
@@ -12,7 +12,7 @@
   margin-top: 5vh;
   padding-bottom: 5vh;
 }
-#left-half-text{
+#pd_left_half_text{
   font-family: Candara;
   font-size: 8vh;
   font-weight: bold;
@@ -20,17 +20,79 @@
   padding-left: 1vw;
   padding-right: 2vw;
 }
-#right-half{
+#pd_right_half{
   float: right;
   width: 40%;
-  padding-top: 7vw;
+  padding-top: 1vw;
   padding-right: 5vw;
   height: 40vh;
   text-align: center;
 }
-#right-half-text{
+#pd_right_half_text{
   font-size: 6vh;
   font-weight: bold;
   font-family: candara;
   color: #0070c0;
+}
+#pd_register_box{
+  margin-top: 5vh;
+  padding-right: 10vh;
+  padding-left: 10vh;
+  text-align: left;
+}
+#pd_register_form input {
+  width: 17vw;
+  float: right;
+  font-size: 2.5vh;
+  border: 1px solid #0070c0;
+}
+.pd_register_input{
+  margin-top: 2vh;
+}
+.pd_input_label{
+  font-family: Calibri;
+  font-size: 3vh;
+}
+.pd_privacy_policy{
+  font-family: calibri;
+  margin-top: 6vh;
+  font-size: 2.3vh;
+}
+#register{
+  background-color: #0070c0;
+  color: #fff;
+  border: 1px solid transparent;
+  padding-left: 7vh;
+  padding-right: 7vh;
+  padding-top: 0.3vh;
+  padding-bottom: 0.3vh;
+  margin-top: 3vh;
+  font-size: 3vh;
+  margin-left: 25.5vw;
+  transition: all 0.5s;
+}
+#register span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#register span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -45px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+#register:hover span{
+  padding-right: 25px;
+}
+
+#register:hover span:after {
+  opacity: 1;
+  right: 0;
 }
