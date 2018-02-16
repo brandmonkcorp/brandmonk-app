@@ -103,35 +103,7 @@ html,body{
   display: none;
 }
 
-@media screen and (max-width: 900px) {
-  .topnav span:not(:first-child) {display: none;}
-  .topnav span.icon {
-    float: right;
-    display: block;
-    font-size: 10px;
-  }
-}
 
-@media screen and (max-width: 900px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive span.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive span {
-    float: none;
-    display: block;
-    text-align: left;
-    font-size: 10px;
-    background-color: #0070c0;
-    color: white;
-  }
-  .pageContainer.responsive{
-    font-size: 10px;
-  }
-
-}
 .pageContainer{
   position: absolute;
   left: 2.5vw;
@@ -139,4 +111,38 @@ html,body{
   width: 95%;
   height: 65%;
   border: 1px solid #0070c0;
+}
+
+#social_navigation_panel{
+  position: relative;
+  float: left;
+  width: 20vw;
+  height: 99.5%;
+  padding: 1px;
+  border-right: 1px solid #0070c0;
+  background-color: white;
+}
+.social_nav{
+  position: relative;
+  float: left;
+  width: 94%;
+  height: auto;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 2.5vh;
+  font-weight: bold;
+  padding: 2vh 0 2vh 2vh;;
+}
+.social_nav:hover{
+  background-color: #eee;
+  cursor: pointer;
+}
+.social_selected{
+  border: 1px solid #0070c0;
+}
+#social_body{
+  position: relative;
+  float: right;
+  height: 100%;
+  width: 74vw;
 }
