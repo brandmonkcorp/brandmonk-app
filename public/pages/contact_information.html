@@ -1,1 +1,22 @@
-<h1>Contact Information</h1>
+<form id="contact_info_form">
+  <label>Mobile No.</label>
+  <input type="text" maxlength="10" name="phone" disabled><br><br>
+  <label>Alternate Mobile No.</label>
+  <input type="text" maxlength="10" name="alt_phone"><br><br>
+  <label>Landline Phone No.</label>
+  <input type="text" name="land_phone"><br><br>
+  <label>Email ID</label>
+  <input type="email" name="email" disabled><br><br>
+  <label>Official Email ID</label>
+  <input type="email" name="off_email"><br><br>
+  <label>Present Address</label>
+  <input type="text" name="add_pre" required><br><br>
+  <label>Permanent Address</label>
+  <input type="text" name="add_perm"><br><br>
+  <label>Skype ID</label>
+  <input type="text" name="skype"><br><br>
+  <label>Duo ID/ Google ID</label>
+  <input type="text" name="duo"><br><br>
+  <button type="hidden" id="contact_info_button"></button>
+</form>
+<input type="submit" value="Save details" id="contact_info_form_submit" onclick="$('#contact_info_button').click()"`>

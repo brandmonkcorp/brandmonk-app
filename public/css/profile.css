@@ -146,3 +146,30 @@ html,body{
   height: 100%;
   width: 74vw;
 }
+#contact_info_form {
+  font-size: 1.3vw;
+  padding: 1vh;
+}
+#contact_info_form label{
+  position: absolute;
+}
+#contact_info_form input{
+  position: absolute;
+  width: 20vw;
+  left: 21vw;
+  height: 1.5vw;
+}
+#contact_info_form_submit{
+  position: absolute;
+  width: 15vw;
+  right: 5vw;
+  bottom: 4vw;
+  background-color: #0070c0;
+  color: white;
+  border: 1px solid transparent;
+  font-size: 1.3vw;
+}
+#contact_info_button{
+  position: absolute;
+  display: none;
+}
