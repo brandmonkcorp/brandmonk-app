@@ -36,10 +36,19 @@
 }
 #pd_register_form input {
   width: 17vw;
+  height: 3vh;
   float: right;
-  font-size: 2.5vh;
+  font-size: 2vh;
   border: 1px solid #0070c0;
 }
+.file_upload {
+  width: 17vw;
+  height: 3vh;
+  float: right;
+  font-size: 2vh;
+  border: 0 !important;
+}
+
 .pd_register_input{
   margin-top: 2vh;
 }
