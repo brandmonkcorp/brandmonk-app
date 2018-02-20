@@ -3,14 +3,10 @@
 
 }
 #pd_left_half{
-  border-right: 1px  solid #0070c0;
   float: left;
   width: 50%;
-  height: 40vh;
   text-align: center;
-  padding-top: 5vh;
-  margin-top: 5vh;
-  padding-bottom: 5vh;
+  padding-top: 0vh;
 }
 #pd_left_half_text{
   font-family: Candara;
@@ -21,11 +17,9 @@
   padding-right: 2vw;
 }
 #pd_right_half{
-  float: right;
-  width: 40%;
-  padding-top: 1vw;
-  padding-right: 5vw;
-  height: 40vh;
+  float: left;
+  width: 50%;
+  padding-top: 0vw;
   text-align: center;
 }
 #pd_right_half_text{
@@ -35,7 +29,7 @@
   color: #0070c0;
 }
 #pd_register_box{
-  margin-top: 5vh;
+  margin-top: 10vh;
   padding-right: 10vh;
   padding-left: 10vh;
   text-align: left;
@@ -57,6 +51,9 @@
   font-family: calibri;
   margin-top: 6vh;
   font-size: 2.3vh;
+  text-align: left;
+  margin-left: 5vw;
+  margin-top: 10vh;
 }
 #register{
   background-color: #0070c0;
@@ -68,7 +65,7 @@
   padding-bottom: 0.3vh;
   margin-top: 3vh;
   font-size: 3vh;
-  margin-left: 25.5vw;
+  margin-left: 18.5vw;
   transition: all 0.5s;
 }
 #register span {
@@ -83,16 +80,25 @@
   position: absolute;
   opacity: 0;
   top: 0;
-  right: -45px;
+  right: -30px;
   transition: 0.5s;
   color: #fff;
 }
 
 #register:hover span{
-  padding-right: 25px;
+  padding-right: 10px;
 }
 
 #register:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.vl {
+    border-right: 1px  solid #0070c0;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 7vh;
+    bottom: 7vh;
 }
