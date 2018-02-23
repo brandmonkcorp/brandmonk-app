@@ -1,0 +1,61 @@
+#txt{
+  position: relative;
+  float: left;
+  font-size: 1.3vw;
+  padding-top: 1vh;
+  padding-left: 3vw;
+  padding-right: 1vw;
+}
+#albumName{
+  position: relative;
+  margin-top: 1vh;
+  float: left;
+  width: 42vw;
+  border: 1px solid #0070c0;
+  padding: 0.5vh;
+}
+#createAlbum{
+  position: relative;
+  margin-top: 0.5vh;
+  padding-top: 0.4vh;
+  text-align: center;
+  float: left;
+  background-color: #0070c0;
+  color: white;
+  width: 10vw;
+  margin-left: 1vw;
+  height: 4vh;
+  cursor: pointer;
+}
+#albtxt{
+  margin-left: 10vw;
+  margin-top: 2.5vh;
+}
+#outer{
+  display: none;
+  position: relative;
+  height: 30vh;
+  width: 35vw;
+  border: 1px dashed black;
+  margin-top: 4vh;
+  margin-left: 2vw;
+  cursor: pointer;
+}
+#inner{
+  position: relative;
+  height: 20vh;
+  width: 30vw;
+  border: 1px dashed black;
+  margin-top: 4.7vh;
+  margin-left: 5vh;
+
+}
+#uploadBtn{
+  position: relative;
+  padding: 1vh;
+  font-size: 1vw;
+  background-color: #0070c0;
+  color: white;
+  margin-left: 5.7vh;
+  top: 8vh;
+}

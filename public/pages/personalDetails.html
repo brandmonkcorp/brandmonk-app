@@ -17,58 +17,81 @@
       <input type="email" name="email" autocomplete="off" required/>
       </div>
       <div class = "pd_register_input">
-      <span class="pd_input_label">Phone</span>
+      <span class="pd_input_label">Mobile Number</span>
       <input type="text" length="10" name="phone"/ autocomplete="off" required>
       </div>
       <div class = "pd_register_input">
-      <span class="pd_input_label">Password</span>
-      <input type="password" name="password" autocomplete="off" required/>
+      <span class="pd_input_label">Address</span>
+      <input type="text" name="address" autocomplete="off" required/>
       </div>
       <div class = "pd_register_input">
-      <span class="pd_input_label">Retype Password</span>
-      <input type="password" name="password2" autocomplete="off" required/>
+      <span class="pd_input_label">City</span>
+      <input type="text" name="city" autocomplete="off" required/>
+      </div>
+      <div class = "pd_register_input">
+      <span class="pd_input_label">Zip/Pin Code</span>
+      <input type="text" name="pin" autocomplete="off" required/>
+      </div>
+      <div class = "pd_register_input">
+      <span class="pd_input_label">Profile Status</span>
+      <input type="text" name="p_status" autocomplete="off" required/>
       </div>
       </div>
     </div>
   </div>
-
+  <div class="vl"></div>
   <div id="pd_right_half">
     <div id="pd_register_box">
       <div id="pd_register_form">
         <div class = "pd_register_input">
-        <span class="pd_input_label">First Name</span>
-        <input type="text" name="firstname" autocomplete="off" required/>
+        <span class="pd_input_label">Date of Birth</span>
+        <input type="date" name="dob" autocomplete="off" required/>
         </div>
         <div class = "pd_register_input">
-        <span class="pd_input_label">Last Name</span>
-        <input type="text" name="lastname" autocomplete="off" required/>
+        <span class="pd_input_label">Marital Status</span>
+        <input type="text" name="m_status" autocomplete="off" required/>
         </div>
         <div class = "pd_register_input">
-        <span class="pd_input_label">Email</span>
-        <input type="email" name="email" autocomplete="off" required/>
+        <span class="pd_input_label">Family</span>
+        <div class="maxl">
+          <label class="radio inline">
+              <input type="radio" name="family" value="2" checked>
+              <span> 2+ </span>
+           </label>
+          <label class="radio inline">
+              <input type="radio" name="family" value="4">
+              <span>4+ </span>
+          </label>
+          <label class="radio inline">
+              <input type="radio" name="family" value="6">
+              <span>6+ </span>
+          </label>
+          <label class="radio inline">
+              <input type="radio" name="family" value="8">
+              <span>8 </span>
+          </label>
+          <label class="radio inline">
+              <input type="radio" name="family" value="more">
+              <span>More </span>
+          </label>
+        </div>
         </div>
         <div class = "pd_register_input">
-        <span class="pd_input_label">Phone</span>
-        <input type="text" length="10" name="phone"/ autocomplete="off" required>
+        <span class="pd_input_label">Profile Picture</span>
+        <input class="file_upload" type="file" length="10" name="pp" autocomplete="off" required>
         </div>
-        <div class = "pd_register_input">
-        <span class="pd_input_label">Password</span>
-        <input type="password" name="password" autocomplete="off" required/>
-        </div>
-        <div class = "pd_register_input">
-        <span class="pd_input_label">Retype Password</span>
-        <input type="password" name="password2" autocomplete="off" required/>
-        </div>
+
 
         <button id="register-form-submit" style="display:none"></button>
       </div>
      </div>
-     </form>
      <div class="pd_privacy_policy">
        By clicking Join Now, You agree to the BrandMonk
        <a href = "">User Agreement</a>, <a href = "">Privacy Policy</a><br>
        and <a href = "">Cookie Policy</a>. <br>
-       <button id="register"><span>Join Now</span></button>
+       <button id="register"><span>Submit Profile Data</span></button>
      </div>
+     </form>
+    </div>
 </body>
 </html>
