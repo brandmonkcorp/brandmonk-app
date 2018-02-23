@@ -15,7 +15,11 @@
       </div>
       <div class = "pd_register_input">
       <span class="pd_input_label">Feedback Language Preferences</span>
-      <input type="text" name="lastname" autocomplete="off" required/>
+      <select name="ad_type">
+        <option value="video">Video Ads</option>
+        <option value="still">Static Ads</option>
+        <option value="animate">Animated GIFs</option>
+      </select>
       </div>
       <div class = "pd_register_input">
       <span class="pd_input_label">Email</span>
@@ -37,10 +41,7 @@
       <span class="pd_input_label">Zip/Pin Code</span>
       <input type="text" name="password2" autocomplete="off" required/>
       </div>
-      <div class = "pd_register_input">
-      <span class="pd_input_label">Profile Status</span>
-      <input type="text" name="password2" autocomplete="off" required/>
-      </div>
+      <div id="ad-genre"></div>
       </div>
     </div>
   </div>
