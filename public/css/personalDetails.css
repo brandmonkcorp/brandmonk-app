@@ -42,7 +42,7 @@
   border: 1px solid #0070c0;
 }
 #pd_register_form select {
-  width: 17.1vw;
+  width: 17.15vw;
   height: 4vh;
   float: right;
   font-size: 2vh;
@@ -168,14 +168,14 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
 }
 .radio input[type="radio"]:checked + span{
-  color:#0B8;
+  color:#0070c0;
 }
 .radio input[type="radio"]:checked + span:before{
   content:'';
   width:5px;
   height:5px;
   position:absolute;
-  background:#0B8;
+  background:#0070c0;
   left:5px;
   top:6px;
   border-radius:100%;

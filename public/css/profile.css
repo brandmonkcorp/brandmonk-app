@@ -150,16 +150,33 @@ html,body{
   font-size: 1.3vw;
   padding: 1vh;
 }
-#contact_info_form label{
+#contact_info_form label, #family_relation_form label{
   position: absolute;
 }
-#contact_info_form input{
+#contact_info_form input, #family_relation_form input, select{
   position: absolute;
   width: 20vw;
   left: 21vw;
   height: 1.5vw;
+  border: 1px solid #0070c0;
+  padding: .2vw;
 }
-#contact_info_form_submit{
+#family_relation_form   .tab{
+  left: 44vw;
+  width: 10vw;
+}
+#family_relation_form .tab1 {
+  left: 52vw;
+  width: 20vw;
+}
+#family_relation_form {
+  margin-top: 2vw;
+}
+#family_relation_form select{
+  height: 2vw;
+  width: 20.5vw;
+}
+#contact_info_form_submit, #family_relation_form_submit{
   position: absolute;
   width: 15vw;
   right: 5vw;
@@ -169,7 +186,7 @@ html,body{
   border: 1px solid transparent;
   font-size: 1.3vw;
 }
-#contact_info_button{
+#contact_info_button, #family_relation_button{
   position: absolute;
   display: none;
 }
