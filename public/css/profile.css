@@ -158,6 +158,8 @@ html,body{
   width: 20vw;
   left: 21vw;
   height: 1.5vw;
+  border: 1px solid #0070c0;
+  padding: .2vw;
 }
 #contact_info_form_submit{
   position: absolute;
