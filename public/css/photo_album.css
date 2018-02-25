@@ -39,7 +39,7 @@
   border: 1px dashed black;
   margin-top: 4vh;
   margin-left: 2vw;
-  cursor: pointer;
+  cursor: grab;
 }
 #inner{
   position: relative;
@@ -58,4 +58,21 @@
   color: white;
   margin-left: 5.7vh;
   top: 8vh;
+  cursor: pointer;
+}
+#albname{
+  font-weight: bold;
+}
+#thumbContainer{
+  position: relative;
+  float: right;
+  height: 50vh;
+  width: 35vw;
+  border: 1px solid black;
+}
+#img-prev{
+  position: relative;
+  height: 10vh;
+  width: 7vw;
+  border: 1px dashed #0070c0;
 }
