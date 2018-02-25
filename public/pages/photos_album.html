@@ -1,15 +1,24 @@
 <html>
 <body>
+
 <span id="txt">Want A New Album ?</span>
 <input type="text" id="albumName" placeholder="Enter New Album Name"/>
 <span id="createAlbum">Create New Album</span>
 <div id="albtxt" style="display:none;">
   Add Photographs or edit existing photographs in <span id="albname"></span>
 </div>
+<div id="thumbContainer" style="display:none;">
+  <div id="img-prev" style="display:none;">
+
+  </div>
+</div>
 <div id="outer">
   <div id="inner">
     <span id="uploadBtn">Click here or Drag & Drop Upload Pictures to this Album</span>
+    <input id="fileUpload" type="file" style="display:none;"/>
   </div>
 </div>
+<script src="./js/imgUpload.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@ var multer = require('multer')
 var api_key = config.mailgun_api_key;
 var domain = config.mailgun_main_domain;
 var from_who = "BrandMonk Team<support@brandmonk.online>";
-
+var cloudinary = require('cloudinary');
 var port = 3000;
 var app = express();
 app.use(bodyParser.json());
