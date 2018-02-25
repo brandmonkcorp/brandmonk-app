@@ -22,6 +22,11 @@ app.use(bodyParser.json());
 
 app.use(express.static(publicPath, {extensions:['html']}));
 app.use('/Fuck_You_For_Inspecting_My_Code', express.static('HoriBol'));
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    next();
+});
 
 app.get('/auth', authenticate, (req, res) => {
   if(!req.user.isLoggedIn){

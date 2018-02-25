@@ -1,4 +1,4 @@
-var Cloudinary_Url = 'https://api.cloudinary.com/v1_1/bmonk/uploads';
+/*var Cloudinary_Url = 'https://api.cloudinary.com/v1_1/bmonk/uploads';
 var Cloudinary_Upload_Preset = 'nrofe3vo';
 $(document).ready(function(){
     $("#fileUpload").change(function(event){
@@ -10,7 +10,8 @@ $(document).ready(function(){
         url: Cloudinary_Url,
         method: 'POST',
         headers: {
-          'Content-Type' : 'application/x-www-form-urlencoded'
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type' : 'application/x-www-form-urlencoded',
         },
         data : formData
       }).then(function(res){
@@ -21,3 +22,4 @@ $(document).ready(function(){
     });
 
 });
+*/
