@@ -17,11 +17,25 @@ var domain = config.mailgun_main_domain;
 var from_who = "BrandMonk Team<support@brandmonk.online>";
 var cloudinary = require('cloudinary');
 var port = 3000;
+var upload = multer();
 var app = express();
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+// for parsing application/json
+//app.use(bodyParser.json());
+
+// for parsing application/xwww-
+//app.use(bodyParser.urlencoded({ extended: true }));
+//form-urlencoded
+
+// for parsing multipart/form-data
+//app.use(upload.array());
+app.use(express.static('public'));
 
 app.use(express.static(publicPath, {extensions:['html']}));
-app.use('/Fuck_You_For_Inspecting_My_Code', express.static('HoriBol'));
+app.use('/Fuck_You_For_Inspecting_My_Code', express.static('Uploads'));
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type");
@@ -266,19 +280,29 @@ app.post('/postProfileData', authenticate, (req, res) => {
   });
 });
 var em;
-var storage = multer.diskStorage({
-	destination: function(req, file, callback) {
-		callback(null, './HoriBol')
-	},
-	filename: function(req, file, callback) {
+var album;
+var imgNo;
 
-		callback(null, em + '.png');
-	}
-})
+app.post('/albumname', function(req,res){
+  console.log(req.body.albname);
+  console.log(req.body.imgno);
+  album = req.body.albname;
+  imgNo = req.body.imgno;
+  res.send('albumname captured');
+});
 
-app.post('/api/file',authenticate, function(req, res) {
+app.post('/api/file',function(req, res) {
+  var storage = multer.diskStorage({
+  	destination: function(req, file, callback) {
+  		callback(null, `public/Uploads/`)
+  	},
+  	filename: function(req, file, callback) {
+
+  		callback(null, em + '_' + album +'_' + 'img_' + imgNo +'.png');
+  	}
+  })
   console.log('req arrived');
-  em = req.user.email;
+  em = 'sayak';//req.user.email; <-- This is the right thing
   //console.log(em);
 	var upload = multer({
 		storage: storage,
@@ -294,7 +318,7 @@ app.post('/api/file',authenticate, function(req, res) {
 		res.send({'message': 'success'});
     console.log('file uploaded', err);
 	})
-})
+});
 
 app.listen(port, () =>{
   console.log(`Server deployed on port ${port}`);
