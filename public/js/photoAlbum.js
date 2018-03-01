@@ -15,7 +15,7 @@ var i=0;
 var file;
 
 $('#uploadBtn').on('click',function(){
-  if(albname==''){
+  if(albname===''){
     if(i==9){
       alert("Maximum 9 Pictures can be added to an album");
     }else {
