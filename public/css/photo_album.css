@@ -62,17 +62,22 @@
 }
 #albname{
   font-weight: bold;
+  font-size: 2vw;
 }
 #thumbContainer{
   position: relative;
   float: right;
-  height: 50vh;
+  height: 48vh;
   width: 35vw;
-  border: 1px solid black;
 }
-#img-prev{
+.img-prev{
   position: relative;
-  height: 10vh;
-  width: 7vw;
-  border: 1px dashed #0070c0;
+  height: 14vh;
+  width: 10vw;
+  margin-left: 1vw;
+  margin-bottom: 1vw;
+  float: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
