@@ -1,29 +1,31 @@
-var albname="";
+var albnam="";
 $(document.body).on('click', '#createAlbum', function(){
   albname = $("#albumName").val();
-  $("#txt").css("display", "none");
-  $("#albumName").css("display", "none");
-  $("#createAlbum").css("display", "none");
-  $("#albtxt").css("display", "block");
-  $("#outer").css("display", "block");
-  $("#img-prev").css("display", "block");
-    $("#thumbContainer").css("display", "block");
-  $("#albname").text(albname);
+  if(albname == ""){
+    alert("please enter albumName");
+  }
+  else {
+    $("#txt").css("display", "none");
+    $("#albumName").css("display", "none");
+    $("#createAlbum").css("display", "none");
+    $("#albtxt").css("display", "block");
+    $("#outer").css("display", "block");
+    $("#img-prev").css("display", "block");
+      $("#thumbContainer").css("display", "block");
+    $("#albname").text(albname);
+  }
+
 });
 
 var i=0;
 var file;
 
 $('#uploadBtn').on('click',function(){
-  if(albname==''){
     if(i==9){
       alert("Maximum 9 Pictures can be added to an album");
     }else {
       $("#fileUpload").trigger("click");
     }
-  }else {
-    alert("please enter albumName");
-  }
 
 
 });
